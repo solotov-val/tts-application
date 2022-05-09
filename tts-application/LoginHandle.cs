@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace tts_application
 {
-    internal class testClass
+    internal class LoginHandle
     {
+        private String path;
     }
 }

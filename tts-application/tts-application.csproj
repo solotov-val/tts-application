@@ -46,17 +46,64 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="About.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountCreation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountCreation.Designer.cs">
+      <DependentUpon>AccountCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountDelete.Designer.cs">
+      <DependentUpon>AccountDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Basics.Designer.cs">
+      <DependentUpon>Basics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileInput.Designer.cs">
+      <DependentUpon>FileInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginHandle.cs" />
+    <Compile Include="LoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginPage.Designer.cs">
+      <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="testClass.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="TextInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextInput.Designer.cs">
+      <DependentUpon>TextInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TranslateTextInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TranslateTextInput.Designer.cs">
+      <DependentUpon>TranslateTextInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="UserList.cs" />
+    <EmbeddedResource Include="AccountCreation.resx">
+      <DependentUpon>AccountCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basics.resx">
+      <DependentUpon>Basics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

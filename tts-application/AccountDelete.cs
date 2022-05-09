@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace tts_application
 {
-    public partial class Form1 : Form
+    public partial class AccountDelete : Form
     {
-        public Form1()
+        public AccountDelete()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
