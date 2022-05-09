@@ -91,6 +91,12 @@
     <Compile Include="TextInput.Designer.cs">
       <DependentUpon>TextInput.cs</DependentUpon>
     </Compile>
+    <Compile Include="TranslateFileInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TranslateFileInput.Designer.cs">
+      <DependentUpon>TranslateFileInput.cs</DependentUpon>
+    </Compile>
     <Compile Include="TranslateTextInput.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,8 +108,17 @@
     <EmbeddedResource Include="AccountCreation.resx">
       <DependentUpon>AccountCreation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AccountDelete.resx">
+      <DependentUpon>AccountDelete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Basics.resx">
       <DependentUpon>Basics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileInput.resx">
+      <DependentUpon>FileInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginPage.resx">
+      <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -114,6 +129,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TextInput.resx">
+      <DependentUpon>TextInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TranslateFileInput.resx">
+      <DependentUpon>TranslateFileInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TranslateTextInput.resx">
+      <DependentUpon>TranslateTextInput.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

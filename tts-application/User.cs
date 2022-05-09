@@ -11,9 +11,28 @@ namespace tts_application
 
         private String name;
         private String password;
-        //private Type language;
+        private String language;
         private bool translator;
         private int inputType;
+
+
+        public bool checkUser(){
+            bool exists = false;
+
+            return exists;
+        }
+
+        public void setDefaultLanguage(String language){
+
+        }
+
+        public void activeTranslator(bool translator){
+
+        }
+
+        public void setInputType(int inputType){
+
+        }
 
     }
 }

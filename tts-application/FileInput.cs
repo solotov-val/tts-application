@@ -16,5 +16,16 @@ namespace tts_application
         {
             InitializeComponent();
         }
+
+
+        public void openClick()
+        {
+
+        }
+
+        private void FileInput_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

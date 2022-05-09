@@ -17,7 +17,18 @@ namespace tts_application
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+
+        public void createClick()
+        {
+
+        }
+
+        public void backClick()
+        {
+
+        }
+
+        private void AccountCreation_Load(object sender, EventArgs e)
         {
 
         }

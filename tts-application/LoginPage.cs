@@ -16,5 +16,26 @@ namespace tts_application
         {
             InitializeComponent();
         }
+
+        public void loginClick()
+        {
+
+        }
+
+        public void createClick()
+        {
+
+        }
+
+        public void deleteClick()
+        {
+
+        }
+
+
+        private void LoginPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

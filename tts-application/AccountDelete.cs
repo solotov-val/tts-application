@@ -16,5 +16,22 @@ namespace tts_application
         {
             InitializeComponent();
         }
+
+
+        public void deleteClick()
+        {
+
+        }
+
+        public void backClick()
+        {
+
+        }
+
+    
+        private void AccountDelete_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
