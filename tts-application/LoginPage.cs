@@ -12,9 +12,11 @@ namespace tts_application
 {
     public partial class LoginPage : Form
     {
+        UserList ul = new UserList();
         public LoginPage()
         {
             InitializeComponent();
+            passwordText.PasswordChar = '*';
         }
 
         public void loginClick()
@@ -27,15 +29,38 @@ namespace tts_application
 
         }
 
+
+        /*
         public void deleteClick()
         {
 
         }
+        */
 
 
         private void LoginPage_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+
+            if(ul.searchUser(usernameText.Text, passwordText.Text))
+            {
+                MessageBox.Show("Login successful!");
+            }
+            else
+            {
+                MessageBox.Show("Login failed!");
+            }
+        }
+
+        private void registerButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var accountCreation = new AccountCreation(this, ul);
+            accountCreation.Show();
         }
     }
 }

@@ -9,11 +9,31 @@ namespace tts_application
     internal class User
     {
 
-        private String name;
+        private String username;
         private String password;
         private String language;
         private bool translator;
         private int inputType;
+
+        public User(String username, String password, String language, bool translator, int inputType)
+        {
+            this.username = username;
+            this.password = password;
+            this.language = language;
+            this.translator = translator;
+            this.inputType = inputType;
+        }
+
+
+        public String getUsername()
+        {
+            return username;
+        }
+
+        public String getPassword()
+        {
+            return password;
+        }
 
 
         public bool checkUser(){
