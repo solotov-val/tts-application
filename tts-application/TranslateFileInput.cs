@@ -10,26 +10,21 @@ using System.Windows.Forms;
 
 namespace tts_application
 {
-    public partial class TranslateTextInput : Form
+    public partial class TranslateFileInput : Form
     {
-        public TranslateTextInput()
+        public TranslateFileInput()
         {
             InitializeComponent();
         }
 
         public String getTranslateLang()
         {
-            String language="TEST";
+            String language = "TEST";
 
             return language;
-
         }
 
-        public void swapLang()
-        {
-
-        }
-        private void TranslateTextInput_Load(object sender, EventArgs e)
+        private void TranslateFileInput_Load(object sender, EventArgs e)
         {
 
         }

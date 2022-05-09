@@ -16,5 +16,48 @@ namespace tts_application
         {
             InitializeComponent();
         }
+
+        public void setStandLang(String language)
+        {
+
+        }
+
+        public void setTranslate(bool translate)
+        {
+
+        }
+
+        public void setInputType(int inputtype)
+        {
+
+        }
+
+
+        public void convertClick()
+        {
+
+        }
+
+        public void basicsClick()
+        {
+
+        }
+
+        public void aboutClick()
+        {
+
+        }
+
+        public void downloadClick()
+        {
+
+        }
+
+
+
+        private void TextInput_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

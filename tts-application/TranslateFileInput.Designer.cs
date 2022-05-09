@@ -1,6 +1,6 @@
 ﻿namespace tts_application
 {
-    partial class AccountCreation
+    partial class TranslateFileInput
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // AccountCreation
+            // TranslateFileInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "AccountCreation";
-            this.Text = "AccountCreation";
-            this.Load += new System.EventHandler(this.AccountCreation_Load);
+            this.Name = "TranslateFileInput";
+            this.Text = "TranslateFileInput";
+            this.Load += new System.EventHandler(this.TranslateFileInput_Load);
             this.ResumeLayout(false);
 
         }
