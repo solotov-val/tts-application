@@ -24,6 +24,12 @@ namespace tts_application
             this.inputType = inputType;
         }
 
+        public User(String username, String password)
+        {
+            this.username = username;
+            this.password = password;
+        }
+
 
         public String getUsername()
         {
@@ -44,14 +50,17 @@ namespace tts_application
 
         public void setDefaultLanguage(String language){
 
+            this.language = language;
         }
 
         public void activeTranslator(bool translator){
 
+            this.translator = translator;
         }
 
         public void setInputType(int inputType){
 
+            this.inputType = inputType;
         }
 
     }

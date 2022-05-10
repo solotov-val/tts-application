@@ -12,24 +12,34 @@ namespace tts_application
 {
     public partial class AccountDelete : Form
     {
-        public AccountDelete()
+        Form loginPage;
+        bool usernameValid = false;
+        bool passwordValid = false;
+        UserList userList;
+
+        public AccountDelete(Form f, UserList ul)
         {
             InitializeComponent();
+            this.loginPage = f;
+            this.userList = ul;
+            passwordBox.PasswordChar = '*';
+            confirmBox.PasswordChar = '*';
         }
-
-
-        public void deleteClick()
-        {
-
-        }
-
-        public void backClick()
-        {
-
-        }
-
     
         private void AccountDelete_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        //Give username and password to the remUser function in UserList
+        private void delete_Click(object sender, EventArgs e)
+        {
+            userList.remUser(usernameBox.Text, passwordBox.Text);
+        }
+
+
+        //Go back to the Login Window
+        private void buttonBack_Click(object sender, EventArgs e)
         {
 
         }

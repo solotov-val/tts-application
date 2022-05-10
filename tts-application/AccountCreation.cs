@@ -28,12 +28,6 @@ namespace tts_application
         }
 
 
-        public void createClick()
-        {
-
-
-        }
-
         public void backClick()
         {
 
@@ -89,6 +83,11 @@ namespace tts_application
         private void confirmBox_TextChanged(object sender, EventArgs e)
         {
             passwordCheck();
+        }
+
+        private void createButton_Click(object sender, EventArgs e)
+        {
+            userList.addUser(usernameBox.Text, passwordBox.Text, "English", false, 1);
         }
     }
 }
