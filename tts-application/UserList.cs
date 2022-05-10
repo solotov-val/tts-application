@@ -17,15 +17,21 @@ namespace tts_application
         }
 
         
+        //Add User to the List and write them to the XML file
+        public void addUser(String username, String password, String language, bool translator, int inputType){
 
-        public void addUser(String crerateN, String createP){
-
+            userList.Add(new User(username, password, language, translator, inputType));
         }
 
-        public void remUser(String crerateN, String createP){
 
+        //Remove User from List and from the XML file
+        public void remUser(String username, String password){
+
+            userList.Remove(new User(username, password));
         }
 
+
+        //Function to search for an existing User
         public bool searchUser(String loginN, String loginP)
         {
             bool found = false;
