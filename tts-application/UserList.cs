@@ -62,6 +62,7 @@ namespace tts_application
         }
 
 
+        //Function to check if the password is long enough
         public bool passwordIsValid(String password)
         {
             if(password.Length>=MINPWDLENGTH)

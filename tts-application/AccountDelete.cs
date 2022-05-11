@@ -42,12 +42,14 @@ namespace tts_application
 
 
 
-        //Go back to the Login Window
+        //Button to go back to the login window
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Hide();
             loginPage.ShowDialog();
         }
+
+
 
         private void usernameBox_TextChanged(object sender, EventArgs e)
         {
@@ -63,33 +65,37 @@ namespace tts_application
             }
         }
 
+
+        //Checks the password if its long enouth and if the two passwords are equal
         private void passwordCheck()
         {
             if (userList.passwordIsValid(passwordBox.Text) && passwordBox.Text.Equals(confirmBox.Text))
             {
                 validPasswords = true;
-                invalidPassword.Hide();
-                
+                invalidPassword.Hide();    
             }
             else
             {
                 validPasswords=false;
                 invalidPassword.Show();
             }
-
             accountDeletable();
         }
 
+
+        //Checks the password everytime the user puts in a new char
         private void passwordBox_TextChanged(object sender, EventArgs e)
         {
             passwordCheck();
         }
 
+        //Checks the confirmed password everytime the user puts in a new char
         private void confirmBox_TextChanged(object sender, EventArgs e)
         {
             passwordCheck();
         }
 
+        //Handels the button status if the information of the account are correct
         private void accountDeletable()
         {
             delete.Enabled = validPasswords && validUsername;
