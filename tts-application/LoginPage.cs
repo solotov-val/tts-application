@@ -19,36 +19,22 @@ namespace tts_application
             passwordText.PasswordChar = '*';
         }
 
-        public void loginClick()
-        {
-
-        }
-
-        public void createClick()
-        {
-
-        }
-
-
-        /*
-        public void deleteClick()
-        {
-
-        }
-        */
-
 
         private void LoginPage_Load(object sender, EventArgs e)
         {
 
         }
 
+
+        //Check if user exists and get to the textInput Form
         private void loginButton_Click(object sender, EventArgs e)
         {
-
             if(ul.searchUser(usernameText.Text, passwordText.Text))
             {
-                MessageBox.Show("Login successful!");
+                MessageBox.Show("Login successful! Welcome back "+usernameText.Text+" !");
+                this.Hide();
+                var textInput = new TextInput(this);
+                textInput.Show();
             }
             else
             {
@@ -61,6 +47,13 @@ namespace tts_application
             this.Hide();
             var accountCreation = new AccountCreation(this, ul);
             accountCreation.Show();
+        }
+
+        private void deleteAccount_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var accountDelete = new AccountDelete(this, ul);
+            accountDelete.Show();
         }
     }
 }

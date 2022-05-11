@@ -12,9 +12,12 @@ namespace tts_application
 {
     public partial class TextInput : Form
     {
-        public TextInput()
+        Form loginPage;
+       
+        public TextInput(Form f)
         {
             InitializeComponent();
+            this.loginPage = f;
         }
 
         public void setStandLang(String language)

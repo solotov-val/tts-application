@@ -13,7 +13,7 @@ namespace tts_application
        
         public UserList()
         {
-            userList.Add(new User("Alex", "1234", "Deutsch", true, 1));
+            userList.Add(new User("Alex", "12345678", "Deutsch", true, 1));
         }
 
         
@@ -31,7 +31,7 @@ namespace tts_application
         }
 
 
-        //Function to search for an existing User
+        //Function to search for an existing User with Password
         public bool searchUser(String loginN, String loginP)
         {
             bool found = false;
@@ -48,11 +48,11 @@ namespace tts_application
         }
 
 
+        //Function to proove if a User with this username exists
         public bool userExists(String username)
         {
             foreach (User user in userList)
             {
-
                 if (user.getUsername().Equals(username))
                 {
                     return true;
