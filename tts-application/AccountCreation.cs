@@ -25,6 +25,8 @@ namespace tts_application
             passwordBox.PasswordChar = '*';
             confirmBox.PasswordChar = '*';
             userExists.Hide();
+            passwordsNotEqual.Hide();
+
         }
 
 
@@ -50,7 +52,6 @@ namespace tts_application
                 userExists.Hide();
                 usernameValid = true;
             }
-
             accountCreatable();
         }
 
@@ -59,10 +60,12 @@ namespace tts_application
         {
             if(userList.passwordIsValid(passwordBox.Text) && passwordBox.Text.Equals(confirmBox.Text))
             {
+                passwordsNotEqual.Hide();
                 passwordValid = true;
             }
             else
             {
+                passwordsNotEqual.Show();
                 passwordValid=false;
             }
 
@@ -74,6 +77,7 @@ namespace tts_application
         {
             createButton.Enabled = usernameValid && passwordValid;
         }
+
 
         private void passwordBox_TextChanged(object sender, EventArgs e)
         {
@@ -87,7 +91,14 @@ namespace tts_application
 
         private void createButton_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Welcome "+ usernameBox.Text+" !");
             userList.addUser(usernameBox.Text, passwordBox.Text, "English", false, 1);
+        }
+        
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            loginPage.ShowDialog();
         }
     }
 }

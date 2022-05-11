@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
             this.registerButton = new System.Windows.Forms.Button();
+            this.deleteAccount = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // usernameText
@@ -88,11 +89,22 @@
             this.registerButton.UseVisualStyleBackColor = true;
             this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
+            // deleteAccount
+            // 
+            this.deleteAccount.Location = new System.Drawing.Point(241, 331);
+            this.deleteAccount.Name = "deleteAccount";
+            this.deleteAccount.Size = new System.Drawing.Size(243, 43);
+            this.deleteAccount.TabIndex = 6;
+            this.deleteAccount.Text = "Delete your account?";
+            this.deleteAccount.UseVisualStyleBackColor = true;
+            this.deleteAccount.Click += new System.EventHandler(this.deleteAccount_Click);
+            // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.deleteAccount);
             this.Controls.Add(this.registerButton);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.label2);
@@ -115,5 +127,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button registerButton;
+        private System.Windows.Forms.Button deleteAccount;
     }
 }
