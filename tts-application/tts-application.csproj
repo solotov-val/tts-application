@@ -83,6 +83,12 @@
     <Compile Include="LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menue.Designer.cs">
+      <DependentUpon>Menue.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TextInput.cs">
@@ -105,6 +111,7 @@
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserList.cs" />
+    <Compile Include="VerifyInput.cs" />
     <EmbeddedResource Include="AccountCreation.resx">
       <DependentUpon>AccountCreation.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menue.resx">
+      <DependentUpon>Menue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

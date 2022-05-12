@@ -33,8 +33,8 @@ namespace tts_application
             {
                 MessageBox.Show("Login successful! Welcome back "+usernameText.Text+" !");
                 this.Hide();
-                var textInput = new TextInput(this);
-                textInput.Show();
+                var menue = new Menue(this);
+                menue.Show();
             }
             else
             {
