@@ -12,14 +12,15 @@ namespace tts_application
 {
     public partial class TextInput : Form
     {
-        Form loginPage;
+        Form menue;
         String input;
+        VerifyInput v = new VerifyInput();
         
 
         public TextInput(Form f)
         {
             InitializeComponent();
-            this.loginPage = f;
+            this.menue = f;
             limitExcceded.Hide();
             charLimitExcceded.Hide();
         }
@@ -76,15 +77,7 @@ namespace tts_application
         private void wordCounter(String text)
         {
 
-            int counter = 0;
-            for (int i = 0; i < text.Length - 1; i++)
-            {
-                if(text[i] == ' ' && Char.IsLetter(text[i + 1]) && (i > 0)) {
-                    counter++;
-
-                }    
-            }
-            counter++;
+            int counter = v.wordCounter(text);
 
             if(counter > 50)
             {
@@ -102,13 +95,7 @@ namespace tts_application
         private void charCounter(String text)
         {
 
-            int counter = 0;
-
-            foreach(char c in text)
-            {
-                counter++;
-            }
-
+            int counter = v.charCounter(text);
 
             if (counter > 250)
             {

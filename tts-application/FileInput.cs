@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +13,15 @@ namespace tts_application
 {
     public partial class FileInput : Form
     {
-        public FileInput()
+        VerifyInput v = new VerifyInput();
+        Form menue;
+        public FileInput(Form f)
         {
             InitializeComponent();
+            limitExcceded.Hide();
+            charLimitExcceded.Hide();
+            this.menue= f;
+
         }
 
 
@@ -26,6 +33,67 @@ namespace tts_application
         private void FileInput_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonOpenFile_Click(object sender, EventArgs e)
+        {
+            ofdFileInput.ShowDialog();
+            String path = ofdFileInput.FileName;
+
+
+            if (path == null)
+            {
+                MessageBox.Show("No path selected!");
+            }
+            else
+            {
+                string text = File.ReadAllText(path);
+                richTextBox1.Text = text;
+
+                wordCount(text);
+                charCount(text);
+            }
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            wordCount(richTextBox1.Text);
+            charCount(richTextBox1.Text);
+        }
+
+        private void wordCount(String text)
+        {
+            int counter = v.wordCounter(text);
+
+            if (counter > 50)
+            {
+                limitExcceded.Show();
+                buttonConvert.Enabled = false;
+            }
+            else
+            {
+                limitExcceded.Hide();
+                buttonConvert.Enabled = true;
+            }
+            wordCounter.Text = "" + counter;
+
+        }
+
+        private void charCount(String text)
+        {
+            int counter = v.charCounter(text);
+            
+            if (counter > 250)
+            {
+                charLimitExcceded.Show();
+                buttonConvert.Enabled = false;
+            }
+            else
+            {
+                charLimitExcceded.Hide();
+                buttonConvert.Enabled = true;
+            }
+            charCounter.Text = "" + counter;
         }
     }
 }
