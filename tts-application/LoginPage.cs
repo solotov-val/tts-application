@@ -44,16 +44,14 @@ namespace tts_application
 
         private void registerButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
             var accountCreation = new AccountCreation(this, ul);
-            accountCreation.Show();
+            accountCreation.ShowDialog();
         }
 
         private void deleteAccount_Click(object sender, EventArgs e)
         {
-            this.Hide();
             var accountDelete = new AccountDelete(this, ul);
-            accountDelete.Show();
+            accountDelete.ShowDialog();
         }
     }
 }

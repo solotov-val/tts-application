@@ -53,7 +53,7 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(109, 173);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(394, 326);
+            this.richTextBox1.Size = new System.Drawing.Size(400, 320);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -110,6 +110,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(602, 270);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 25);
@@ -196,6 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Blue;
             this.ClientSize = new System.Drawing.Size(974, 764);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.charCounter);

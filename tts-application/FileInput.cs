@@ -39,6 +39,7 @@ namespace tts_application
         {
             ofdFileInput.ShowDialog();
             String path = ofdFileInput.FileName;
+            String text="";
 
 
             if (path == null)
@@ -47,9 +48,18 @@ namespace tts_application
             }
             else
             {
-                string text = File.ReadAllText(path);
-                richTextBox1.Text = text;
+                try
+                {
+                    text = File.ReadAllText(path);
+                    
+                }
+                catch (Exception)
+                {
 
+                    MessageBox.Show("Loading of the file failed!");
+                }
+               
+                richTextBox1.Text = text;
                 wordCount(text);
                 charCount(text);
             }
@@ -61,6 +71,8 @@ namespace tts_application
             charCount(richTextBox1.Text);
         }
 
+
+        //Function to value the Text by the number of words
         private void wordCount(String text)
         {
             int counter = v.wordCounter(text);
@@ -79,6 +91,8 @@ namespace tts_application
 
         }
 
+        
+        //Function to value the Text by the number of chars
         private void charCount(String text)
         {
             int counter = v.charCounter(text);

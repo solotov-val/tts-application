@@ -12,16 +12,14 @@ namespace tts_application
         private String username;
         private String password;
         private String language;
-        private bool translator;
-        private int inputType;
 
-        public User(String username, String password, String language, bool translator, int inputType)
+
+        public User(String username, String password, String language)
         {
             this.username = username;
             this.password = password;
             this.language = language;
-            this.translator = translator;
-            this.inputType = inputType;
+
         }
 
         public User(String username, String password)
@@ -41,6 +39,10 @@ namespace tts_application
             return password;
         }
 
+        public String getLanguage()
+        {
+            return language;
+        }
 
         public bool checkUser(){
             bool exists = false;
@@ -51,16 +53,6 @@ namespace tts_application
         public void setDefaultLanguage(String language){
 
             this.language = language;
-        }
-
-        public void activeTranslator(bool translator){
-
-            this.translator = translator;
-        }
-
-        public void setInputType(int inputType){
-
-            this.inputType = inputType;
         }
 
     }
