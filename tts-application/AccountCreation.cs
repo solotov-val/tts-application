@@ -40,6 +40,9 @@ namespace tts_application
 
         }
 
+
+
+        //Updates the verification status of the username when TextChanged
         private void usernameBox_TextChanged(object sender, EventArgs e)
         {
             if(!usernameBox.Text.Equals("") && userList.userExists(usernameBox.Text))
@@ -56,6 +59,7 @@ namespace tts_application
         }
 
 
+        //Checks if the passwords are equal and if they are long enough with the passwordIsValid() function
         private void passwordCheck()
         {
             if(userList.passwordIsValid(passwordBox.Text) && passwordBox.Text.Equals(confirmBox.Text))
@@ -92,13 +96,13 @@ namespace tts_application
         private void createButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Welcome "+ usernameBox.Text+" !");
-            userList.addUser(usernameBox.Text, passwordBox.Text, "English", false, 1);
+            userList.addUser(usernameBox.Text, passwordBox.Text, "EN");
+            this.Hide();
         }
         
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            loginPage.ShowDialog();
         }
     }
 }

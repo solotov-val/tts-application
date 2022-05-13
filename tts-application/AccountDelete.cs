@@ -38,6 +38,7 @@ namespace tts_application
         private void delete_Click(object sender, EventArgs e)
         {
             userList.remUser(usernameBox.Text, passwordBox.Text);
+            this.Hide();
         }
 
 
@@ -46,7 +47,6 @@ namespace tts_application
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            loginPage.ShowDialog();
         }
 
 

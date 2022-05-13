@@ -35,5 +35,19 @@ namespace tts_application
             fileInput.Show();
 
         }
+
+        private void buttonTranslateFile_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var translateFileInput = new TranslateFileInput(this);
+            translateFileInput.Show();
+        }
+
+        private void buttonTranslateText_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var translateTextInput = new TranslateTextInput(this);
+            translateTextInput.Show();
+        }
     }
 }
