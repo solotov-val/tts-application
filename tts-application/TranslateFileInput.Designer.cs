@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TranslateFileInput));
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,13 +48,20 @@
             this.userInput = new System.Windows.Forms.RichTextBox();
             this.buttonOpenFile = new System.Windows.Forms.Button();
             this.ofdFileInput = new System.Windows.Forms.OpenFileDialog();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.spracheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deutschToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.namexyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1122, 506);
+            this.button1.Location = new System.Drawing.Point(1135, 501);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 40);
             this.button1.TabIndex = 44;
@@ -63,7 +71,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1210, 322);
+            this.label2.Location = new System.Drawing.Point(1203, 322);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 25);
             this.label2.TabIndex = 43;
@@ -72,7 +80,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1210, 272);
+            this.label1.Location = new System.Drawing.Point(1203, 272);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 25);
             this.label1.TabIndex = 42;
@@ -80,7 +88,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(1215, 506);
+            this.progressBar1.Location = new System.Drawing.Point(1228, 501);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(200, 40);
             this.progressBar1.TabIndex = 41;
@@ -111,7 +119,7 @@
             // charCount
             // 
             this.charCount.AutoSize = true;
-            this.charCount.Location = new System.Drawing.Point(387, 590);
+            this.charCount.Location = new System.Drawing.Point(387, 570);
             this.charCount.Name = "charCount";
             this.charCount.Size = new System.Drawing.Size(0, 25);
             this.charCount.TabIndex = 37;
@@ -119,7 +127,7 @@
             // wordCount
             // 
             this.wordCount.AutoSize = true;
-            this.wordCount.Location = new System.Drawing.Point(391, 521);
+            this.wordCount.Location = new System.Drawing.Point(391, 501);
             this.wordCount.Name = "wordCount";
             this.wordCount.Size = new System.Drawing.Size(0, 25);
             this.wordCount.TabIndex = 36;
@@ -128,7 +136,7 @@
             // 
             this.charLimitExcceded.AutoSize = true;
             this.charLimitExcceded.ForeColor = System.Drawing.Color.Red;
-            this.charLimitExcceded.Location = new System.Drawing.Point(206, 616);
+            this.charLimitExcceded.Location = new System.Drawing.Point(206, 596);
             this.charLimitExcceded.Name = "charLimitExcceded";
             this.charLimitExcceded.Size = new System.Drawing.Size(312, 25);
             this.charLimitExcceded.TabIndex = 35;
@@ -138,7 +146,7 @@
             // 
             this.limitExcceded.AutoSize = true;
             this.limitExcceded.ForeColor = System.Drawing.Color.Red;
-            this.limitExcceded.Location = new System.Drawing.Point(206, 547);
+            this.limitExcceded.Location = new System.Drawing.Point(206, 527);
             this.limitExcceded.Name = "limitExcceded";
             this.limitExcceded.Size = new System.Drawing.Size(319, 25);
             this.limitExcceded.TabIndex = 34;
@@ -147,7 +155,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(148, 591);
+            this.label4.Location = new System.Drawing.Point(206, 571);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(174, 25);
             this.label4.TabIndex = 33;
@@ -156,7 +164,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(164, 521);
+            this.label3.Location = new System.Drawing.Point(206, 501);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(178, 25);
             this.label3.TabIndex = 32;
@@ -164,18 +172,18 @@
             // 
             // buttonSwitch
             // 
-            this.buttonSwitch.Location = new System.Drawing.Point(565, 52);
+            this.buttonSwitch.Location = new System.Drawing.Point(653, 96);
             this.buttonSwitch.Name = "buttonSwitch";
-            this.buttonSwitch.Size = new System.Drawing.Size(197, 37);
+            this.buttonSwitch.Size = new System.Drawing.Size(200, 45);
             this.buttonSwitch.TabIndex = 31;
             this.buttonSwitch.Text = "Switch languages";
             this.buttonSwitch.UseVisualStyleBackColor = true;
             // 
             // buttonConvert
             // 
-            this.buttonConvert.Location = new System.Drawing.Point(697, 548);
+            this.buttonConvert.Location = new System.Drawing.Point(653, 501);
             this.buttonConvert.Name = "buttonConvert";
-            this.buttonConvert.Size = new System.Drawing.Size(175, 55);
+            this.buttonConvert.Size = new System.Drawing.Size(175, 45);
             this.buttonConvert.TabIndex = 30;
             this.buttonConvert.Text = "Convert";
             this.buttonConvert.UseVisualStyleBackColor = true;
@@ -199,9 +207,9 @@
             // 
             // buttonOpenFile
             // 
-            this.buttonOpenFile.Location = new System.Drawing.Point(514, 715);
+            this.buttonOpenFile.Location = new System.Drawing.Point(195, 96);
             this.buttonOpenFile.Name = "buttonOpenFile";
-            this.buttonOpenFile.Size = new System.Drawing.Size(125, 43);
+            this.buttonOpenFile.Size = new System.Drawing.Size(175, 44);
             this.buttonOpenFile.TabIndex = 45;
             this.buttonOpenFile.Text = "Open file";
             this.buttonOpenFile.UseVisualStyleBackColor = true;
@@ -211,11 +219,63 @@
             // 
             this.ofdFileInput.FileName = "openFileDialog1";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1576, 42);
+            this.toolStrip1.TabIndex = 46;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.spracheToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(54, 36);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // spracheToolStripMenuItem
+            // 
+            this.spracheToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deutschToolStripMenuItem,
+            this.englishToolStripMenuItem});
+            this.spracheToolStripMenuItem.Name = "spracheToolStripMenuItem";
+            this.spracheToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.spracheToolStripMenuItem.Text = "Sprache:";
+            // 
+            // deutschToolStripMenuItem
+            // 
+            this.deutschToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.namexyToolStripMenuItem});
+            this.deutschToolStripMenuItem.Name = "deutschToolStripMenuItem";
+            this.deutschToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.deutschToolStripMenuItem.Text = "Deutsch";
+            // 
+            // namexyToolStripMenuItem
+            // 
+            this.namexyToolStripMenuItem.Name = "namexyToolStripMenuItem";
+            this.namexyToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.namexyToolStripMenuItem.Text = "Namexy";
+            // 
+            // englishToolStripMenuItem
+            // 
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.englishToolStripMenuItem.Text = "English";
+            // 
             // TranslateFileInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1576, 816);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.buttonOpenFile);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
@@ -239,6 +299,8 @@
             this.Load += new System.EventHandler(this.TranslateFileInput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,5 +327,11 @@
         private System.Windows.Forms.RichTextBox userInput;
         private System.Windows.Forms.Button buttonOpenFile;
         private System.Windows.Forms.OpenFileDialog ofdFileInput;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem spracheToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deutschToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem namexyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
     }
 }

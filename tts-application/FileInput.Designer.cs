@@ -51,7 +51,9 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(109, 173);
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.richTextBox1.ForeColor = System.Drawing.Color.White;
+            this.richTextBox1.Location = new System.Drawing.Point(109, 188);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(400, 320);
             this.richTextBox1.TabIndex = 0;
@@ -60,34 +62,42 @@
             // 
             // buttonOpenFile
             // 
+            this.buttonOpenFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.buttonOpenFile.ForeColor = System.Drawing.Color.White;
             this.buttonOpenFile.Location = new System.Drawing.Point(109, 664);
             this.buttonOpenFile.Name = "buttonOpenFile";
-            this.buttonOpenFile.Size = new System.Drawing.Size(125, 43);
+            this.buttonOpenFile.Size = new System.Drawing.Size(125, 45);
             this.buttonOpenFile.TabIndex = 1;
             this.buttonOpenFile.Text = "Open file";
-            this.buttonOpenFile.UseVisualStyleBackColor = true;
+            this.buttonOpenFile.UseVisualStyleBackColor = false;
             this.buttonOpenFile.Click += new System.EventHandler(this.buttonOpenFile_Click);
             // 
             // buttonConvert
             // 
+            this.buttonConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.buttonConvert.ForeColor = System.Drawing.Color.White;
             this.buttonConvert.Location = new System.Drawing.Point(391, 664);
             this.buttonConvert.Name = "buttonConvert";
-            this.buttonConvert.Size = new System.Drawing.Size(112, 43);
+            this.buttonConvert.Size = new System.Drawing.Size(125, 45);
             this.buttonConvert.TabIndex = 2;
             this.buttonConvert.Text = "Convert";
-            this.buttonConvert.UseVisualStyleBackColor = true;
+            this.buttonConvert.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(769, 663);
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(607, 596);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(121, 45);
             this.button3.TabIndex = 3;
             this.button3.Text = "Download";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // numericUpDown1
             // 
+            this.numericUpDown1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.numericUpDown1.ForeColor = System.Drawing.Color.White;
             this.numericUpDown1.Location = new System.Drawing.Point(700, 268);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 31);
@@ -95,6 +105,8 @@
             // 
             // numericUpDown2
             // 
+            this.numericUpDown2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.numericUpDown2.ForeColor = System.Drawing.Color.White;
             this.numericUpDown2.Location = new System.Drawing.Point(700, 320);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(120, 31);
@@ -120,6 +132,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(602, 320);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 25);
@@ -129,6 +142,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(104, 528);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(178, 25);
@@ -138,6 +152,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(104, 597);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(174, 25);
@@ -186,12 +201,14 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(607, 538);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 40);
             this.button1.TabIndex = 15;
             this.button1.Text = "Play";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // FileInput
             // 

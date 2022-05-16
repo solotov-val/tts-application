@@ -20,6 +20,8 @@ namespace tts_application
         {
             InitializeComponent();
             this.menue = f;
+            toolStripDropDownButton1.ShowDropDown();
+            
 
         }
 

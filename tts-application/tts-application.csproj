@@ -82,6 +82,7 @@
     <Compile Include="Basics.Designer.cs">
       <DependentUpon>Basics.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConvertTTScs.cs" />
     <Compile Include="FileInput.cs">
       <SubType>Form</SubType>
     </Compile>
