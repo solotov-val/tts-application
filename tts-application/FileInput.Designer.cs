@@ -48,6 +48,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.comboBoxSprache = new System.Windows.Forms.ComboBox();
+            this.comboBoxSpeakers = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +86,7 @@
             this.buttonConvert.TabIndex = 2;
             this.buttonConvert.Text = "Convert";
             this.buttonConvert.UseVisualStyleBackColor = false;
+            this.buttonConvert.Click += new System.EventHandler(this.buttonConvert_Click);
             // 
             // button3
             // 
@@ -240,12 +242,23 @@
             this.comboBoxSprache.Text = "Language";
             this.comboBoxSprache.SelectedIndexChanged += new System.EventHandler(this.comboBoxSprache_SelectedIndexChanged);
             // 
+            // comboBoxSpeakers
+            // 
+            this.comboBoxSpeakers.FormattingEnabled = true;
+            this.comboBoxSpeakers.Location = new System.Drawing.Point(109, 127);
+            this.comboBoxSpeakers.Name = "comboBoxSpeakers";
+            this.comboBoxSpeakers.Size = new System.Drawing.Size(407, 33);
+            this.comboBoxSpeakers.TabIndex = 18;
+            this.comboBoxSpeakers.Visible = false;
+            this.comboBoxSpeakers.SelectedIndexChanged += new System.EventHandler(this.comboBoxSpeakers_SelectedIndexChanged);
+            // 
             // FileInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Blue;
             this.ClientSize = new System.Drawing.Size(974, 764);
+            this.Controls.Add(this.comboBoxSpeakers);
             this.Controls.Add(this.comboBoxSprache);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.charCounter);
@@ -294,5 +307,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ComboBox comboBoxSprache;
+        private System.Windows.Forms.ComboBox comboBoxSpeakers;
     }
 }

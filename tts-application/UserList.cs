@@ -35,16 +35,22 @@ namespace tts_application
         //Funktioniert noch nicht, umbedingt nachfragen!
         public void remUser(String username, String password){
 
-            userList.Remove(new User(username, hashString(password)));
-            /*foreach(User user in userList)
-            {
-                if(username.Equals(user.getUsername())&& hashString(password).Equals(user.getPassword())){
+            bool found = false;
 
-                    userList.Remove(user);
+            for(int i=0; i<userList.Count(); i++)
+            {
+                if(userList[i].getUsername().Equals(username)&& userList[i].getPassword().Equals(hashString(password))){
+                    found = true;
+                    userList.RemoveAt(i); 
+                    saveUsers();
+                    break;
                 }
+                
+                
             }
-            */
-            saveUsers();
+            if(found==false){
+                MessageBox.Show("Delete failed!");
+            }
         }
 
 
@@ -151,7 +157,6 @@ namespace tts_application
                 }
                 catch (Exception)
                 {
-                
                     MessageBox.Show("Users could not be saved!");
                 }
             }
