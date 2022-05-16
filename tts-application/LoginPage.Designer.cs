@@ -56,6 +56,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(537, 250);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 25);
@@ -65,6 +66,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(537, 313);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 25);
@@ -73,39 +75,45 @@
             // 
             // loginButton
             // 
+            this.loginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.loginButton.ForeColor = System.Drawing.Color.White;
             this.loginButton.Location = new System.Drawing.Point(580, 497);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(250, 45);
-            this.loginButton.TabIndex = 4;
+            this.loginButton.TabIndex = 2;
             this.loginButton.Text = "Login";
-            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.UseVisualStyleBackColor = false;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // registerButton
             // 
+            this.registerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.registerButton.ForeColor = System.Drawing.Color.White;
             this.registerButton.Location = new System.Drawing.Point(580, 548);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(250, 45);
-            this.registerButton.TabIndex = 5;
+            this.registerButton.TabIndex = 3;
             this.registerButton.Text = "Not a member yet?";
-            this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.UseVisualStyleBackColor = false;
             this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
             // deleteAccount
             // 
+            this.deleteAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.deleteAccount.ForeColor = System.Drawing.Color.White;
             this.deleteAccount.Location = new System.Drawing.Point(580, 599);
             this.deleteAccount.Name = "deleteAccount";
             this.deleteAccount.Size = new System.Drawing.Size(250, 45);
-            this.deleteAccount.TabIndex = 6;
+            this.deleteAccount.TabIndex = 4;
             this.deleteAccount.Text = "Delete your account?";
-            this.deleteAccount.UseVisualStyleBackColor = true;
+            this.deleteAccount.UseVisualStyleBackColor = false;
             this.deleteAccount.Click += new System.EventHandler(this.deleteAccount_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(554, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(329, 76);
@@ -115,6 +123,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(495, 157);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(422, 25);
@@ -125,6 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Blue;
             this.ClientSize = new System.Drawing.Size(1474, 929);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
