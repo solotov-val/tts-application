@@ -14,7 +14,13 @@ namespace tts_application
     public partial class FileInput : Form
     {
         VerifyInput v = new VerifyInput();
+        EvaluateParameters ev = new EvaluateParameters();
+        
         Form menue;
+        String choosenLanguage;
+        String speakers;
+        String choosenSpeaker;
+        String gener;
         public FileInput(Form f)
         {
             InitializeComponent();
@@ -51,11 +57,9 @@ namespace tts_application
                 try
                 {
                     text = File.ReadAllText(path);
-                    
                 }
                 catch (Exception)
                 {
-
                     MessageBox.Show("Loading of the file failed!");
                 }
                
@@ -108,6 +112,44 @@ namespace tts_application
                 buttonConvert.Enabled = true;
             }
             charCounter.Text = "" + counter;
+        }
+
+
+
+        //Selected Language
+        private void comboBoxSprache_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            choosenLanguage = comboBoxSprache.SelectedItem.ToString();
+            String[] words = choosenLanguage.Split(' ');
+            choosenLanguage = words[1];
+
+            speakers = ev.evaluateSpeaker(choosenLanguage);
+            int len = v.wordCounter(speakers);
+
+            if(len == 1)
+            {
+                choosenSpeaker = speakers;
+
+            }else
+            {
+                MessageBox.Show("HALLO");
+                String[] sp = speakers.Split(' ');
+                ComboBox comboBoxSpeakers = new ComboBox();
+
+                comboBoxSpeakers.Location = new System.Drawing.Point(0, 0);
+                comboBoxSpeakers.Name = "Speaker";
+                comboBoxSpeakers.Size = new System.Drawing.Size(245, 25);
+                comboBoxSpeakers.BackColor = System.Drawing.Color.Black;
+                comboBoxSpeakers.ForeColor = System.Drawing.Color.White;
+
+                for(int i = 0; i < len; i++)
+                {
+                    comboBoxSpeakers.Items.Add(""+sp[i]);
+                }
+                comboBoxSpeakers.Show();
+
+                choosenSpeaker = comboBoxSpeakers.SelectedItem.ToString();
+            }
         }
     }
 }

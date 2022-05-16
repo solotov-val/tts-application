@@ -46,5 +46,17 @@ namespace tts_application
             var translateTextInput = new TranslateTextInput(this);
             translateTextInput.Show();
         }
+
+        private void settings_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var settings = new Settings(this);
+            settings.Show();
+        }
+
+        private void Menue_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
