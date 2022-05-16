@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.buttonOpenFile = new System.Windows.Forms.Button();
             this.buttonConvert = new System.Windows.Forms.Button();
@@ -45,6 +46,8 @@
             this.charCounter = new System.Windows.Forms.Label();
             this.ofdFileInput = new System.Windows.Forms.OpenFileDialog();
             this.button1 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.comboBoxSprache = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
@@ -210,12 +213,40 @@
             this.button1.Text = "Play";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // comboBoxSprache
+            // 
+            this.comboBoxSprache.FormattingEnabled = true;
+            this.comboBoxSprache.Items.AddRange(new object[] {
+            "Chinesisch cmn-CN",
+            "Deutsch de-DE",
+            "English en-GB",
+            "Französisch fr-FR",
+            "Holländisch nl-NL",
+            "Italienisch it-IT",
+            "Spanisch es-ES",
+            "Japanisch ja-JP",
+            "Koreanisch ko-KR",
+            "Portugisisch pt-PT"});
+            this.comboBoxSprache.Location = new System.Drawing.Point(109, 88);
+            this.comboBoxSprache.Name = "comboBoxSprache";
+            this.comboBoxSprache.Size = new System.Drawing.Size(407, 33);
+            this.comboBoxSprache.TabIndex = 17;
+            this.comboBoxSprache.Text = "Language";
+            this.comboBoxSprache.SelectedIndexChanged += new System.EventHandler(this.comboBoxSprache_SelectedIndexChanged);
+            // 
             // FileInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Blue;
             this.ClientSize = new System.Drawing.Size(974, 764);
+            this.Controls.Add(this.comboBoxSprache);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.charCounter);
             this.Controls.Add(this.wordCounter);
@@ -261,5 +292,7 @@
         private System.Windows.Forms.Label charCounter;
         private System.Windows.Forms.OpenFileDialog ofdFileInput;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ComboBox comboBoxSprache;
     }
 }

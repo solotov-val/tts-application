@@ -4,13 +4,10 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 
-
-
 namespace tts_application
 {
     internal class ConvertTTS
     {
-        /**
         static async Task Main(string[] args)
         {
             if (args.Length != 3)
@@ -57,6 +54,5 @@ namespace tts_application
                 output.Close();
             }
         }
-        **/
     }
 }
