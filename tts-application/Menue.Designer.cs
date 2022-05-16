@@ -61,7 +61,7 @@
             this.buttonTranslateText.Location = new System.Drawing.Point(271, 374);
             this.buttonTranslateText.Name = "buttonTranslateText";
             this.buttonTranslateText.Size = new System.Drawing.Size(250, 45);
-            this.buttonTranslateText.TabIndex = 2;
+            this.buttonTranslateText.TabIndex = 3;
             this.buttonTranslateText.Text = "Translate text input";
             this.buttonTranslateText.UseVisualStyleBackColor = true;
             this.buttonTranslateText.Click += new System.EventHandler(this.buttonTranslateText_Click);
@@ -71,7 +71,7 @@
             this.buttonTranslateFile.Location = new System.Drawing.Point(271, 323);
             this.buttonTranslateFile.Name = "buttonTranslateFile";
             this.buttonTranslateFile.Size = new System.Drawing.Size(250, 45);
-            this.buttonTranslateFile.TabIndex = 3;
+            this.buttonTranslateFile.TabIndex = 2;
             this.buttonTranslateFile.Text = "Translate file input";
             this.buttonTranslateFile.UseVisualStyleBackColor = true;
             this.buttonTranslateFile.Click += new System.EventHandler(this.buttonTranslateFile_Click);

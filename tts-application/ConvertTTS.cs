@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Amazon.Polly;
+﻿using Amazon.Polly;
 using Amazon.Polly.Model;
+using System;
 using System.IO;
+using System.Threading.Tasks;
+
 
 
 namespace tts_application
 {
-    internal class ConvertTTScs
+    internal class ConvertTTS
     {
+        /**
         static async Task Main(string[] args)
         {
             if (args.Length != 3)
@@ -58,5 +57,6 @@ namespace tts_application
                 output.Close();
             }
         }
+        **/
     }
 }
