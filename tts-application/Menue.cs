@@ -24,8 +24,6 @@ namespace tts_application
             this.Hide();
             var textInput = new TextInput(this);
             textInput.Show();
-
-
         }
 
         private void buttonFileInput_Click(object sender, EventArgs e)
@@ -33,7 +31,6 @@ namespace tts_application
             this.Hide();
             var fileInput = new FileInput(this);
             fileInput.Show();
-
         }
 
         private void buttonTranslateFile_Click(object sender, EventArgs e)
