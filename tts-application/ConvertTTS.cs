@@ -8,13 +8,13 @@ namespace tts_application
 {
     internal class ConvertTTS
     {
-        static async Task Main(string[] args)
+        public static async Task <String> Main(string[] args)
         {
             if (args.Length != 3)
             {
                 Console.WriteLine("Please provide text file, language code, and voice id.");
                 Console.ReadLine();
-                return;
+                return "ERROR";
             }
 
             var fileName = args[0];
@@ -30,9 +30,11 @@ namespace tts_application
                 Console.WriteLine("Exception caught:\n{0}", e);
                 Console.ReadLine();
             }
+
+            return "SUCCESS";
         }
 
-        private static async Task ConvertTextToAudio(string fileName, string targetLanguageCode, string voiceId)
+        public static async Task <String> ConvertTextToAudio(string fileName, string targetLanguageCode, string voiceId)
         {
             var text = File.ReadAllText(fileName);
             var voice = VoiceId.FindValue(voiceId);
@@ -53,6 +55,8 @@ namespace tts_application
                 speechResponse.AudioStream.CopyTo(output);
                 output.Close();
             }
+
+            return ""+outputFileName;
         }
     }
 }

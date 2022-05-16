@@ -73,6 +73,7 @@
     <Compile Include="AccountDelete.Designer.cs">
       <DependentUpon>AccountDelete.cs</DependentUpon>
     </Compile>
+    <Compile Include="ApiHelpClass.cs" />
     <Compile Include="Basics.cs">
       <SubType>Form</SubType>
     </Compile>

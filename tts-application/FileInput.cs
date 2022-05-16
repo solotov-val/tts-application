@@ -27,6 +27,7 @@ namespace tts_application
             limitExcceded.Hide();
             charLimitExcceded.Hide();
             this.menue= f;
+            comboBoxSprache.SelectedIndex=0;
 
         }
 
@@ -132,24 +133,27 @@ namespace tts_application
 
             }else
             {
-                MessageBox.Show("HALLO");
                 String[] sp = speakers.Split(' ');
-                ComboBox comboBoxSpeakers = new ComboBox();
-
-                comboBoxSpeakers.Location = new System.Drawing.Point(0, 0);
-                comboBoxSpeakers.Name = "Speaker";
-                comboBoxSpeakers.Size = new System.Drawing.Size(245, 25);
-                comboBoxSpeakers.BackColor = System.Drawing.Color.Black;
-                comboBoxSpeakers.ForeColor = System.Drawing.Color.White;
+                
 
                 for(int i = 0; i < len; i++)
                 {
                     comboBoxSpeakers.Items.Add(""+sp[i]);
                 }
+                comboBoxSpeakers.Parent = this;
+                comboBoxSpeakers.SelectedIndex = 0;
                 comboBoxSpeakers.Show();
-
-                choosenSpeaker = comboBoxSpeakers.SelectedItem.ToString();
             }
+        }
+
+        private void comboBoxSpeakers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            choosenSpeaker=comboBoxSpeakers.SelectedItem.ToString();
+        }
+
+        private void buttonConvert_Click(object sender, EventArgs e)
+        {
+            ApiHelpClass.tts(choosenLanguage, choosenSpeaker, richTextBox1.Text);
         }
     }
 }
