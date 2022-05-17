@@ -5,13 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace tts_application
 {
-    public partial class FileInput : Form
+    public partial class InputTTS : Form
     {
         VerifyInput v = new VerifyInput();
         EvaluateParameters ev = new EvaluateParameters();
@@ -21,12 +22,15 @@ namespace tts_application
         String speakers;
         String choosenSpeaker;
         String gener;
-        public FileInput(Form f)
+        bool fileBrowser;
+        public InputTTS(Form f, bool b)
         {
             InitializeComponent();
             limitExcceded.Hide();
             charLimitExcceded.Hide();
             this.menue= f;
+            this.fileBrowser= b;
+            checkFileState();
             comboBoxSprache.SelectedIndex=0;
 
         }
@@ -40,8 +44,19 @@ namespace tts_application
         private void FileInput_Load(object sender, EventArgs e)
         {
 
-        }
 
+        }
+        private void checkFileState()
+        {
+            if (fileBrowser == false)
+            {
+                buttonOpenFile.Hide();
+            }
+            else
+            {
+                buttonOpenFile.Show();
+            }
+        }
         private void buttonOpenFile_Click(object sender, EventArgs e)
         {
             ofdFileInput.ShowDialog();
@@ -154,6 +169,17 @@ namespace tts_application
         private void buttonConvert_Click(object sender, EventArgs e)
         {
             ApiHelpClass.tts(choosenLanguage, choosenSpeaker, richTextBox1.Text);
+        }
+
+        private void buttonPlay_Click(object sender, EventArgs e)
+        {
+            /*
+            using (var soundPlayer = new SoundPlayer(@"C:\Users\alexpastore\source\repos\tts-application\tts-application\bin\Debug\tempfile.txt-it-IT.mp3"))
+            {
+                soundPlayer.PlaySync(); // can also use soundPlayer.PlaySync()
+            }
+            */
+
         }
     }
 }

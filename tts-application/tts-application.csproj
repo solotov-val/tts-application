@@ -82,11 +82,11 @@
     </Compile>
     <Compile Include="EvaluateParameters.cs" />
     <Compile Include="ConvertTTS.cs" />
-    <Compile Include="FileInput.cs">
+    <Compile Include="InputTTS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FileInput.Designer.cs">
-      <DependentUpon>FileInput.cs</DependentUpon>
+    <Compile Include="InputTTS.Designer.cs">
+      <DependentUpon>InputTTS.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
@@ -102,29 +102,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Settings.cs">
+    <Compile Include="TranslateInput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Settings.Designer.cs">
-      <DependentUpon>Settings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TextInput.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TextInput.Designer.cs">
-      <DependentUpon>TextInput.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TranslateFileInput.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TranslateFileInput.Designer.cs">
-      <DependentUpon>TranslateFileInput.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TranslateTextInput.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TranslateTextInput.Designer.cs">
-      <DependentUpon>TranslateTextInput.cs</DependentUpon>
+    <Compile Include="TranslateInput.Designer.cs">
+      <DependentUpon>TranslateInput.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserList.cs" />
@@ -138,8 +120,8 @@
     <EmbeddedResource Include="Basics.resx">
       <DependentUpon>Basics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FileInput.resx">
-      <DependentUpon>FileInput.cs</DependentUpon>
+    <EmbeddedResource Include="InputTTS.resx">
+      <DependentUpon>InputTTS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
@@ -156,17 +138,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Settings.resx">
-      <DependentUpon>Settings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TextInput.resx">
-      <DependentUpon>TextInput.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TranslateFileInput.resx">
-      <DependentUpon>TranslateFileInput.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TranslateTextInput.resx">
-      <DependentUpon>TranslateTextInput.cs</DependentUpon>
+    <EmbeddedResource Include="TranslateInput.resx">
+      <DependentUpon>TranslateInput.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

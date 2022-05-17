@@ -11,20 +11,34 @@ using System.Windows.Forms;
 
 namespace tts_application
 {
-    public partial class TranslateFileInput : Form
+    public partial class TranslateInput : Form
     {
         Form menue;
         String input;
+        bool fileBrowser;
         VerifyInput v = new VerifyInput();
-        public TranslateFileInput(Form f)
+        public TranslateInput(Form f, bool b)
         {
             InitializeComponent();
             this.menue = f;
+            this.fileBrowser = b;
+            checkFileState();
             toolStripDropDownButton1.ShowDropDown();
             
 
         }
 
+        private void checkFileState()
+        {
+            if (fileBrowser==false)
+            {
+                buttonOpenFile.Hide();
+            }
+            else
+            {
+                buttonOpenFile.Show();
+            }
+        }
         public String getTranslateLang()
         {
             String language = "TEST";
