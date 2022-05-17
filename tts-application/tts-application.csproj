@@ -120,6 +120,9 @@
     <Reference Include="NAudio, Version=1.5.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NAudio.1.5\lib\NAudio.dll</HintPath>
     </Reference>
+    <Reference Include="Solotov.Translator">
+      <HintPath>..\..\..\..\Downloads\Solotov.Translator.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
@@ -147,6 +150,8 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Text.Encodings.Web, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Text.Encodings.Web.4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
     </Reference>
@@ -200,13 +205,16 @@
     <Compile Include="AccountDelete.Designer.cs">
       <DependentUpon>AccountDelete.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\AwsTranslate.cs" />
-    <Compile Include="Models\AwsTranslateModel.cs" />
     <Compile Include="Basics.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Basics.Designer.cs">
       <DependentUpon>Basics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\TranslatorService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ConvertTTScs.cs" />
     <Compile Include="FileInput.cs">
@@ -235,6 +243,7 @@
     <Compile Include="TextInput.Designer.cs">
       <DependentUpon>TextInput.cs</DependentUpon>
     </Compile>
+    <Compile Include="Translate.cs" />
     <Compile Include="TranslateFileInput.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +295,18 @@
     <EmbeddedResource Include="TranslateTextInput.resx">
       <DependentUpon>TranslateTextInput.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Connected Services\TranslatorService\soap.wsdl" />
+    <None Include="Connected Services\TranslatorService\soap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\TranslatorService\soap1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\TranslatorService\soap2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\TranslatorService\SoapService.wsdl" />
+    <None Include="Connected Services\TranslatorService\SoapService1.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -301,6 +322,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\TranslatorService\configuration91.svcinfo" />
+    <None Include="Connected Services\TranslatorService\configuration.svcinfo" />
+    <None Include="Connected Services\TranslatorService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="useraccounts.xml" />
     <Content Include="users.txt" />
   </ItemGroup>
@@ -310,6 +337,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\TranslatorService\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
