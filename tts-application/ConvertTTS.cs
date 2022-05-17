@@ -8,13 +8,13 @@ namespace tts_application
 {
     internal class ConvertTTS
     {
-        public static async Task <String> Main(string[] args)
+        public static async Task Main(string[] args)
         {
             if (args.Length != 3)
             {
                 Console.WriteLine("Please provide text file, language code, and voice id.");
                 Console.ReadLine();
-                return "ERROR";
+                return;
             }
 
             var fileName = args[0];
@@ -30,11 +30,9 @@ namespace tts_application
                 Console.WriteLine("Exception caught:\n{0}", e);
                 Console.ReadLine();
             }
-
-            return "SUCCESS";
         }
 
-        public static async Task <String> ConvertTextToAudio(string fileName, string targetLanguageCode, string voiceId)
+        public static async Task ConvertTextToAudio(string fileName, string targetLanguageCode, string voiceId)
         {
             var text = File.ReadAllText(fileName);
             var voice = VoiceId.FindValue(voiceId);
@@ -49,14 +47,21 @@ namespace tts_application
                     OutputFormat = OutputFormat.Mp3,
                     VoiceId = voice
                 };
+                
+                string dir = @"C:\Users\alexpastore\Desktop\output";
+                if(!Directory.Exists(dir))
+                {
+                    Directory.CreateDirectory(dir);
+                }
 
                 var speechResponse = await pollyClient.SynthesizeSpeechAsync(speechRequest);
                 var output = File.Open(outputFileName, FileMode.Create);
+                File.Copy(outputFileName, dir);
                 speechResponse.AudioStream.CopyTo(output);
                 output.Close();
+
             }
 
-            return ""+outputFileName;
         }
     }
 }
