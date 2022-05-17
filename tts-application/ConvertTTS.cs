@@ -48,15 +48,9 @@ namespace tts_application
                     VoiceId = voice
                 };
                 
-                string dir = @"C:\Users\alexpastore\Desktop\output";
-                if(!Directory.Exists(dir))
-                {
-                    Directory.CreateDirectory(dir);
-                }
 
                 var speechResponse = await pollyClient.SynthesizeSpeechAsync(speechRequest);
                 var output = File.Open(outputFileName, FileMode.Create);
-                File.Copy(outputFileName, dir);
                 speechResponse.AudioStream.CopyTo(output);
                 output.Close();
 

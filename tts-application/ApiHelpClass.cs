@@ -29,7 +29,7 @@ namespace tts_application
             if(writeSuccessful==true)
             {
                 String[] args = {outputFileName, language, speaker};
-                ConvertTTS.Main(args);
+                _ = ConvertTTS.Main(args);
                
             }
 
