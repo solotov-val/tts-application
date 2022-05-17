@@ -29,11 +29,8 @@ namespace tts_application
             if(writeSuccessful==true)
             {
                 String[] args = {outputFileName, language, speaker};
-                Task <String> task  = ConvertTTS.Main(args);
+                ConvertTTS.Main(args);
                
-                MessageBox.Show(task.Result);
-                return task.Result;
-
             }
 
             return "ERROR HELPER";
