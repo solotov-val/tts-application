@@ -1,6 +1,6 @@
 ﻿namespace tts_application
 {
-    partial class FileInput
+    partial class InputTTS
     {
         /// <summary>
         /// Required designer variable.
@@ -214,6 +214,7 @@
             this.button1.TabIndex = 15;
             this.button1.Text = "Play";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.buttonPlay_Click);
             // 
             // contextMenuStrip1
             // 
@@ -249,10 +250,11 @@
             this.comboBoxSpeakers.Name = "comboBoxSpeakers";
             this.comboBoxSpeakers.Size = new System.Drawing.Size(407, 33);
             this.comboBoxSpeakers.TabIndex = 18;
+            this.comboBoxSpeakers.Text = "Speaker";
             this.comboBoxSpeakers.Visible = false;
             this.comboBoxSpeakers.SelectedIndexChanged += new System.EventHandler(this.comboBoxSpeakers_SelectedIndexChanged);
             // 
-            // FileInput
+            // InputTTS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -276,7 +278,7 @@
             this.Controls.Add(this.buttonConvert);
             this.Controls.Add(this.buttonOpenFile);
             this.Controls.Add(this.richTextBox1);
-            this.Name = "FileInput";
+            this.Name = "InputTTS";
             this.Text = "FileInput";
             this.Load += new System.EventHandler(this.FileInput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

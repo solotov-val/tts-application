@@ -1,6 +1,6 @@
 ﻿namespace tts_application
 {
-    partial class TranslateFileInput
+    partial class TranslateInput
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TranslateFileInput));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TranslateInput));
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,6 +54,8 @@
             this.deutschToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.namexyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comboBoxSpeakers = new System.Windows.Forms.ComboBox();
+            this.comboBoxSprache = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -61,16 +63,19 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(1135, 501);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 40);
             this.button1.TabIndex = 44;
             this.button1.Text = "Play";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(1203, 322);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 25);
@@ -80,6 +85,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(1203, 272);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 25);
@@ -109,17 +115,19 @@
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(1283, 673);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(121, 45);
             this.button3.TabIndex = 38;
             this.button3.Text = "Download";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // charCount
             // 
             this.charCount.AutoSize = true;
-            this.charCount.Location = new System.Drawing.Point(387, 570);
+            this.charCount.Location = new System.Drawing.Point(359, 696);
             this.charCount.Name = "charCount";
             this.charCount.Size = new System.Drawing.Size(0, 25);
             this.charCount.TabIndex = 37;
@@ -127,7 +135,7 @@
             // wordCount
             // 
             this.wordCount.AutoSize = true;
-            this.wordCount.Location = new System.Drawing.Point(391, 501);
+            this.wordCount.Location = new System.Drawing.Point(363, 627);
             this.wordCount.Name = "wordCount";
             this.wordCount.Size = new System.Drawing.Size(0, 25);
             this.wordCount.TabIndex = 36;
@@ -136,7 +144,7 @@
             // 
             this.charLimitExcceded.AutoSize = true;
             this.charLimitExcceded.ForeColor = System.Drawing.Color.Red;
-            this.charLimitExcceded.Location = new System.Drawing.Point(206, 596);
+            this.charLimitExcceded.Location = new System.Drawing.Point(178, 722);
             this.charLimitExcceded.Name = "charLimitExcceded";
             this.charLimitExcceded.Size = new System.Drawing.Size(312, 25);
             this.charLimitExcceded.TabIndex = 35;
@@ -146,7 +154,7 @@
             // 
             this.limitExcceded.AutoSize = true;
             this.limitExcceded.ForeColor = System.Drawing.Color.Red;
-            this.limitExcceded.Location = new System.Drawing.Point(206, 527);
+            this.limitExcceded.Location = new System.Drawing.Point(178, 653);
             this.limitExcceded.Name = "limitExcceded";
             this.limitExcceded.Size = new System.Drawing.Size(319, 25);
             this.limitExcceded.TabIndex = 34;
@@ -155,7 +163,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(206, 571);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(178, 697);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(174, 25);
             this.label4.TabIndex = 33;
@@ -164,7 +173,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(206, 501);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(178, 627);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(178, 25);
             this.label3.TabIndex = 32;
@@ -172,25 +182,31 @@
             // 
             // buttonSwitch
             // 
-            this.buttonSwitch.Location = new System.Drawing.Point(653, 96);
+            this.buttonSwitch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.buttonSwitch.ForeColor = System.Drawing.Color.White;
+            this.buttonSwitch.Location = new System.Drawing.Point(625, 222);
             this.buttonSwitch.Name = "buttonSwitch";
             this.buttonSwitch.Size = new System.Drawing.Size(200, 45);
             this.buttonSwitch.TabIndex = 31;
             this.buttonSwitch.Text = "Switch languages";
-            this.buttonSwitch.UseVisualStyleBackColor = true;
+            this.buttonSwitch.UseVisualStyleBackColor = false;
             // 
             // buttonConvert
             // 
-            this.buttonConvert.Location = new System.Drawing.Point(653, 501);
+            this.buttonConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.buttonConvert.ForeColor = System.Drawing.Color.White;
+            this.buttonConvert.Location = new System.Drawing.Point(625, 627);
             this.buttonConvert.Name = "buttonConvert";
             this.buttonConvert.Size = new System.Drawing.Size(175, 45);
             this.buttonConvert.TabIndex = 30;
             this.buttonConvert.Text = "Convert";
-            this.buttonConvert.UseVisualStyleBackColor = true;
+            this.buttonConvert.UseVisualStyleBackColor = false;
             // 
             // rtbOutput
             // 
-            this.rtbOutput.Location = new System.Drawing.Point(653, 160);
+            this.rtbOutput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.rtbOutput.ForeColor = System.Drawing.Color.White;
+            this.rtbOutput.Location = new System.Drawing.Point(625, 286);
             this.rtbOutput.Name = "rtbOutput";
             this.rtbOutput.Size = new System.Drawing.Size(400, 320);
             this.rtbOutput.TabIndex = 29;
@@ -198,7 +214,9 @@
             // 
             // userInput
             // 
-            this.userInput.Location = new System.Drawing.Point(195, 160);
+            this.userInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.userInput.ForeColor = System.Drawing.Color.White;
+            this.userInput.Location = new System.Drawing.Point(167, 286);
             this.userInput.Name = "userInput";
             this.userInput.Size = new System.Drawing.Size(400, 320);
             this.userInput.TabIndex = 28;
@@ -207,12 +225,14 @@
             // 
             // buttonOpenFile
             // 
-            this.buttonOpenFile.Location = new System.Drawing.Point(195, 96);
+            this.buttonOpenFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.buttonOpenFile.ForeColor = System.Drawing.Color.White;
+            this.buttonOpenFile.Location = new System.Drawing.Point(167, 222);
             this.buttonOpenFile.Name = "buttonOpenFile";
             this.buttonOpenFile.Size = new System.Drawing.Size(175, 44);
             this.buttonOpenFile.TabIndex = 45;
             this.buttonOpenFile.Text = "Open file";
-            this.buttonOpenFile.UseVisualStyleBackColor = true;
+            this.buttonOpenFile.UseVisualStyleBackColor = false;
             this.buttonOpenFile.Click += new System.EventHandler(this.buttonOpenFile_Click);
             // 
             // ofdFileInput
@@ -247,7 +267,7 @@
             this.deutschToolStripMenuItem,
             this.englishToolStripMenuItem});
             this.spracheToolStripMenuItem.Name = "spracheToolStripMenuItem";
-            this.spracheToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.spracheToolStripMenuItem.Size = new System.Drawing.Size(237, 44);
             this.spracheToolStripMenuItem.Text = "Sprache:";
             // 
             // deutschToolStripMenuItem
@@ -255,26 +275,59 @@
             this.deutschToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.namexyToolStripMenuItem});
             this.deutschToolStripMenuItem.Name = "deutschToolStripMenuItem";
-            this.deutschToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.deutschToolStripMenuItem.Size = new System.Drawing.Size(234, 44);
             this.deutschToolStripMenuItem.Text = "Deutsch";
             // 
             // namexyToolStripMenuItem
             // 
             this.namexyToolStripMenuItem.Name = "namexyToolStripMenuItem";
-            this.namexyToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.namexyToolStripMenuItem.Size = new System.Drawing.Size(234, 44);
             this.namexyToolStripMenuItem.Text = "Namexy";
             // 
             // englishToolStripMenuItem
             // 
             this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            this.englishToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(234, 44);
             this.englishToolStripMenuItem.Text = "English";
             // 
-            // TranslateFileInput
+            // comboBoxSpeakers
+            // 
+            this.comboBoxSpeakers.FormattingEnabled = true;
+            this.comboBoxSpeakers.Location = new System.Drawing.Point(167, 156);
+            this.comboBoxSpeakers.Name = "comboBoxSpeakers";
+            this.comboBoxSpeakers.Size = new System.Drawing.Size(407, 33);
+            this.comboBoxSpeakers.TabIndex = 48;
+            this.comboBoxSpeakers.Text = "Speaker";
+            this.comboBoxSpeakers.Visible = false;
+            // 
+            // comboBoxSprache
+            // 
+            this.comboBoxSprache.FormattingEnabled = true;
+            this.comboBoxSprache.Items.AddRange(new object[] {
+            "Chinesisch cmn-CN",
+            "Deutsch de-DE",
+            "English en-GB",
+            "Französisch fr-FR",
+            "Holländisch nl-NL",
+            "Italienisch it-IT",
+            "Spanisch es-ES",
+            "Japanisch ja-JP",
+            "Koreanisch ko-KR",
+            "Portugisisch pt-PT"});
+            this.comboBoxSprache.Location = new System.Drawing.Point(167, 117);
+            this.comboBoxSprache.Name = "comboBoxSprache";
+            this.comboBoxSprache.Size = new System.Drawing.Size(407, 33);
+            this.comboBoxSprache.TabIndex = 47;
+            this.comboBoxSprache.Text = "Language";
+            // 
+            // TranslateInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Blue;
             this.ClientSize = new System.Drawing.Size(1576, 816);
+            this.Controls.Add(this.comboBoxSpeakers);
+            this.Controls.Add(this.comboBoxSprache);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.buttonOpenFile);
             this.Controls.Add(this.button1);
@@ -294,7 +347,7 @@
             this.Controls.Add(this.buttonConvert);
             this.Controls.Add(this.rtbOutput);
             this.Controls.Add(this.userInput);
-            this.Name = "TranslateFileInput";
+            this.Name = "TranslateInput";
             this.Text = "TranslateFileInput";
             this.Load += new System.EventHandler(this.TranslateFileInput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
@@ -333,5 +386,7 @@
         private System.Windows.Forms.ToolStripMenuItem deutschToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem namexyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBoxSpeakers;
+        private System.Windows.Forms.ComboBox comboBoxSprache;
     }
 }
