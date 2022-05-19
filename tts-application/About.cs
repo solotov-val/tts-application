@@ -12,9 +12,21 @@ namespace tts_application
 {
     public partial class About : Form
     {
-        public About()
+        Form menue;
+        public About(Form f)
         {
             InitializeComponent();
+            this.menue = f;
+        }
+
+        private void About_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

@@ -111,6 +111,9 @@
     <Compile Include="User.cs" />
     <Compile Include="UserList.cs" />
     <Compile Include="VerifyInput.cs" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AccountCreation.resx">
       <DependentUpon>AccountCreation.cs</DependentUpon>
     </EmbeddedResource>
