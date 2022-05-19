@@ -42,6 +42,8 @@
             // 
             // usernameBox
             // 
+            this.usernameBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.usernameBox.ForeColor = System.Drawing.Color.White;
             this.usernameBox.Location = new System.Drawing.Point(337, 88);
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.Size = new System.Drawing.Size(100, 31);
@@ -50,6 +52,8 @@
             // 
             // passwordBox
             // 
+            this.passwordBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.passwordBox.ForeColor = System.Drawing.Color.White;
             this.passwordBox.Location = new System.Drawing.Point(337, 148);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(100, 31);
@@ -58,6 +62,8 @@
             // 
             // confirmBox
             // 
+            this.confirmBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.confirmBox.ForeColor = System.Drawing.Color.White;
             this.confirmBox.Location = new System.Drawing.Point(337, 208);
             this.confirmBox.Name = "confirmBox";
             this.confirmBox.Size = new System.Drawing.Size(100, 31);
@@ -67,6 +73,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(196, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 25);
@@ -76,6 +83,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(200, 154);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 25);
@@ -85,6 +93,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(120, 208);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(192, 25);
@@ -103,23 +112,27 @@
             // 
             // createButton
             // 
+            this.createButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.createButton.Enabled = false;
+            this.createButton.ForeColor = System.Drawing.Color.White;
             this.createButton.Location = new System.Drawing.Point(337, 402);
             this.createButton.Name = "createButton";
             this.createButton.Size = new System.Drawing.Size(100, 36);
             this.createButton.TabIndex = 7;
             this.createButton.Text = "Create";
-            this.createButton.UseVisualStyleBackColor = true;
+            this.createButton.UseVisualStyleBackColor = false;
             this.createButton.Click += new System.EventHandler(this.createButton_Click);
             // 
             // buttonBack
             // 
+            this.buttonBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.buttonBack.ForeColor = System.Drawing.Color.White;
             this.buttonBack.Location = new System.Drawing.Point(12, 402);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(100, 36);
             this.buttonBack.TabIndex = 8;
             this.buttonBack.Text = "Back";
-            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // passwordsNotEqual
@@ -136,6 +149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Blue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.passwordsNotEqual);
             this.Controls.Add(this.buttonBack);

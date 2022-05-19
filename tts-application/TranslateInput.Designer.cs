@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TranslateInput));
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,17 +47,11 @@
             this.userInput = new System.Windows.Forms.RichTextBox();
             this.buttonOpenFile = new System.Windows.Forms.Button();
             this.ofdFileInput = new System.Windows.Forms.OpenFileDialog();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.spracheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deutschToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.namexyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comboBoxSpeakers = new System.Windows.Forms.ComboBox();
             this.comboBoxSprache = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -239,59 +232,10 @@
             // 
             this.ofdFileInput.FileName = "openFileDialog1";
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1576, 42);
-            this.toolStrip1.TabIndex = 46;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.spracheToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(54, 36);
-            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
-            // 
-            // spracheToolStripMenuItem
-            // 
-            this.spracheToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deutschToolStripMenuItem,
-            this.englishToolStripMenuItem});
-            this.spracheToolStripMenuItem.Name = "spracheToolStripMenuItem";
-            this.spracheToolStripMenuItem.Size = new System.Drawing.Size(237, 44);
-            this.spracheToolStripMenuItem.Text = "Sprache:";
-            // 
-            // deutschToolStripMenuItem
-            // 
-            this.deutschToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.namexyToolStripMenuItem});
-            this.deutschToolStripMenuItem.Name = "deutschToolStripMenuItem";
-            this.deutschToolStripMenuItem.Size = new System.Drawing.Size(234, 44);
-            this.deutschToolStripMenuItem.Text = "Deutsch";
-            // 
-            // namexyToolStripMenuItem
-            // 
-            this.namexyToolStripMenuItem.Name = "namexyToolStripMenuItem";
-            this.namexyToolStripMenuItem.Size = new System.Drawing.Size(234, 44);
-            this.namexyToolStripMenuItem.Text = "Namexy";
-            // 
-            // englishToolStripMenuItem
-            // 
-            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            this.englishToolStripMenuItem.Size = new System.Drawing.Size(234, 44);
-            this.englishToolStripMenuItem.Text = "English";
-            // 
             // comboBoxSpeakers
             // 
+            this.comboBoxSpeakers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.comboBoxSpeakers.ForeColor = System.Drawing.Color.White;
             this.comboBoxSpeakers.FormattingEnabled = true;
             this.comboBoxSpeakers.Location = new System.Drawing.Point(167, 156);
             this.comboBoxSpeakers.Name = "comboBoxSpeakers";
@@ -302,6 +246,8 @@
             // 
             // comboBoxSprache
             // 
+            this.comboBoxSprache.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.comboBoxSprache.ForeColor = System.Drawing.Color.White;
             this.comboBoxSprache.FormattingEnabled = true;
             this.comboBoxSprache.Items.AddRange(new object[] {
             "Chinesisch cmn-CN",
@@ -319,6 +265,19 @@
             this.comboBoxSprache.Size = new System.Drawing.Size(407, 33);
             this.comboBoxSprache.TabIndex = 47;
             this.comboBoxSprache.Text = "Language";
+            this.comboBoxSprache.SelectedIndexChanged += new System.EventHandler(this.comboBoxSprache_SelectedIndexChanged);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(26, 117);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(90, 45);
+            this.button2.TabIndex = 49;
+            this.button2.Text = "Back";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // TranslateInput
             // 
@@ -326,9 +285,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Blue;
             this.ClientSize = new System.Drawing.Size(1576, 816);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBoxSpeakers);
             this.Controls.Add(this.comboBoxSprache);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.buttonOpenFile);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
@@ -352,8 +311,6 @@
             this.Load += new System.EventHandler(this.TranslateFileInput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,13 +337,8 @@
         private System.Windows.Forms.RichTextBox userInput;
         private System.Windows.Forms.Button buttonOpenFile;
         private System.Windows.Forms.OpenFileDialog ofdFileInput;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
-        private System.Windows.Forms.ToolStripMenuItem spracheToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deutschToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem namexyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
         private System.Windows.Forms.ComboBox comboBoxSpeakers;
         private System.Windows.Forms.ComboBox comboBoxSprache;
+        private System.Windows.Forms.Button button2;
     }
 }

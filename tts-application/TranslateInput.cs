@@ -16,14 +16,19 @@ namespace tts_application
         Form menue;
         String input;
         bool fileBrowser;
-        VerifyInput v = new VerifyInput();
+        String choosenLanguage;
+        String choosenSpeaker;
+        String speakers;
+        VerifyInput v = new VerifyInput(); 
+        EvaluateParameters ev = new EvaluateParameters();
+
         public TranslateInput(Form f, bool b)
         {
             InitializeComponent();
             this.menue = f;
             this.fileBrowser = b;
             checkFileState();
-            toolStripDropDownButton1.ShowDropDown();
+            //toolStripDropDownButton1.ShowDropDown();
             
 
         }
@@ -127,6 +132,46 @@ namespace tts_application
         private void TranslateFileInput_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            menue.Show();
+        }
+
+
+        //ÜBERARBEITEN, je nach sprache der Trnaslate API!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        private void comboBoxSprache_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            choosenLanguage = comboBoxSprache.SelectedItem.ToString();
+            String[] words = choosenLanguage.Split(' ');
+            choosenLanguage = words[1];
+
+            speakers = ev.evaluateSpeaker(choosenLanguage);
+            int len = v.wordCounter(speakers);
+
+            if (len == 1)
+            {
+                choosenSpeaker = speakers;
+            }
+            else
+            {
+                String[] sp = speakers.Split(' ');
+                for (int i = 0; i < len; i++)
+                {
+                    comboBoxSpeakers.Items.Add("" + sp[i]);
+                }
+                comboBoxSpeakers.Parent = this;
+                comboBoxSpeakers.SelectedIndex = 0;
+                comboBoxSpeakers.Show();
+            }
+        }
+
+
+        private void comboBoxSpeakers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            choosenSpeaker = comboBoxSpeakers.SelectedItem.ToString();
         }
     }
 }

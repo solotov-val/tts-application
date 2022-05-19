@@ -34,6 +34,8 @@
             this.buttonTranslateFile = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonAbout = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonTextInput
@@ -104,12 +106,38 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Text To Speech + translation";
             // 
+            // buttonAbout
+            // 
+            this.buttonAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.buttonAbout.ForeColor = System.Drawing.Color.White;
+            this.buttonAbout.Location = new System.Drawing.Point(27, 165);
+            this.buttonAbout.Name = "buttonAbout";
+            this.buttonAbout.Size = new System.Drawing.Size(112, 45);
+            this.buttonAbout.TabIndex = 6;
+            this.buttonAbout.Text = "About";
+            this.buttonAbout.UseVisualStyleBackColor = false;
+            this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(27, 114);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 45);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Logout";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Menue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Blue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonAbout);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonTranslateFile);
@@ -132,5 +160,7 @@
         private System.Windows.Forms.Button buttonTranslateFile;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonAbout;
+        private System.Windows.Forms.Button button1;
     }
 }

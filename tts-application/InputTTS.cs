@@ -21,8 +21,8 @@ namespace tts_application
         String choosenLanguage;
         String speakers;
         String choosenSpeaker;
-        String gener;
         bool fileBrowser;
+
         public InputTTS(Form f, bool b)
         {
             InitializeComponent();
@@ -180,6 +180,12 @@ namespace tts_application
             }
             */
 
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            menue.Show();
         }
     }
 }

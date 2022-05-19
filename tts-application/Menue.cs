@@ -56,5 +56,18 @@ namespace tts_application
         {
 
         }
+
+        private void buttonAbout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var about = new About(this);
+            about.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            loginPage.Show();
+        }
     }
 }

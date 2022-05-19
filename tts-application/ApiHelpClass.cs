@@ -22,7 +22,6 @@ namespace tts_application
             }
             catch (Exception)
             {
-
                 MessageBox.Show("Temporary file could not be saved!");
             }
 
@@ -30,10 +29,9 @@ namespace tts_application
             {
                 String[] args = {outputFileName, language, speaker};
                 _ = ConvertTTS.Main(args);
-               
             }
 
-            return "ERROR HELPER";
+            return "ERROR API-HELP-CLASS";
         }
     }
 }
