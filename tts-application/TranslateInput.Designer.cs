@@ -31,7 +31,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.button3 = new System.Windows.Forms.Button();
@@ -47,9 +46,9 @@
             this.userInput = new System.Windows.Forms.RichTextBox();
             this.buttonOpenFile = new System.Windows.Forms.Button();
             this.ofdFileInput = new System.Windows.Forms.OpenFileDialog();
-            this.comboBoxSpeakers = new System.Windows.Forms.ComboBox();
-            this.comboBoxSprache = new System.Windows.Forms.ComboBox();
+            this.comboBoxInputLanguage = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.comboBoxOutputLanguage = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -58,9 +57,9 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1135, 501);
+            this.button1.Location = new System.Drawing.Point(1209, 561);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 40);
+            this.button1.Size = new System.Drawing.Size(121, 45);
             this.button1.TabIndex = 44;
             this.button1.Text = "Play";
             this.button1.UseVisualStyleBackColor = false;
@@ -69,7 +68,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(1203, 322);
+            this.label2.Location = new System.Drawing.Point(1129, 276);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 25);
             this.label2.TabIndex = 43;
@@ -79,29 +78,22 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1203, 272);
+            this.label1.Location = new System.Drawing.Point(1129, 226);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 25);
             this.label1.TabIndex = 42;
             this.label1.Text = "Speed";
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(1228, 501);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(200, 40);
-            this.progressBar1.TabIndex = 41;
-            // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(1308, 322);
+            this.numericUpDown2.Location = new System.Drawing.Point(1234, 276);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(120, 31);
             this.numericUpDown2.TabIndex = 40;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(1308, 270);
+            this.numericUpDown1.Location = new System.Drawing.Point(1234, 224);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 31);
             this.numericUpDown1.TabIndex = 39;
@@ -110,7 +102,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(1283, 673);
+            this.button3.Location = new System.Drawing.Point(1209, 627);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(121, 45);
             this.button3.TabIndex = 38;
@@ -183,6 +175,7 @@
             this.buttonSwitch.TabIndex = 31;
             this.buttonSwitch.Text = "Switch languages";
             this.buttonSwitch.UseVisualStyleBackColor = false;
+            this.buttonSwitch.Click += new System.EventHandler(this.buttonSwitch_Click);
             // 
             // buttonConvert
             // 
@@ -194,6 +187,7 @@
             this.buttonConvert.TabIndex = 30;
             this.buttonConvert.Text = "Convert";
             this.buttonConvert.UseVisualStyleBackColor = false;
+            this.buttonConvert.Click += new System.EventHandler(this.buttonConvert_Click_1);
             // 
             // rtbOutput
             // 
@@ -232,46 +226,33 @@
             // 
             this.ofdFileInput.FileName = "openFileDialog1";
             // 
-            // comboBoxSpeakers
+            // comboBoxInputLanguage
             // 
-            this.comboBoxSpeakers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.comboBoxSpeakers.ForeColor = System.Drawing.Color.White;
-            this.comboBoxSpeakers.FormattingEnabled = true;
-            this.comboBoxSpeakers.Location = new System.Drawing.Point(167, 156);
-            this.comboBoxSpeakers.Name = "comboBoxSpeakers";
-            this.comboBoxSpeakers.Size = new System.Drawing.Size(407, 33);
-            this.comboBoxSpeakers.TabIndex = 48;
-            this.comboBoxSpeakers.Text = "Speaker";
-            this.comboBoxSpeakers.Visible = false;
-            // 
-            // comboBoxSprache
-            // 
-            this.comboBoxSprache.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.comboBoxSprache.ForeColor = System.Drawing.Color.White;
-            this.comboBoxSprache.FormattingEnabled = true;
-            this.comboBoxSprache.Items.AddRange(new object[] {
-            "Chinesisch cmn-CN",
-            "Deutsch de-DE",
-            "English en-GB",
-            "Französisch fr-FR",
-            "Holländisch nl-NL",
-            "Italienisch it-IT",
-            "Spanisch es-ES",
-            "Japanisch ja-JP",
-            "Koreanisch ko-KR",
-            "Portugisisch pt-PT"});
-            this.comboBoxSprache.Location = new System.Drawing.Point(167, 117);
-            this.comboBoxSprache.Name = "comboBoxSprache";
-            this.comboBoxSprache.Size = new System.Drawing.Size(407, 33);
-            this.comboBoxSprache.TabIndex = 47;
-            this.comboBoxSprache.Text = "Language";
-            this.comboBoxSprache.SelectedIndexChanged += new System.EventHandler(this.comboBoxSprache_SelectedIndexChanged);
+            this.comboBoxInputLanguage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.comboBoxInputLanguage.ForeColor = System.Drawing.Color.White;
+            this.comboBoxInputLanguage.FormattingEnabled = true;
+            this.comboBoxInputLanguage.Items.AddRange(new object[] {
+            "ZH - Chinese",
+            "NL - Dutch",
+            "EN - English",
+            "FR - French",
+            "DE - German",
+            "IT - Italian",
+            "JA - Japanese",
+            "ES - Spanish",
+            "PT-PT - Portuguese"});
+            this.comboBoxInputLanguage.Location = new System.Drawing.Point(167, 117);
+            this.comboBoxInputLanguage.Name = "comboBoxInputLanguage";
+            this.comboBoxInputLanguage.Size = new System.Drawing.Size(407, 33);
+            this.comboBoxInputLanguage.TabIndex = 47;
+            this.comboBoxInputLanguage.Text = "Language";
+            this.comboBoxInputLanguage.SelectedIndexChanged += new System.EventHandler(this.comboBoxSprache_SelectedIndexChanged);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(26, 117);
+            this.button2.Location = new System.Drawing.Point(26, 110);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 45);
             this.button2.TabIndex = 49;
@@ -279,20 +260,41 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // comboBoxOutputLanguage
+            // 
+            this.comboBoxOutputLanguage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.comboBoxOutputLanguage.ForeColor = System.Drawing.Color.White;
+            this.comboBoxOutputLanguage.FormattingEnabled = true;
+            this.comboBoxOutputLanguage.Items.AddRange(new object[] {
+            "ZH - Chinese",
+            "NL - Dutch",
+            "EN - English",
+            "FR - French",
+            "DE - German",
+            "IT - Italian",
+            "JA - Japanese",
+            "ES - Spanish",
+            "PT-PT - Portuguese"});
+            this.comboBoxOutputLanguage.Location = new System.Drawing.Point(618, 117);
+            this.comboBoxOutputLanguage.Name = "comboBoxOutputLanguage";
+            this.comboBoxOutputLanguage.Size = new System.Drawing.Size(407, 33);
+            this.comboBoxOutputLanguage.TabIndex = 50;
+            this.comboBoxOutputLanguage.Text = "Language";
+            this.comboBoxOutputLanguage.SelectedIndexChanged += new System.EventHandler(this.comboBoxOutputLanguage_SelectedIndexChanged);
+            // 
             // TranslateInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Blue;
-            this.ClientSize = new System.Drawing.Size(1576, 816);
+            this.ClientSize = new System.Drawing.Size(1520, 816);
+            this.Controls.Add(this.comboBoxOutputLanguage);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBoxSpeakers);
-            this.Controls.Add(this.comboBoxSprache);
+            this.Controls.Add(this.comboBoxInputLanguage);
             this.Controls.Add(this.buttonOpenFile);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.button3);
@@ -322,7 +324,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button button3;
@@ -338,8 +339,8 @@
         private System.Windows.Forms.RichTextBox userInput;
         private System.Windows.Forms.Button buttonOpenFile;
         private System.Windows.Forms.OpenFileDialog ofdFileInput;
-        private System.Windows.Forms.ComboBox comboBoxSpeakers;
-        private System.Windows.Forms.ComboBox comboBoxSprache;
+        private System.Windows.Forms.ComboBox comboBoxInputLanguage;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBoxOutputLanguage;
     }
 }
