@@ -53,7 +53,6 @@ namespace tts_application
                 var output = File.Open(outputFileName, FileMode.Create);
                 speechResponse.AudioStream.CopyTo(output);
                 output.Close();
-
             }
         }
     }
