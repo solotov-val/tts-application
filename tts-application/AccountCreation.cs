@@ -37,7 +37,8 @@ namespace tts_application
 
         private void AccountCreation_Load(object sender, EventArgs e)
         {
-
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
 

@@ -54,7 +54,8 @@ namespace tts_application
 
         private void Menue_Load(object sender, EventArgs e)
         {
-
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void buttonAbout_Click(object sender, EventArgs e)

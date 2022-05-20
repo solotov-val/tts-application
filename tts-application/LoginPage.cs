@@ -22,7 +22,14 @@ namespace tts_application
 
         private void LoginPage_Load(object sender, EventArgs e)
         {
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            StartPosition = FormStartPosition.CenterScreen;
+        }
 
+        public void  deleteInput()
+        {
+            passwordText.Text = "";
+            usernameText.Text = "";
         }
 
 
@@ -52,6 +59,12 @@ namespace tts_application
         {
             var accountDelete = new AccountDelete(this, ul);
             accountDelete.ShowDialog();
+        }
+
+
+        private void LoginPage_VisibleChanged(object sender, EventArgs e)
+        {
+            deleteInput();
         }
     }
 }

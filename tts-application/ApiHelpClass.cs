@@ -13,11 +13,11 @@ namespace tts_application
         public static String tts(String language, String speaker, String text)
         {
             bool writeSuccessful=false;
-            var outputFileName = "tempfile.txt";
+            var inputFileName = "tempfile_"+DateTime.Now.ToString().Replace(":", "-").Replace(" ", "_")+".txt";
 
             try
             {
-                File.WriteAllText(outputFileName, text, Encoding.UTF8);
+                File.WriteAllText(inputFileName, text, Encoding.UTF8);
                 writeSuccessful=true;
             }
             catch (Exception)
@@ -27,7 +27,7 @@ namespace tts_application
 
             if(writeSuccessful==true)
             {
-                String[] args = {outputFileName, language, speaker};
+                String[] args = {inputFileName, language, speaker};
                 _ = ConvertTTS.Main(args);
             }
 
