@@ -307,6 +307,7 @@
             this.Controls.Add(this.rtbOutput);
             this.Controls.Add(this.userInput);
             this.Name = "TranslateInput";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TranslateFileInput";
             this.Load += new System.EventHandler(this.TranslateFileInput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();

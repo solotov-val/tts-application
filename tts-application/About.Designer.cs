@@ -59,6 +59,7 @@
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.label1);
             this.Name = "About";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "About";
             this.Load += new System.EventHandler(this.About_Load);
             this.ResumeLayout(false);

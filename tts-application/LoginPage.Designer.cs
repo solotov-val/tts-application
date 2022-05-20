@@ -150,8 +150,10 @@
             this.Controls.Add(this.passwordText);
             this.Controls.Add(this.usernameText);
             this.Name = "LoginPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginPage";
             this.Load += new System.EventHandler(this.LoginPage_Load);
+            this.VisibleChanged += new System.EventHandler(this.LoginPage_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

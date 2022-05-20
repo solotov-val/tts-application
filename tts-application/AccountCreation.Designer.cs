@@ -162,6 +162,7 @@
             this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.usernameBox);
             this.Name = "AccountCreation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AccountCreation";
             this.Load += new System.EventHandler(this.AccountCreation_Load);
             this.ResumeLayout(false);

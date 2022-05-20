@@ -131,7 +131,8 @@ namespace tts_application
 
         private void TranslateFileInput_Load(object sender, EventArgs e)
         {
-
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void button2_Click(object sender, EventArgs e)

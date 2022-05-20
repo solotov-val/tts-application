@@ -35,7 +35,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -93,12 +92,13 @@
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(607, 596);
+            this.button3.Location = new System.Drawing.Point(700, 440);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 45);
             this.button3.TabIndex = 3;
             this.button3.Text = "Download";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.buttonDownload_Click);
             // 
             // numericUpDown1
             // 
@@ -117,14 +117,6 @@
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(120, 31);
             this.numericUpDown2.TabIndex = 5;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.progressBar1.Location = new System.Drawing.Point(716, 538);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(200, 40);
-            this.progressBar1.TabIndex = 6;
             // 
             // label1
             // 
@@ -210,9 +202,9 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(607, 538);
+            this.button1.Location = new System.Drawing.Point(700, 382);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 45);
+            this.button1.Size = new System.Drawing.Size(120, 45);
             this.button1.TabIndex = 15;
             this.button1.Text = "Play";
             this.button1.UseVisualStyleBackColor = false;
@@ -290,7 +282,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.button3);
@@ -298,7 +289,7 @@
             this.Controls.Add(this.buttonOpenFile);
             this.Controls.Add(this.richTextBox1);
             this.Name = "InputTTS";
-            this.Text = "FileInput";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FileInput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
@@ -315,7 +306,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
