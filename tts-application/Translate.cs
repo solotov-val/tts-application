@@ -72,19 +72,21 @@ namespace tts_application
             //"1" (default) - splits on punctuation and on newlines
             //"nonewlines" - splits on punctuation only, ignoring newlines
 
-            var authKey = "48b840d9-957f-e91b-ff3d-d5616d26a7b3:fx";
+            var authKey = "48b840d9-957f-e91b-ff3d-d5616d26a7b3:fx"; //von datei auslesen
             var translator = new Translator(authKey);
-
             // Translate text into a target language, in this case, French:
             string source = "Hello world!";
-            var translatedText = await translator.TranslateTextAsync(
-                  source,
-                  LanguageCode.English,
-                  LanguageCode.German);
+
+            string textInput="";
+            string inputLanguage="";
+            string outputLanguage="";
+
+            var translatedText = await translator.TranslateTextAsync(textInput, inputLanguage, outputLanguage);
 
             Console.WriteLine("Source: " + source);
             Console.WriteLine("Translated: " + translatedText + "\n");
 
+            /*
             string first_lang = "お元気ですか？";
             string second_lang = "¿Cómo estás?";
             // Translate multiple texts into British English:
@@ -103,6 +105,7 @@ namespace tts_application
                     + translations[1].Text); // "How are you?"
             Console.WriteLine("Detected languagecode: "
                     + translations[1].DetectedSourceLanguageCode + "\n"); // "ES"
+            */
             Console.ReadLine();
         }
     }

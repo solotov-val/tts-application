@@ -14,13 +14,16 @@ namespace tts_application
     public partial class TranslateInput : Form
     {
         Form menue;
-        String input;
-        bool fileBrowser;
-        String choosenLanguage;
-        String choosenSpeaker;
-        String speakers;
         VerifyInput v = new VerifyInput(); 
         EvaluateParameters ev = new EvaluateParameters();
+        String input;
+        bool fileBrowser;
+        String choosenInputLanguage;
+        String choosenOutputLanguage;
+        String[] tempIn;
+        String[] tempOut;
+
+
 
         public TranslateInput(Form f, bool b)
         {
@@ -28,9 +31,6 @@ namespace tts_application
             this.menue = f;
             this.fileBrowser = b;
             checkFileState();
-            //toolStripDropDownButton1.ShowDropDown();
-            
-
         }
 
         private void checkFileState()
@@ -44,10 +44,10 @@ namespace tts_application
                 buttonOpenFile.Show();
             }
         }
+
         public String getTranslateLang()
         {
             String language = "TEST";
-
             return language;
         }
 
@@ -115,11 +115,9 @@ namespace tts_application
                 try
                 {
                     text = File.ReadAllText(path);
-
                 }
                 catch (Exception)
                 {
-
                     MessageBox.Show("Loading of the file failed!");
                 }
 
@@ -145,34 +143,34 @@ namespace tts_application
         //ÜBERARBEITEN, je nach sprache der Trnaslate API!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         private void comboBoxSprache_SelectedIndexChanged(object sender, EventArgs e)
         {
-            choosenLanguage = comboBoxSprache.SelectedItem.ToString();
-            String[] words = choosenLanguage.Split(' ');
-            choosenLanguage = words[1];
-
-            speakers = ev.evaluateSpeaker(choosenLanguage);
-            int len = v.wordCounter(speakers);
-
-            if (len == 1)
-            {
-                choosenSpeaker = speakers;
-            }
-            else
-            {
-                String[] sp = speakers.Split(' ');
-                for (int i = 0; i < len; i++)
-                {
-                    comboBoxSpeakers.Items.Add("" + sp[i]);
-                }
-                comboBoxSpeakers.Parent = this;
-                comboBoxSpeakers.SelectedIndex = 0;
-                comboBoxSpeakers.Show();
-            }
+            choosenInputLanguage = comboBoxInputLanguage.SelectedItem.ToString();
+            tempIn = choosenInputLanguage.Split(' ');
+            choosenInputLanguage = tempIn[0];
         }
 
 
-        private void comboBoxSpeakers_SelectedIndexChanged(object sender, EventArgs e)
+        private void buttonConvert_Click_1(object sender, EventArgs e)
         {
-            choosenSpeaker = comboBoxSpeakers.SelectedItem.ToString();
+            //Ruft anschließend die TranslateText Funktion auf mit den Parametern, um den Text zu übersetzen
+            //ApiHelpClass.TranslateText(authKey, userInput.Text, choosenOutputLanguage, choosenOutputLanguage);
+        }
+
+        private void buttonSwitch_Click(object sender, EventArgs e)
+        {
+            string temp = choosenOutputLanguage;
+            choosenOutputLanguage = choosenInputLanguage;
+            choosenInputLanguage=temp;
+            
+            //Sprachen noch richtig in die Comboboxen eintragen
+            comboBoxInputLanguage.Text = tempOut.ToString();
+            comboBoxOutputLanguage.Text = tempIn.ToString();
+        }
+
+        private void comboBoxOutputLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            choosenOutputLanguage = comboBoxOutputLanguage.SelectedItem.ToString();
+            tempOut = choosenOutputLanguage.Split(' ');
+            choosenOutputLanguage = tempOut[0];
         }
     }
 }
