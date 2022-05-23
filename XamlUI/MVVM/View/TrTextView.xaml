@@ -1,0 +1,147 @@
+﻿<UserControl x:Class="XamlUI.MVVM.View.TrTextView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:XamlUI.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="870">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="500"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="550"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel>
+            <ComboBox Margin="50,40,300,0">
+
+            </ComboBox>
+            <ComboBox Margin="50,10,300,0">
+
+            </ComboBox>
+            <TextBox Margin="50,10, 300, 10"
+                     Style="{StaticResource ModernTextBox}"
+                     Height="300">
+            </TextBox>
+            <TextBlock Text="Current Words:"
+                       Margin="50,0,300,10"
+                       Foreground="DarkGray">
+            </TextBlock>
+
+            <TextBlock Text="Current Symbols:"
+                       Margin="50,0,300,10"
+                       Foreground="DarkGray">
+            </TextBlock>
+
+            <TextBlock x:Name="maxWords"
+                       Visibility="Hidden"
+                       Text="Over Maximum Amount"
+                       Margin="50,0,300,10"
+                       Foreground="DarkRed">
+            </TextBlock>
+        </StackPanel>
+
+        <StackPanel>
+            <ComboBox Margin="300,40,50,0">
+
+            </ComboBox>
+            <ComboBox Margin="300,10,50,0">
+
+            </ComboBox>
+            <TextBox Margin="300,10, 50, 10"
+                     Height="300"
+                     Style="{StaticResource ModernTrBox}"
+                     IsReadOnly="True">
+
+            </TextBox>
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="1">
+            <Border BorderBrush="#00FF29" BorderThickness="1" Margin="165,0,300,0" CornerRadius="10">
+                <Button x:Name="_ConvertButton"
+                        Content="Convert"
+                        Foreground="#00FF29"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Style="{StaticResource Button}">
+                </Button>
+            </Border>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <Border Margin="10,100,50,10" BorderThickness="1" Height="300" BorderBrush="#353340" CornerRadius="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel>
+                        <TextBlock Text="Speed"
+                               Foreground="DarkGray"
+                               Margin="10,70,0,0"
+                               FontSize="16">
+
+                        </TextBlock>
+
+                        <TextBlock Text="Volume"
+                                   Foreground="DarkGray"
+                                   Margin="10,50"
+                                   FontSize="16">
+                        </TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1">
+                        <Border CornerRadius="10" BorderBrush="LightGray" BorderThickness="1" Margin="10,70,50,0" Height="22">
+                            <TextBox Background="Transparent"
+                                     BorderThickness="0"
+                                     Margin="5,0,5,0"
+                                     Foreground="White"
+                                     HorizontalContentAlignment="Center">
+                            </TextBox>
+                        </Border>
+
+                        <Border CornerRadius="10" BorderBrush="LightGray" BorderThickness="1"  Margin="10,50,50,0" Height="22" >
+                            <TextBox Background="Transparent"
+                                     BorderThickness="0"
+                                     Margin="5,0,5,0"
+                                     Foreground="White"
+                                     HorizontalContentAlignment="Center">
+                            </TextBox>
+                        </Border>
+                        <Border BorderBrush="#00FF29" BorderThickness="1" Margin="10,50,50,0" CornerRadius="10">
+                            <Button x:Name="_PlayButton"
+                                    Content="Play"
+                                    Foreground="#00FF29"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Style="{StaticResource Button}">
+                            </Button>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+
+            </Border>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1"
+                        Grid.Column="1">
+            <Border BorderBrush="#00FF29" BorderThickness="1" Margin="200,0,10,30" CornerRadius="10">
+                <Button x:Name="_DownloadButton"
+                        Content="Download"
+                        Foreground="#00FF29"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Style="{StaticResource Button}">
+                </Button>
+            </Border>
+        </StackPanel>
+
+    </Grid>
+</UserControl>
