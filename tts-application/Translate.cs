@@ -32,13 +32,14 @@ namespace tts_application
             }
         }
 
-        public static async Task TranslateText(string authKey, string textInput, string inputLanguage, string outputLanguage)
+        public static async Task TranslateText(string authKey, string fileName, string inputLanguage, string outputLanguage)
         {
             //key: 48b840d9-957f-e91b-ff3d-d5616d26a7b3:fx
             var key = authKey;
-            var input = File.ReadAllText(textInput);
+            var input = File.ReadAllText(fileName);
             var inputLang = inputLanguage;
             var outputLang = outputLanguage;
+            //var outputFileName = $"{fileName}.txt";
 
             var translator = new Translator(key);
 
@@ -47,8 +48,11 @@ namespace tts_application
                     inputLang,
                     outputLang
                 );
-            //Create txt file
-            //write string into txt file
+            string temp = translatedText.ToString();
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            var output = File.Open("temp", FileMode.Create);
+            File.WriteAllText(path, temp);
+            output.Close();
         }
     }
 }

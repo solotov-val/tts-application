@@ -34,7 +34,7 @@ namespace tts_application
             return "ERROR API-HELP-CLASS";
         }
 
-        public static String translate(/*add correct parameters*/)
+        public static String translate(String inputLang, String outputLang, String text)
         {
             bool writeSuccessful = false;
             var outputFileName = "tempfile2_"+DateTime.Now.ToString().Replace(":", "-").Replace(" ", "_")+".txt";
@@ -51,7 +51,7 @@ namespace tts_application
 
             if (writeSuccessful == true)
             {
-                String[] args = { /*add correct parameters*/ };
+                String[] args = {outputFileName, inputLang, outputLang };
                 _ = Translate.Main(args);
             }
 
