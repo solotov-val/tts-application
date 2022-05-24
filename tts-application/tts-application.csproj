@@ -237,5 +237,6 @@
   <ItemGroup>
     <Analyzer Include="..\packages\AWSSDK.Polly.3.7.5.9\analyzers\dotnet\cs\AWSSDK.Polly.CodeAnalysis.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
