@@ -165,7 +165,7 @@ namespace tts_application
 
             string teststring = "This is a test";
             //userInput.Text.ToString()
-            ApiHelpClass.translate(authKey, teststring, choosenInputLanguage, choosenOutputLanguage);
+            ApiHelpClass.translate(authKey, choosenInputLanguage, choosenOutputLanguage, teststring);
 
         }
 
