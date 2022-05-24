@@ -8,13 +8,13 @@ namespace tts_application
 {
     internal class ConvertTTS
     {
-        public static async Task Main(string[] args)
+        public static async Task <String> Main(string[] args)
         {
             if (args.Length != 3)
             {
                 Console.WriteLine("Please provide text file, language code, and voice id.");
                 Console.ReadLine();
-                return;
+                return "ERROR";
             }
 
             var fileName = args[0];
@@ -30,13 +30,15 @@ namespace tts_application
                 Console.WriteLine("Exception caught:\n{0}", e);
                 Console.ReadLine();
             }
+            return "";
         }
 
         public static async Task ConvertTextToAudio(string fileName, string targetLanguageCode, string voiceId)
         {
             var text = File.ReadAllText(fileName);
             var voice = VoiceId.FindValue(voiceId);
-            var outputFileName = $"{fileName}-{targetLanguageCode}.mp3";
+            var outputFileName = $"{fileName}-{targetLanguageCode}"+DateTime.Now.ToString().Replace(":", " - ").Replace(" ", "_")+".mp3";
+            File.WriteAllText("filename.txt", outputFileName);
 
             using (var pollyClient = new AmazonPollyClient(Amazon.RegionEndpoint.USEast1))
             {

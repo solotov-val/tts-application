@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +9,8 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
+
 
 namespace tts_application
 {
@@ -43,9 +45,10 @@ namespace tts_application
 
         private void FileInput_Load(object sender, EventArgs e)
         {
-
-
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            StartPosition = FormStartPosition.CenterScreen;
         }
+
         private void checkFileState()
         {
             if (fileBrowser == false)
@@ -173,19 +176,56 @@ namespace tts_application
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
-            /*
-            using (var soundPlayer = new SoundPlayer(@"C:\Users\alexpastore\source\repos\tts-application\tts-application\bin\Debug\tempfile.txt-it-IT.mp3"))
+            if(File.Exists("filename.txt"))
             {
-                soundPlayer.PlaySync(); // can also use soundPlayer.PlaySync()
+                String filename = File.ReadAllText("filename.txt");
+
+                if(File.Exists(filename))
+                {
+                    WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
+                    wplayer.URL = filename;
+                    wplayer.controls.play();
+                }
             }
-            */
+            else
+            {
+                MessageBox.Show("Error by searching for the file!");
+            }
 
         }
+
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Hide();
             menue.Show();
+        }
+
+
+        private void buttonDownload_Click(object sender, EventArgs e)
+        {
+            if (File.Exists("filename.txt"))
+            {
+                String filename = File.ReadAllText("filename.txt");
+
+                if (File.Exists(filename))
+                {
+                    string destinationFile = "C:\\Users\\alexpastore\\Desktop";
+
+                    try
+                    {
+                        File.Copy(filename, destinationFile, true);
+                    }
+                    catch (IOException iox)
+                    {
+                        Console.WriteLine(iox.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error by searching for the file!");
+            }
         }
     }
 }

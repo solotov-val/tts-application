@@ -30,7 +30,8 @@ namespace tts_application
     
         private void AccountDelete_Load(object sender, EventArgs e)
         {
-
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
 

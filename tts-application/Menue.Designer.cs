@@ -145,6 +145,7 @@
             this.Controls.Add(this.buttonFileInput);
             this.Controls.Add(this.buttonTextInput);
             this.Name = "Menue";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menue";
             this.Load += new System.EventHandler(this.Menue_Load);
             this.ResumeLayout(false);

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using DeepL;
@@ -9,7 +9,7 @@ namespace tts_application
     {
         public static async Task Main(string[] args)
         {
-            if(args.Length != 4)
+            if (args.Length != 4)
             {
                 Console.WriteLine("Please provide authKey, textInput, inputLanguage, outputLanguage.");
                 Console.ReadLine();
@@ -17,13 +17,13 @@ namespace tts_application
             }
 
             var authKey = args[0];
-            var textInput = args[1];
+            var fileName = args[1];
             var inputLanguage = args[2];
             var outputLanguage = args[3];
 
             try
             {
-                await TranslateText(authKey, textInput, inputLanguage, outputLanguage);
+                await TranslateText(authKey, fileName, inputLanguage, outputLanguage);
             }
             catch (FileNotFoundException e)
             {
@@ -49,10 +49,11 @@ namespace tts_application
                     outputLang
                 );
             string temp = translatedText.ToString();
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            var output = File.Open("temp", FileMode.Create);
+            //string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string path = @"C:\Users\prill\OneDrive\Desktop\translation.txt";
+            //var output = File.Open("temp", FileMode.Create);
             File.WriteAllText(path, temp);
-            output.Close();
+            //output.Close();
         }
     }
 }
