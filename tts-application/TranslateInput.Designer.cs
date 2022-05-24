@@ -49,6 +49,7 @@
             this.comboBoxInputLanguage = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBoxOutputLanguage = new System.Windows.Forms.ComboBox();
+            this.buttonShowTranslation = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -183,7 +184,7 @@
             this.buttonConvert.ForeColor = System.Drawing.Color.White;
             this.buttonConvert.Location = new System.Drawing.Point(625, 627);
             this.buttonConvert.Name = "buttonConvert";
-            this.buttonConvert.Size = new System.Drawing.Size(175, 45);
+            this.buttonConvert.Size = new System.Drawing.Size(200, 45);
             this.buttonConvert.TabIndex = 30;
             this.buttonConvert.Text = "Convert";
             this.buttonConvert.UseVisualStyleBackColor = false;
@@ -282,12 +283,25 @@
             this.comboBoxOutputLanguage.Text = "Language";
             this.comboBoxOutputLanguage.SelectedIndexChanged += new System.EventHandler(this.comboBoxOutputLanguage_SelectedIndexChanged);
             // 
+            // buttonShowTranslation
+            // 
+            this.buttonShowTranslation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.buttonShowTranslation.ForeColor = System.Drawing.Color.White;
+            this.buttonShowTranslation.Location = new System.Drawing.Point(624, 678);
+            this.buttonShowTranslation.Name = "buttonShowTranslation";
+            this.buttonShowTranslation.Size = new System.Drawing.Size(201, 45);
+            this.buttonShowTranslation.TabIndex = 51;
+            this.buttonShowTranslation.Text = "Show translation";
+            this.buttonShowTranslation.UseVisualStyleBackColor = false;
+            this.buttonShowTranslation.Click += new System.EventHandler(this.buttonShowTranslation_Click);
+            // 
             // TranslateInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Blue;
             this.ClientSize = new System.Drawing.Size(1520, 816);
+            this.Controls.Add(this.buttonShowTranslation);
             this.Controls.Add(this.comboBoxOutputLanguage);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBoxInputLanguage);
@@ -342,5 +356,6 @@
         private System.Windows.Forms.ComboBox comboBoxInputLanguage;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBoxOutputLanguage;
+        private System.Windows.Forms.Button buttonShowTranslation;
     }
 }

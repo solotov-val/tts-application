@@ -151,21 +151,21 @@ namespace tts_application
 
         private void buttonConvert_Click_1(object sender, EventArgs e)
         {
-            String authKey = "48b840d9-957f-e91b-ff3d-d5616d26a7b3:fx";
-            //if (File.Exists("KeyAPI.txt"))
-            //{
-            //    authKey = File.ReadAllText("KeyAPI.txt");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Error by searching for the KeyAPI file!");
-            //}
+            String authKey=""; //= "48b840d9-957f-e91b-ff3d-d5616d26a7b3:fx";
+            if (File.Exists("C:\\Users\\alexpastore\\source\\repos\\tts-application\\tts-application\\Keys\\KeyAPI.txt"))
+            {
+                authKey = File.ReadAllText("C:\\Users\\alexpastore\\source\\repos\\tts-application\\tts-application\\Keys\\KeyAPI.txt");
+            }
+            else
+            {
+                MessageBox.Show("Error by searching for the KeyAPI file!");
+            }
 
             //Ruft anschließend die TranslateText Funktion auf mit den Parametern, um den Text zu übersetzen
 
-            string teststring = "This is a test";
-            //userInput.Text.ToString()
-            ApiHelpClass.translate(authKey, choosenInputLanguage, choosenOutputLanguage, teststring);
+
+            String input = userInput.Text.ToString();
+            ApiHelpClass.translate(authKey, choosenInputLanguage, choosenOutputLanguage, input);
 
         }
 
@@ -185,6 +185,12 @@ namespace tts_application
             choosenOutputLanguage = comboBoxOutputLanguage.SelectedItem.ToString();
             tempOut = choosenOutputLanguage.Split(' ');
             choosenOutputLanguage = tempOut[0];
+        }
+
+        private void buttonShowTranslation_Click(object sender, EventArgs e)
+        {
+            String text = File.ReadAllText("C:\\Users\\alexpastore\\source\\repos\\tts-application\\tts-application\\temptranslate.txt");
+            rtbOutput.Text = text;
         }
     }
 }

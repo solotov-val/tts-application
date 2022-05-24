@@ -43,14 +43,11 @@ namespace tts_application
 
             var translator = new Translator(key);
 
-            var translatedText = await translator.TranslateTextAsync(
-                    input,
-                    inputLang,
-                    outputLang
-                );
+            var translatedText = await translator.TranslateTextAsync(input, inputLang, outputLang);
+            
             string temp = translatedText.ToString();
             //string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            string path = @"C:\Users\prill\OneDrive\Desktop\translation.txt";
+            string path = "C:\\Users\\alexpastore\\source\\repos\\tts-application\\tts-application\\temptranslate.txt";
             //var output = File.Open("temp", FileMode.Create);
             File.WriteAllText(path, temp);
             //output.Close();
