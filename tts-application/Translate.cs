@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using DeepL;
+using Microsoft.Win32;
 
 namespace tts_application
 {
@@ -51,6 +52,11 @@ namespace tts_application
             //var output = File.Open("temp", FileMode.Create);
             File.WriteAllText(path, temp);
             //output.Close();
+        }
+
+        public string GetDownloadFolderPath()
+        {
+            return Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString();
         }
     }
 }
