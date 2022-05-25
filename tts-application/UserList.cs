@@ -12,7 +12,8 @@ namespace tts_application
     {
         private List<User> userList = new List<User>();
         public const int MINPWDLENGTH = 8;
-        private const String PATH = "C:\\Users\\alexpastore\\source\\repos\\tts-application\\tts-application\\users.txt";
+        private static string userName = Environment.UserName;
+        private String PATH = Application.StartupPath + "\\users.txt";
         private bool pathExists = false;
         private const String HASHSALT = "アレックス・パストーレ";
 
