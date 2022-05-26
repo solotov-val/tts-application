@@ -34,12 +34,12 @@ namespace tts_application
 
         public static async Task TranslateText(string authKey, string fileName, string inputLanguage, string outputLanguage)
         {
-            //key: 48b840d9-957f-e91b-ff3d-d5616d26a7b3:fx
+
             var key = authKey;
             var input = File.ReadAllText(fileName);
             var inputLang = inputLanguage;
             var outputLang = outputLanguage;
-            //var outputFileName = $"{fileName}.txt";
+
 
             var translator = new Translator(key);
 
@@ -47,7 +47,7 @@ namespace tts_application
             
             string temp = translatedText.ToString();
             //string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            string path = "C:\\Users\\alexpastore\\source\\repos\\tts-application\\tts-application\\temptranslate.txt";
+            string path = "temptranslate.txt";
             //var output = File.Open("temp", FileMode.Create);
             File.WriteAllText(path, temp);
             //output.Close();

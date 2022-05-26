@@ -97,9 +97,12 @@ namespace tts_application
         private void createButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Welcome "+ usernameBox.Text+" !");
-            userList.addUser(usernameBox.Text, passwordBox.Text, "en-GB");
+            userList.addUser(usernameBox.Text, passwordBox.Text);
             this.Hide();
         }
+
+
+        
         
         private void buttonBack_Click(object sender, EventArgs e)
         {

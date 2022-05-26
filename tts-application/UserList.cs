@@ -11,8 +11,9 @@ namespace tts_application
     public class UserList
     {
         private List<User> userList = new List<User>();
+        private User currentUser;
         public const int MINPWDLENGTH = 8;
-        private const String PATH = "C:\\Users\\alexpastore\\source\\repos\\tts-application\\tts-application\\users.txt";
+        private const String PATH = "..\\..\\users.txt";
         private bool pathExists = false;
         private const String HASHSALT = "アレックス・パストーレ";
 
@@ -24,9 +25,9 @@ namespace tts_application
 
         
         //Add User to the List and write them to the txt file
-        public void addUser(String username, String password, String language){
+        public void addUser(String username, String password){
 
-            userList.Add(new User(username, hashString(password), language));
+            userList.Add(new User(username, hashString(password), 0,0,0,0));
             saveUsers();
         }
 
@@ -64,6 +65,7 @@ namespace tts_application
                 if(user.getUsername().Equals(loginN)&& user.getPassword().Equals(hashString(loginP)))
                 {
                     found = true;
+                    currentUser = user;
                     break;
                 }
             }
@@ -126,9 +128,9 @@ namespace tts_application
                 {
                     String[] splitted = user.Split('\t');
                 
-                    if(splitted.Length==3)
+                    if(splitted.Length==6)
                     {
-                        userList.Add(new User(splitted[0], splitted[1], splitted[2]));
+                        userList.Add(new User(splitted[0], splitted[1], Int32.Parse(splitted[2]), Int32.Parse(splitted[3]), Int32.Parse(splitted[4]), Int32.Parse(splitted[5])));
                     }
                 }
             }    
@@ -136,7 +138,7 @@ namespace tts_application
 
 
         //Function to save new users in the uers.txt file
-        private void saveUsers()
+        public void saveUsers()
         {
             if(pathExists==false)
             {
@@ -148,7 +150,7 @@ namespace tts_application
 
                 foreach(User user in userList)
                 {
-                    allUsers = allUsers + user.getUsername() + "\t" + user.getPassword() + "\t" + user.getLanguage()+ "\n";
+                    allUsers = allUsers + user.getUsername() + "\t" + user.getPassword() + "\t" + user.getLanguage()+ "\t"+ user.getSpeaker() + "\t"+ user.gettranslateIn()+ "\t"+ user.getTranslateOut()+"\n";
                 }
 
                 try
@@ -182,6 +184,12 @@ namespace tts_application
 
                 return hash;
             }
+        }
+
+
+        public User getCurrentUser()
+        {
+            return currentUser;
         }
     }
 }
