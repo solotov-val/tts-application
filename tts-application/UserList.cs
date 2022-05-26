@@ -13,13 +13,13 @@ namespace tts_application
         private List<User> userList = new List<User>();
         public const int MINPWDLENGTH = 8;
         private static string userName = Environment.UserName;
-        private String PATH = Application.StartupPath + "\\users.txt";
+        private String path = Application.StartupPath + "\\users.txt";
         private bool pathExists = false;
         private const String HASHSALT = "アレックス・パストーレ";
 
         public UserList()
         {
-            pathExists = File.Exists(PATH);
+            pathExists = File.Exists(path);
             readFromFile();
         }
 
@@ -104,6 +104,8 @@ namespace tts_application
         {
             if (pathExists == false)
             {
+                //String temp = Application.StartupPath;
+                //using (StreamWriter sw = File.CreateText(temp));
                 MessageBox.Show("Invalid path to users File!");
             }
             else
@@ -111,7 +113,7 @@ namespace tts_application
                 String users = "";
                 try
                 {
-                    users = File.ReadAllText(PATH);
+                    users = File.ReadAllText(path);
                 }
                 catch (Exception)
                 {
@@ -154,7 +156,7 @@ namespace tts_application
 
                 try
                 {
-                    File.WriteAllText(PATH, allUsers, Encoding.UTF8);
+                    File.WriteAllText(path, allUsers, Encoding.UTF8);
                 }
                 catch (Exception)
                 {
