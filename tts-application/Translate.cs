@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DeepL;
 using Microsoft.Win32;
 
@@ -48,9 +49,10 @@ namespace tts_application
             
             string temp = translatedText.ToString();
             //string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            string path = "C:\\Users\\alexpastore\\source\\repos\\tts-application\\tts-application\\temptranslate.txt";
+            //string path = "C:\\Users\\alexpastore\\source\\repos\\tts-application\\tts-application\\temptranslate.txt";
+            String path = Application.StartupPath + "\\temptranslate.txt";
             //var output = File.Open("temp", FileMode.Create);
-            File.WriteAllText(path, temp);
+            File.WriteAllText(path, temp);      //file not found exception
             //output.Close();
         }
 
