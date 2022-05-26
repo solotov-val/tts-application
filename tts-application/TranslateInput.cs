@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -201,7 +202,8 @@ namespace tts_application
                 if (convertClicked < File.GetLastWriteTime("temptranslate.txt"))
                 {
                
-                    String text = File.ReadAllText("temptranslate.txt");
+                    String path = Application.StartupPath + "\\temptranslate.txt";
+                    String text = File.ReadAllText(path);
                     rtbOutput.Text = text;
                 }
                 else
@@ -212,7 +214,37 @@ namespace tts_application
             else{
                 MessageBox.Show("No answer yet from API");
             }
-            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (File.Exists("filename.txt"))
+            {
+                String filename = File.ReadAllText("filename.txt");
+                String startPath = Application.StartupPath + "\\" + filename + ".mp3";
+                string destinationPath = GetDownloadFolderPath() + "\\" + filename;
+
+                if (File.Exists(filename))
+                {
+                    try
+                    {
+                        File.Copy(filename, destinationPath, true);
+                    }
+                    catch (IOException iox)
+                    {
+                        Console.WriteLine(iox.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error by searching for the file!");
+            }
+        }
+
+        string GetDownloadFolderPath()
+        {
+            return Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString();
         }
     }
 }

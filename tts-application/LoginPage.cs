@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace tts_application
 {
+    //Fully exported to XAML UI
     public partial class LoginPage : Form
     {
         UserList ul = new UserList();

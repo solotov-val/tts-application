@@ -1,3 +1,4 @@
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -226,6 +227,8 @@ namespace tts_application
             if (File.Exists("filename.txt"))
             {
                 String filename = File.ReadAllText("filename.txt");
+                String startPath = Application.StartupPath + "\\" + filename + ".mp3";
+                string destinationPath = GetDownloadFolderPath() + "\\" + filename;
 
                 if (File.Exists(filename))
                 {
@@ -251,6 +254,10 @@ namespace tts_application
             {
                 MessageBox.Show("Error by searching for the file!");
             }
+        }
+        string GetDownloadFolderPath()
+        {
+            return Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString();
         }
     }
 }

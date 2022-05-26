@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace tts_application
 {
+    //Fully exported to Xaml UI
     public partial class About : Form
     {
         Form menue;
@@ -27,6 +28,7 @@ namespace tts_application
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Hide();
+            menue.Show();
         }
     }
 }

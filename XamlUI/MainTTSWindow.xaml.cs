@@ -19,9 +19,24 @@ namespace XamlUI
     /// </summary>
     public partial class MainTTSWindow : Window
     {
-        public MainTTSWindow()
+        Window loginWindow;
+
+        void LogOutClick(object sender, RoutedEventArgs e)
+        {
+
+            loginWindow.Show();
+            Close();
+        }
+        void CloseClick(object sender, RoutedEventArgs e)
+        {
+            Close();
+            loginWindow.Close();
+        }
+
+        public MainTTSWindow(Window w)
         {
             InitializeComponent();
+            this.loginWindow = w;
         }
     }
 }
