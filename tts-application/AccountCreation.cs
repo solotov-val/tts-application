@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace tts_application
 {
+    //Fully exported to XamlUI
     public partial class AccountCreation : Form
     {
         Form loginPage;

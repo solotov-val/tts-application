@@ -28,7 +28,8 @@
             </Border.Background>
         </Border>
 
-        <ContentControl Content="{Binding CurrentView}">
+        <ContentControl Content="{Binding CurrentView}"
+                        x:Name="LoginContent">
 
         </ContentControl>
 
@@ -41,7 +42,8 @@
                 BorderThickness="0"
                 Foreground="White"
                 FontSize="20"
-                FontWeight="Light"/>
+                FontWeight="Light"
+                Click="CloseClick"/>
 
         <StackPanel>
             <Button x:Name="Login_Button"
@@ -50,7 +52,8 @@
                     Width="100"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Bottom"
-                    Margin="0,420,10,10"/>
+                    Margin="0,420,10,10"
+                    Click="LoginClick"/>
         </StackPanel>
         <StackPanel>
             <Button x:Name="Register_Button"
@@ -61,7 +64,8 @@
                     VerticalAlignment="Bottom"
                     Margin="0,420,10,0"
                     Command="{Binding LoginViewCommand}"
-                    Visibility="Hidden"/>
+                    Visibility="Hidden"
+                    Click="RegisterClick"/>
         </StackPanel>
         <StackPanel>
             <Button x:Name="Back_Button"
@@ -71,8 +75,9 @@
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     Margin="10,420,0,0"
-                    Command="{Binding RegisterViewCommand}"
-                    Visibility="Hidden"/>
+                    Command="{Binding LoginViewCommand}"
+                    Visibility="Hidden"
+                    Click="BackClick"/>
         </StackPanel>
         <StackPanel>
             <Button x:Name="Delete_Button"
@@ -83,7 +88,8 @@
                     VerticalAlignment="Bottom"
                     Margin="0,420,10,0"
                     Command="{Binding LoginViewCommand}"
-                    Visibility="Hidden"/>
+                    Visibility="Hidden"
+                    Click="DeleteClick"/>
         </StackPanel>
         <StackPanel Grid.Row="1">
             <Button x:Name="Click_Register"
@@ -96,7 +102,8 @@
                     BorderThickness="0"
                     FontSize="11"
                     Width="50"
-                    Command="{Binding RegisterViewCommand}"/>
+                    Command="{Binding RegisterViewCommand}"
+                    Click="RegisterClickHere"/>
             <Button x:Name="Click_Delete"
                     Background="Transparent"
                     Content="Click here!"
@@ -107,7 +114,8 @@
                     BorderThickness="0"
                     FontSize="11"
                     Width="50"
-                    Command="{Binding DeleteViewCommand}"/>
+                    Command="{Binding DeleteViewCommand}"
+                    Click="DeleteClickHere"/>
         </StackPanel>
     </Grid>
 </Window>

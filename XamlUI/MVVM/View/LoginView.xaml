@@ -40,29 +40,10 @@
                         Height="30"
                         Width="250"
                         CornerRadius="10">
-                <TextBox FontFamily="Helvetica"
-                             FontWeight="Light"
-                             Text="Username"
-                             FontSize="20"
-                             HorizontalAlignment="Center"
-                             Foreground="White"
-                             Background="Transparent"
-                             BorderThickness="0"
-                             Width="235"
-                             HorizontalContentAlignment="Left"
-                             Opacity="0.5"
-                             Margin="0,3,0,0"/>
-            </Border>
-
-            <Border BorderThickness="1"
-                        BorderBrush="White"
-                        Height="30"
-                        Width="250"
-                        CornerRadius="10"
-                         Margin="0,25">
-                <PasswordBox FontFamily="Helvetica"
+                <TextBox x:Name="User"
+                         FontFamily="Helvetica"
                          FontWeight="Light"
-                         Password="Password"
+                         Text="Username"
                          FontSize="20"
                          HorizontalAlignment="Center"
                          Foreground="White"
@@ -71,6 +52,27 @@
                          Width="235"
                          HorizontalContentAlignment="Left"
                          Opacity="0.5"
+                         Margin="0,3,0,0"/>
+            </Border>
+
+            <Border BorderThickness="1"
+                        BorderBrush="White"
+                        Height="30"
+                        Width="250"
+                        CornerRadius="10"
+                         Margin="0,25">
+                <PasswordBox x:Name="Password" 
+                             FontFamily="Helvetica"
+                             FontWeight="Light"
+                             Password="Password"
+                             FontSize="20"
+                             HorizontalAlignment="Center"
+                             Foreground="White"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Width="235"
+                             HorizontalContentAlignment="Left"
+                             Opacity="0.5"
                              Margin="0,3,0,0"/>
             </Border>
 

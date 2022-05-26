@@ -9,6 +9,12 @@ namespace XamlUI.MVVM.ViewModel
 {
     internal class MainViewModel : ObservableObject
     {
+        #region Variables
+        private object _currentView;
+        private object _currentTTSView;
+        #endregion
+
+        #region Getter-Setter
         public RelayCommand LoginViewCommand { get; set; }
         public RelayCommand RegisterViewCommand { get; set; }
         public RelayCommand DeleteViewCommand { get; set; }
@@ -28,12 +34,9 @@ namespace XamlUI.MVVM.ViewModel
         public TrFileViewModel TrFileVm { get; set; }
         public AboutViewModel AboutVm { get; set; }
         public HelpViewModel HelpVm { get; set; }
+        #endregion
 
-
-        private object _currentView;
-        private object _currentTTSView;
-
-
+        #region Public Methods
         public object CurrentView
         {
             get { return _currentView; }
@@ -52,6 +55,7 @@ namespace XamlUI.MVVM.ViewModel
                 OnPropertyChanged();
             }
         }
+        #endregion
 
         public MainViewModel()
         {
@@ -69,7 +73,8 @@ namespace XamlUI.MVVM.ViewModel
             CurrentView = LoginVm;
             CurrentTTSView = TextVm;
 
-
+            // On Button Click Commands
+            //for Login UI
             LoginViewCommand = new RelayCommand(o =>
             {
                 CurrentView = LoginVm;
@@ -83,7 +88,7 @@ namespace XamlUI.MVVM.ViewModel
                 CurrentView = RegisterVm;
             });
 
-
+            //for TTS
             TextViewCommand = new RelayCommand(o =>
             {
                 CurrentTTSView = TextVm;
