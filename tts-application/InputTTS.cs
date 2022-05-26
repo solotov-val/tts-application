@@ -19,6 +19,7 @@ namespace tts_application
     {
         VerifyInput v = new VerifyInput();
         EvaluateParameters ev = new EvaluateParameters();
+        UserList ul;
         
         Form menue;
         String choosenLanguage;
@@ -26,7 +27,7 @@ namespace tts_application
         String choosenSpeaker;
         bool fileBrowser;
 
-        public InputTTS(Form f, bool b)
+        public InputTTS(Form f, bool b, UserList ul)
         {
             InitializeComponent();
             limitExcceded.Hide();
@@ -34,8 +35,9 @@ namespace tts_application
             this.menue= f;
             this.fileBrowser= b;
             checkFileState();
-            comboBoxSprache.SelectedIndex=0;
+            this.ul = ul;
 
+            
         }
 
 
@@ -48,6 +50,9 @@ namespace tts_application
         {
             FormBorderStyle = FormBorderStyle.FixedSingle;
             StartPosition = FormStartPosition.CenterScreen;
+
+            comboBoxSprache.SelectedIndex = ul.getCurrentUser().getLanguage();
+            
         }
 
         private void checkFileState()
@@ -139,6 +144,13 @@ namespace tts_application
         //Selected Language
         private void comboBoxSprache_SelectedIndexChanged(object sender, EventArgs e)
         {
+            updateSpeakerCombo();
+        }
+
+
+        private void updateSpeakerCombo()
+        {
+
             choosenLanguage = comboBoxSprache.SelectedItem.ToString();
             String[] words = choosenLanguage.Split(' ');
             choosenLanguage = words[1];
@@ -146,21 +158,21 @@ namespace tts_application
             speakers = ev.evaluateSpeaker(choosenLanguage);
             int len = v.wordCounter(speakers);
 
-            if(len == 1)
+            if (len == 1)
             {
                 choosenSpeaker = speakers;
 
-            }else
+            }
+            else
             {
                 String[] sp = speakers.Split(' ');
-                
-
-                for(int i = 0; i < len; i++)
+                comboBoxSpeakers.Items.Clear();
+                for (int i = 0; i < len; i++)
                 {
-                    comboBoxSpeakers.Items.Add(""+sp[i]);
+                    comboBoxSpeakers.Items.Add("" + sp[i]);
                 }
                 comboBoxSpeakers.Parent = this;
-                comboBoxSpeakers.SelectedIndex = 0;
+                comboBoxSpeakers.SelectedIndex = ul.getCurrentUser().getSpeaker();
                 comboBoxSpeakers.Show();
             }
         }
@@ -172,6 +184,10 @@ namespace tts_application
 
         private void buttonConvert_Click(object sender, EventArgs e)
         {
+            ul.getCurrentUser().setTtsLanguage(comboBoxSprache.SelectedIndex);
+            ul.getCurrentUser().setSpeaker(comboBoxSpeakers.SelectedIndex);
+            ul.saveUsers();
+
             ApiHelpClass.tts(choosenLanguage, choosenSpeaker, richTextBox1.Text);
         }
 
@@ -205,6 +221,9 @@ namespace tts_application
 
         private void buttonDownload_Click(object sender, EventArgs e)
         {
+            folderBrowserDialog.ShowDialog();
+            String path = folderBrowserDialog.SelectedPath;
+            
             if (File.Exists("filename.txt"))
             {
                 String filename = File.ReadAllText("filename.txt");
@@ -213,13 +232,21 @@ namespace tts_application
 
                 if (File.Exists(filename))
                 {
-                    try
+                    String destinationFile = path + "\\"+filename;
+                    if (!File.Exists(destinationFile))
                     {
-                        File.Copy(filename, destinationPath, true);
+                        try
+                        {
+                            File.Copy(filename, destinationFile, true);
+                        }
+                        catch (IOException iox)
+                        {
+                            Console.WriteLine(iox.Message);
+                        }
                     }
-                    catch (IOException iox)
+                    else
                     {
-                        Console.WriteLine(iox.Message);
+                        MessageBox.Show("File already exists! "+destinationFile);
                     }
                 }
             }

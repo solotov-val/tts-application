@@ -12,7 +12,7 @@ namespace tts_application
         {
             if (args.Length != 3)
             {
-                Console.WriteLine("Please provide text file, language code, and voice id.");
+                Console.WriteLine("Please provide text file, ttsLanguage code, and voice id.");
                 Console.ReadLine();
                 return "ERROR";
             }

@@ -41,7 +41,7 @@ namespace tts_application
             {
                 MessageBox.Show("Login successful! Welcome back "+usernameText.Text+" !");
                 this.Hide();
-                var menue = new Menue(this);
+                var menue = new Menue(this, ul);
                 menue.Show();
             }
             else

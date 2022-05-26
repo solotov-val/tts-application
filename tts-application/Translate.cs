@@ -36,13 +36,10 @@ namespace tts_application
 
         public static async Task TranslateText(string authKey, string fileName, string inputLanguage, string outputLanguage)
         {
-            //key:
-            //
             var key = authKey;
             var input = File.ReadAllText(fileName);
             var inputLang = inputLanguage;
             var outputLang = outputLanguage;
-            //var outputFileName = $"{fileName}.txt";
 
             var translator = new Translator(key);
 
@@ -50,7 +47,7 @@ namespace tts_application
             
             string temp = translatedText.ToString();
             //string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            //string path = "C:\\Users\\alexpastore\\source\\repos\\tts-application\\tts-application\\temptranslate.txt";
+          
             String path = Application.StartupPath + "\\temptranslate.txt";
             //var output = File.Open("temp", FileMode.Create);
             File.WriteAllText(path, temp);      //file not found exception

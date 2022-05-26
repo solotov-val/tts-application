@@ -17,21 +17,26 @@ namespace tts_application
         Form menue;
         VerifyInput v = new VerifyInput(); 
         EvaluateParameters ev = new EvaluateParameters();
+        UserList ul;
         String input;
         bool fileBrowser;
         String choosenInputLanguage;
         String choosenOutputLanguage;
         String[] tempIn;
         String[] tempOut;
+        DateTime convertClicked;
 
 
-
-        public TranslateInput(Form f, bool b)
+        public TranslateInput(Form f, bool b, UserList ul)
         {
             InitializeComponent();
             this.menue = f;
             this.fileBrowser = b;
             checkFileState();
+            this.ul = ul;
+            comboBoxInputLanguage.SelectedIndex = ul.getCurrentUser().gettranslateIn();
+            comboBoxOutputLanguage.SelectedIndex = ul.getCurrentUser().getTranslateOut();
+
         }
 
         private void checkFileState()
@@ -152,20 +157,20 @@ namespace tts_application
 
         private void buttonConvert_Click_1(object sender, EventArgs e)
         {
-            //String authKey= ""; //= "48b840d9-957f-e91b-ff3d-d5616d26a7b3:fx";
-            String authKey = "48b840d9-957f-e91b-ff3d-d5616d26a7b3:fx";
-            //String path = Application.StartupPath + "\\APIKey.txt";
-            //if (File.Exists(path))
-            //{
-            //    authKey = File.ReadAllText(path);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Error by searching for the KeyAPI file!");
-            //}
+            convertClicked=DateTime.Now;
 
-            //Ruft anschließend die TranslateText Funktion auf mit den Parametern, um den Text zu übersetzen
-
+            ul.getCurrentUser().setTranslateIn(comboBoxInputLanguage.SelectedIndex);
+            ul.getCurrentUser().setTranslateOut(comboBoxOutputLanguage.SelectedIndex);
+            ul.saveUsers();
+            String authKey="";
+            if (File.Exists("..\\..\\Keys\\KeyAPI.txt"))
+            {
+                authKey = File.ReadAllText("..\\..\\Keys\\KeyAPI.txt");
+            }
+            else
+            {
+                MessageBox.Show("Error by searching for the KeyAPI file!");
+            }
 
             String input = userInput.Text.ToString();
             ApiHelpClass.translate(authKey, choosenInputLanguage, choosenOutputLanguage, input);
@@ -174,13 +179,13 @@ namespace tts_application
 
         private void buttonSwitch_Click(object sender, EventArgs e)
         {
-            string temp = choosenOutputLanguage;
-            choosenOutputLanguage = choosenInputLanguage;
-            choosenInputLanguage=temp;
-            
+            int temp = comboBoxInputLanguage.SelectedIndex;
+            comboBoxInputLanguage.SelectedIndex = comboBoxOutputLanguage.SelectedIndex;
+            comboBoxOutputLanguage.SelectedIndex = temp;
+
             //Sprachen noch richtig in die Comboboxen eintragen
-            comboBoxInputLanguage.Text = tempOut.ToString();
-            comboBoxOutputLanguage.Text = tempIn.ToString();
+            //comboBoxInputLanguage.Text = String.Concat(tempOut);
+            //comboBoxOutputLanguage.Text = String.Concat(tempIn);
         }
 
         private void comboBoxOutputLanguage_SelectedIndexChanged(object sender, EventArgs e)
@@ -192,9 +197,23 @@ namespace tts_application
 
         private void buttonShowTranslation_Click(object sender, EventArgs e)
         {
-            String path = Application.StartupPath + "\\temptranslate.txt";
-            String text = File.ReadAllText(path);
-            rtbOutput.Text = text;
+            if(File.Exists("temptranslate.txt"))
+            {
+                if (convertClicked < File.GetLastWriteTime("temptranslate.txt"))
+                {
+               
+                    String path = Application.StartupPath + "\\temptranslate.txt";
+                    String text = File.ReadAllText(path);
+                    rtbOutput.Text = text;
+                }
+                else
+                {
+                    MessageBox.Show("No answer yet from API");
+                }
+            }
+            else{
+                MessageBox.Show("No answer yet from API");
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
