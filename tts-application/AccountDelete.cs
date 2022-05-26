@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace tts_application
 {
+    //Fully exported to Xaml UI
     public partial class AccountDelete : Form
     {
         Form loginPage;

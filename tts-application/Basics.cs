@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace tts_application
 {
+    //Fully exported to XAML UI
     public partial class Basics : Form
     {
         public Basics()

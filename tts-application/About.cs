@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace tts_application
 {
+    //Fully exported to Xaml UI
     public partial class About : Form
     {
         Form menue;
