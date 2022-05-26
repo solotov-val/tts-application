@@ -208,14 +208,14 @@ namespace tts_application
             if (File.Exists("filename.txt"))
             {
                 String filename = File.ReadAllText("filename.txt");
+                String startPath = Application.StartupPath + "\\" + filename + ".mp3";
+                string destinationPath = GetDownloadFolderPath() + "\\" + filename;
 
                 if (File.Exists(filename))
                 {
-                    string destinationFile = GetDownloadFolderPath();
-
                     try
                     {
-                        File.Copy(filename, destinationFile, true);
+                        File.Copy(filename, destinationPath, true);
                     }
                     catch (IOException iox)
                     {
