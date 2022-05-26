@@ -20,6 +20,10 @@ namespace tts_application
         public UserList()
         {
             pathExists = File.Exists(path);
+            if(pathExists == false)
+            {
+                using (FileStream fs = File.Create(path));
+            } 
             readFromFile();
         }
 

@@ -36,7 +36,8 @@ namespace tts_application
 
         public static async Task TranslateText(string authKey, string fileName, string inputLanguage, string outputLanguage)
         {
-            //key: 48b840d9-957f-e91b-ff3d-d5616d26a7b3:fx
+            //key:
+            //
             var key = authKey;
             var input = File.ReadAllText(fileName);
             var inputLang = inputLanguage;
