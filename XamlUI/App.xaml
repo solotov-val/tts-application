@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:XamlUI"
              xmlns:viewModel="clr-namespace:XamlUI.MVVM.ViewModel"
              xmlns:view="clr-namespace:XamlUI.MVVM.View"
-             StartupUri="MainWindow.xaml">
+             StartupUri="MainLoginWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

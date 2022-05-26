@@ -39,7 +39,7 @@ namespace XamlUI
             if (ul.searchUser(user.Text, pass.Password))
             {
                 this.Hide();
-                var mainTTS = new MainTTSWindow();
+                var mainTTS = new MainTTSWindow(this);
                 mainTTS.Show();
             }
             else
