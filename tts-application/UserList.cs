@@ -16,7 +16,7 @@ namespace tts_application
 
         //private const String PATH = "..\\..\\users.txt";
         private static string userName = Environment.UserName;
-        private const String path = Application.StartupPath + "\\users.txt";
+        private String path = Application.StartupPath + "\\users.txt";
 
         private bool pathExists = false;
         private const String HASHSALT = "アレックス・パストーレ";
