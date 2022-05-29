@@ -1,4 +1,4 @@
-﻿namespace tts_application
+namespace tts_application
 {
     partial class TranslateInput
     {

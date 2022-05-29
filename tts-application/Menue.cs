@@ -15,17 +15,20 @@ namespace tts_application
         Form loginPage;
         bool fileTts = false;
         bool fileTranslate = false;
-        public Menue(Form f)
+        UserList ul;
+        public Menue(Form f, UserList ul)
         {
             InitializeComponent();
             this.loginPage = f;
+            this.ul = ul;
+
         }
 
         private void buttonTextInput_Click(object sender, EventArgs e)
         {
            
             this.Hide();
-            var textInput = new InputTTS(this, fileTts);
+            var textInput = new InputTTS(this, fileTts, ul);
             textInput.Show();
         }
 
@@ -33,14 +36,14 @@ namespace tts_application
         {
             fileTts = true;
             this.Hide();
-            var fileInput = new InputTTS(this, fileTts);
+            var fileInput = new InputTTS(this, fileTts, ul);
             fileInput.Show();
         }
 
         private void buttonTranslateFile_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var translateFileInput = new TranslateInput(this, fileTranslate);
+            var translateFileInput = new TranslateInput(this, fileTranslate, ul);
             translateFileInput.Show();
         }
 
@@ -48,7 +51,7 @@ namespace tts_application
         {
             fileTranslate = true;
             this.Hide();
-            var translateFileInput = new TranslateInput(this, fileTranslate);
+            var translateFileInput = new TranslateInput(this, fileTranslate, ul);
             translateFileInput.Show();
         }
 

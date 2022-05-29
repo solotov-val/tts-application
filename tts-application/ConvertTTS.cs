@@ -12,7 +12,7 @@ namespace tts_application
         {
             if (args.Length != 3)
             {
-                Console.WriteLine("Please provide text file, language code, and voice id.");
+                Console.WriteLine("Please provide text file, ttsLanguage code, and voice id.");
                 Console.ReadLine();
                 return "ERROR";
             }
@@ -37,7 +37,8 @@ namespace tts_application
         {
             var text = File.ReadAllText(fileName);
             var voice = VoiceId.FindValue(voiceId);
-            var outputFileName = $"{fileName}-{targetLanguageCode}"+DateTime.Now.ToString().Replace(":", " - ").Replace(" ", "_")+".mp3";
+            //var outputFileName = $"{fileName}-{targetLanguageCode}"+DateTime.Now.ToString().Replace(":", " - ").Replace(" ", "_")+".mp3";
+            var outputFileName = "tts" + "_" + $"{targetLanguageCode}" + "_" + DateTime.Now.ToString("HH-mm") + "_" + DateTime.Now.ToString("dd.MM.yyyy") + ".mp3";
             File.WriteAllText("filename.txt", outputFileName);
 
             using (var pollyClient = new AmazonPollyClient(Amazon.RegionEndpoint.USEast1))

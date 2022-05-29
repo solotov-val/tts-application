@@ -49,6 +49,7 @@
             this.comboBoxSprache = new System.Windows.Forms.ComboBox();
             this.comboBoxSpeakers = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
@@ -320,5 +321,6 @@
         private System.Windows.Forms.ComboBox comboBoxSprache;
         private System.Windows.Forms.ComboBox comboBoxSpeakers;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
     }
 }
