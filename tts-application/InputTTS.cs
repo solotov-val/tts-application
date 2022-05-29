@@ -38,18 +38,13 @@ namespace tts_application
 
         }
 
-
-        public void openClick()
-        {
-
-        }
-
         private void FileInput_Load(object sender, EventArgs e)
         {
             FormBorderStyle = FormBorderStyle.FixedSingle;
             StartPosition = FormStartPosition.CenterScreen;
         }
 
+        //exported to xaml
         private void checkFileState()
         {
             if (fileBrowser == false)
@@ -61,6 +56,8 @@ namespace tts_application
                 buttonOpenFile.Show();
             }
         }
+
+        //Open Button exported to XAML
         private void buttonOpenFile_Click(object sender, EventArgs e)
         {
             ofdFileInput.ShowDialog();
@@ -165,16 +162,19 @@ namespace tts_application
             }
         }
 
+        // Speaker Selection
         private void comboBoxSpeakers_SelectedIndexChanged(object sender, EventArgs e)
         {
             choosenSpeaker=comboBoxSpeakers.SelectedItem.ToString();
         }
 
+        //Convert Button
         private void buttonConvert_Click(object sender, EventArgs e)
         {
             ApiHelpClass.tts(choosenLanguage, choosenSpeaker, richTextBox1.Text);
         }
 
+        //Play Button
         private void buttonPlay_Click(object sender, EventArgs e)
         {
             if(File.Exists("filename.txt"))
@@ -202,7 +202,7 @@ namespace tts_application
             menue.Show();
         }
 
-
+        //Download Button
         private void buttonDownload_Click(object sender, EventArgs e)
         {
             if (File.Exists("filename.txt"))

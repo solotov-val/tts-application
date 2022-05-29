@@ -18,25 +18,31 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel>
-            <ComboBox Margin="50,40,300,0">
+            <ComboBox Margin="50,40,300,0"
+                      x:Name="_Language">
 
             </ComboBox>
-            <ComboBox Margin="50,10,300,0">
+            <ComboBox Margin="50,10,300,0"
+                      x:Name="_Speaker">
 
             </ComboBox>
             <TextBox Margin="50,10, 300, 0"
                      Style="{StaticResource ModernFileBox}"
                      Height="300"
-                     IsReadOnly="True">
+                     IsReadOnly="True"
+                     x:Name="FileTextBox"
+                     TextChanged="FileTextChanged">
             </TextBox>
-            <TextBlock Text="Current Words:"
+            <TextBlock Text="Current Words: 0"
                        Margin="50,0,300,10"
-                       Foreground="DarkGray">
+                       Foreground="DarkGray"
+                       x:Name="CurrentWordsLabel">
             </TextBlock>
 
-            <TextBlock Text="Current Symbols:"
+            <TextBlock Text="Current Symbols: 0"
                        Margin="50,0,300,10"
-                       Foreground="DarkGray">
+                       Foreground="DarkGray"
+                       x:Name="CurrentSymbolsLabel">
             </TextBlock>
 
             <TextBlock x:Name="maxWords"
@@ -48,16 +54,19 @@
         </StackPanel>
 
         <StackPanel>
-            <ComboBox Margin="300,40,50,0">
+            <ComboBox Margin="300,40,50,0"
+                      x:Name="_TrLanguage">
 
             </ComboBox>
-            <ComboBox Margin="300,10,50,0">
+            <ComboBox Margin="300,10,50,0"
+                      x:Name="_TrSpeaker">
 
             </ComboBox>
             <TextBox Margin="300,10, 50, 10"
                      Height="300"
                      Style="{StaticResource ModernTrBox}"
-                     IsReadOnly="True">
+                     IsReadOnly="True"
+                     x:Name="TranslateTextBox">
 
             </TextBox>
         </StackPanel>
@@ -82,7 +91,8 @@
                         Foreground="#00FF29"
                         Background="Transparent"
                         BorderThickness="0"
-                        Style="{StaticResource Button}">
+                        Style="{StaticResource Button}"
+                        Click="OpenFile_Click">
                 </Button>
             </Border>
         </StackPanel>
@@ -134,7 +144,8 @@
                                     Foreground="#00FF29"
                                     Background="Transparent"
                                     BorderThickness="0"
-                                    Style="{StaticResource Button}">
+                                    Style="{StaticResource Button}"
+                                    Click="PlayFile_Click">
                             </Button>
                         </Border>
                     </StackPanel>
@@ -151,7 +162,8 @@
                         Foreground="#00FF29"
                         Background="Transparent"
                         BorderThickness="0"
-                        Style="{StaticResource Button}">
+                        Style="{StaticResource Button}"
+                        Click="Download_Click">
                 </Button>
             </Border>
         </StackPanel>

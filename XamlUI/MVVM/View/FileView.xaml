@@ -18,25 +18,37 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel>
-            <ComboBox Margin="150,70,100,0">
+            <ComboBox Margin="150,70,100,0"
+                      Text="Languages"
+                      x:Name="_Language"
+                      Foreground="Black"
+                      Background="Transparent">
 
             </ComboBox>
-            <ComboBox Margin="150,10,100,0">
+            <ComboBox Margin="150,10,100,0"
+                      Text="Speakers"
+                      x:Name="_Speaker"
+                      Foreground="Black"
+                      Background="Transparent">
 
             </ComboBox>
             <TextBox Margin="150,10, 100, 10"
                      Style="{StaticResource ModernFileBox}"
                      Height="300"
-                     IsReadOnly="True">
+                     IsReadOnly="True"
+                     x:Name="FileTextBox"
+                     TextChanged="FileTextChanged">
             </TextBox>
-            <TextBlock Text="Current Words:"
+            <TextBlock Text="Current Words: 0"
                        Margin="150,0"
-                       Foreground="DarkGray">
+                       Foreground="DarkGray"
+                       x:Name="CurrentWordsLabel">
             </TextBlock>
 
-            <TextBlock Text="Current Symbols:"
+            <TextBlock Text="Current Symbols: 0"
                        Margin="150,0"
-                       Foreground="DarkGray">
+                       Foreground="DarkGray"
+                       x:Name="CurrentSymbolsLabel">
             </TextBlock>
 
             <TextBlock x:Name="maxWords"
@@ -68,7 +80,8 @@
                         Foreground="#00FF29"
                         Background="Transparent"
                         BorderThickness="0"
-                        Style="{StaticResource Button}">
+                        Style="{StaticResource Button}"
+                        Click="OpenFile_Click">
                 </Button>
             </Border>
         </StackPanel>
@@ -120,7 +133,8 @@
                                     Foreground="#00FF29"
                                     Background="Transparent"
                                     BorderThickness="0"
-                                    Style="{StaticResource Button}">
+                                    Style="{StaticResource Button}"
+                                    Click="PlayFile_Click">
                             </Button>
                         </Border>
                     </StackPanel>
@@ -137,7 +151,8 @@
                         Foreground="#00FF29"
                         Background="Transparent"
                         BorderThickness="0"
-                        Style="{StaticResource Button}">
+                        Style="{StaticResource Button}"
+                        Click="Download_Click">
                 </Button>
             </Border>
         </StackPanel>
