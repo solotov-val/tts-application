@@ -15,7 +15,8 @@
                                      Background="Transparent"
                                      VerticalContentAlignment="Top"
                                      Padding="5"
-                                     Foreground="#CFCFCF"
+                                     Foreground="#CFCFCF" 
+                                     TextWrapping="Wrap"
                                      x:Name="TextInput"/>
 
                             <TextBlock IsHitTestVisible="False"

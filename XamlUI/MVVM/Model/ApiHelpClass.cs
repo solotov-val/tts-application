@@ -4,11 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows;
 
-namespace tts_application
+namespace XamlUI.MVVM.Model
 {
-    public class ApiHelpClass
+    internal class ApiHelpClass
     {
         public static String tts(String language, String speaker, String text)
         {

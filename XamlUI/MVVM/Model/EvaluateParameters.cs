@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace tts_application
+namespace XamlUI.MVVM.Model
 {
-    public class EvaluateParameters
+    internal class EvaluateParameters
     {
 
         public String evaluateSpeaker(String choosenLanguage)

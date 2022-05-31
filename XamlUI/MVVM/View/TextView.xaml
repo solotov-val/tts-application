@@ -18,24 +18,39 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel>
-            <ComboBox Margin="150,70,100,0">
-
+            <ComboBox Margin="150,70,100,0"
+                      x:Name="_Language"
+                      SelectionChanged="UpdateSpeaker">
+                <ComboBoxItem Content="Chinesisch cmn-CN"/>
+                <ComboBoxItem Content="Deutsch de-DE"/>
+                <ComboBoxItem Content="English en-GB"/>
+                <ComboBoxItem Content="Französisch fr-FR"/>
+                <ComboBoxItem Content="Holländisch nl-NL"/>
+                <ComboBoxItem Content="Spanisch es-ES"/>
+                <ComboBoxItem Content="Italienisch it-IT"/>
+                <ComboBoxItem Content="Japanisch ja-JP"/>
+                <ComboBoxItem Content="Koreanisch ko-KR"/>
+                <ComboBoxItem Content="Portugisisch pt-PT"/>
             </ComboBox>
-            <ComboBox Margin="150,10,100,0">
-
+            <ComboBox Margin="150,10,100,0"
+                      x:Name="_Speaker">
             </ComboBox>
             <TextBox Margin="150,10, 100, 10"
                      Style="{StaticResource ModernTextBox}"
-                     Height="300">
+                     Height="300"
+                     x:Name="InputTextBox"
+                     TextChanged="InputTextChanged">
             </TextBox>
-            <TextBlock Text="Current Words:"
+            <TextBlock Text="Current Words: 0"
                        Margin="150,0"
-                       Foreground="DarkGray">
+                       Foreground="DarkGray"
+                       x:Name="CurrentWordsLabel">
             </TextBlock>
 
-            <TextBlock Text="Current Symbols:"
+            <TextBlock Text="Current Symbols: 0"
                        Margin="150,0"
-                       Foreground="DarkGray">
+                       Foreground="DarkGray"
+                       x:Name="CurrentSymbolsLabel">
             </TextBlock>
 
             <TextBlock x:Name="maxWords"
@@ -53,7 +68,8 @@
                         Foreground="#00FF29"
                         Background="Transparent"
                         BorderThickness="0"
-                        Style="{StaticResource Button}">
+                        Style="{StaticResource Button}"
+                        Click="Convert_Click">
                 </Button>
             </Border>
         </StackPanel>
@@ -106,7 +122,8 @@
                                     Foreground="#00FF29"
                                     Background="Transparent"
                                     BorderThickness="0"
-                                    Style="{StaticResource Button}">
+                                    Style="{StaticResource Button}"
+                                    Click="PlayFile_Click">
                             </Button>
                         </Border>
                     </StackPanel>
@@ -123,7 +140,8 @@
                         Foreground="#00FF29"
                         Background="Transparent"
                         BorderThickness="0"
-                        Style="{StaticResource Button}">
+                        Style="{StaticResource Button}"
+                        Click="Download_Click">
                 </Button>
             </Border>
         </StackPanel>

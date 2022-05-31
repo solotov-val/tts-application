@@ -9,6 +9,16 @@
                             Background="#353340">
                         <Grid>
                             <Rectangle StrokeThickness="1"/>
+                            <TextBox Margin="5,36,0,0"
+                                     Text="{TemplateBinding Text}"
+                                     BorderThickness="0"
+                                     Background="Transparent"
+                                     VerticalContentAlignment="Top"
+                                     Padding="5"
+                                     Foreground="#CFCFCF" 
+                                     TextWrapping="Wrap"
+                                     IsReadOnly="True"/>
+                            
                             <Border BorderThickness="1" BorderBrush="Black" CornerRadius="10" Height="40" VerticalAlignment="Top">
                                 <TextBlock IsHitTestVisible="False"
                                             Text="Filename:"
@@ -19,14 +29,6 @@
                                             Foreground="DarkGray">
                                 </TextBlock>
                             </Border>
-                            <TextBox Margin="5,36,0,0"
-                                     Text="{TemplateBinding Text}"
-                                     BorderThickness="0"
-                                     Background="Transparent"
-                                     VerticalContentAlignment="Top"
-                                     Padding="5"
-                                     Foreground="#CFCFCF"
-                                     x:Name="TextInput"/>
                         </Grid>
                     </Border>
                 </ControlTemplate>
