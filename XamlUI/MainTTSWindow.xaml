@@ -11,7 +11,8 @@
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True"
-        Icon ="/Images/tts-pic.png">
+        Icon ="/Images/tts-pic.png"
+        WindowStartupLocation="CenterScreen">
     
     <Window.DataContext>
         <viewModel:MainViewModel/>

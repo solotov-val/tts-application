@@ -12,7 +12,8 @@
         Background="Transparent"
         WindowStyle="None"
         ResizeMode="NoResize"
-        Icon="/Images/tts-pic.png">
+        Icon="/Images/tts-pic.png"
+        WindowStartupLocation="CenterScreen">
 
     <Window.DataContext>
         <viewModel:MainViewModel/>
