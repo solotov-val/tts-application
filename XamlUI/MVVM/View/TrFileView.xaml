@@ -93,19 +93,19 @@
 
         <StackPanel Grid.Row="1">
             <Border BorderBrush="#00FF29" BorderThickness="1" Margin="165,0,300,0" CornerRadius="10">
-                <Button x:Name="_ConvertButton"
-                        Content="Convert"
+                <Button x:Name="_TranslateButton"
+                        Content="Translate"
                         Foreground="#00FF29"
                         Background="Transparent"
                         BorderThickness="0"
                         Style="{StaticResource Button}"
-                        Click="Convert_Click">
+                        Click="Translate_Click">
                 </Button>
             </Border>
         </StackPanel>
 
         <StackPanel Grid.Row="1">
-            <Border BorderBrush="#00FF29" BorderThickness="1" Margin="50,0,400,0" CornerRadius="10">
+            <Border BorderBrush="#00FF29" BorderThickness="1" Margin="50,0,415,0" CornerRadius="10">
                 <Button x:Name="_OpenButton"
                         Content="Open"
                         Foreground="#00FF29"
@@ -113,6 +113,19 @@
                         BorderThickness="0"
                         Style="{StaticResource Button}"
                         Click="OpenFile_Click">
+                </Button>
+            </Border>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <Border BorderBrush="#00FF29" BorderThickness="1" Margin="415,0,50,0" CornerRadius="10">
+                <Button x:Name="_ConvertButton"
+                        Content="Convert"
+                        Foreground="#00FF29"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Style="{StaticResource Button}"
+                        Click="Convert_Click">
                 </Button>
             </Border>
         </StackPanel>

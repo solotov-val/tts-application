@@ -93,6 +93,19 @@
 
         <StackPanel Grid.Row="1">
             <Border BorderBrush="#00FF29" BorderThickness="1" Margin="165,0,300,0" CornerRadius="10">
+                <Button x:Name="_TranslateButton"
+                        Content="Translate"
+                        Foreground="#00FF29"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Style="{StaticResource Button}"
+                        Click="Translate_Click">
+                </Button>
+            </Border>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <Border BorderBrush="#00FF29" BorderThickness="1" Margin="415,0,50,0" CornerRadius="10">
                 <Button x:Name="_ConvertButton"
                         Content="Convert"
                         Foreground="#00FF29"
