@@ -1,19 +1,10 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using XamlUI.MVVM.Model;
 
 namespace XamlUI.MVVM.View
 {
@@ -22,10 +13,96 @@ namespace XamlUI.MVVM.View
     /// </summary>
     public partial class TrTextView : UserControl
     {
+        #region Variables
+        String speakers;
+        String choosenLanguage;
+
+        EvaluateParameters ev = new EvaluateParameters();
+        #endregion
+
         #region Private Methods
+        void UpdateTrSpeaker(object sender, RoutedEventArgs e)
+        {
+            choosenLanguage = _TrLanguage.SelectedItem.ToString();
+            String[] words = choosenLanguage.Split(' ');
+            choosenLanguage = words[2];
+
+            speakers = ev.evaluateSpeaker(choosenLanguage);
+
+            int len = 0;
+            for (int i = 0; i < speakers.Length - 1; i++)
+            {
+                if (speakers[i] == ' ' && Char.IsLetter(speakers[i + 1]) && (i > 0))
+                {
+                    len++;
+                }
+            }
+
+            len++;
+
+            if (len == 1)
+            {
+                _TrSpeaker.Items.Clear();
+                _TrSpeaker.Items.Add(speakers);
+            }
+            else
+            {
+                String[] sp = speakers.Split(' ');
+                _TrSpeaker.Items.Clear();
+                for (int i = 0; i < len; i++)
+                {
+                    _TrSpeaker.Items.Add("" + sp[i]);
+                }
+            }
+        }
+        void UpdateSpeaker(object sender, RoutedEventArgs e)
+        {
+            choosenLanguage = _Language.SelectedItem.ToString();
+            String[] words = choosenLanguage.Split(' ');
+            choosenLanguage = words[2];
+
+            speakers = ev.evaluateSpeaker(choosenLanguage);
+
+            int len = 0;
+            for (int i = 0; i < speakers.Length - 1; i++)
+            {
+                if (speakers[i] == ' ' && Char.IsLetter(speakers[i + 1]) && (i > 0))
+                {
+                    len++;
+                }
+            }
+
+            len++;
+
+            if (len == 1)
+            {
+                _Speaker.Items.Clear();
+                _Speaker.Items.Add(speakers);
+            }
+            else
+            {
+                String[] sp = speakers.Split(' ');
+                _Speaker.Items.Clear();
+                for (int i = 0; i < len; i++)
+                {
+                    _Speaker.Items.Add("" + sp[i]);
+                }
+            }
+        }
         void Convert_Click(object sender, RoutedEventArgs e)
         {
-            ApiHelpClass.tts(_Language, _Speaker, TranslateTextBox.Text);
+            String authKey = "";
+            if (File.Exists("..\\..\\Keys\\KeyAPI.txt"))
+            {
+                authKey = File.ReadAllText("..\\..\\Keys\\KeyAPI.txt");
+            }
+            else
+            {
+                MessageBox.Show("Error by searching for the KeyAPI file!");
+            }
+
+            String input = InputTextBox.Text.ToString();
+            ApiHelpClass.translate(authKey, _Language.SelectedValue.ToString(), _TrLanguage.SelectedValue.ToString(), input);
         }
 
         void PlayFile_Click(object sender, RoutedEventArgs e)

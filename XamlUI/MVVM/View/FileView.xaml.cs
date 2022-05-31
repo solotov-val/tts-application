@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using Microsoft.Win32;
+using XamlUI.MVVM.Model;
 
 namespace XamlUI.MVVM.View
 {
@@ -14,12 +15,53 @@ namespace XamlUI.MVVM.View
     {
         #region Variables
         Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
+
+        String choosenLanguage;
+        String speakers;
+
+        EvaluateParameters ev = new EvaluateParameters();
         #endregion
 
         #region Private Methods
+        void UpdateSpeaker(object sender, RoutedEventArgs e)
+        {
+            choosenLanguage = _Language.SelectedItem.ToString();
+            String[] words = choosenLanguage.Split(' ');
+            choosenLanguage = words[2];
+
+            speakers = ev.evaluateSpeaker(choosenLanguage);
+
+            int len = 0;
+            for (int i = 0; i < speakers.Length - 1; i++)
+            {
+                if (speakers[i] == ' ' && Char.IsLetter(speakers[i + 1]) && (i > 0))
+                {
+                    len++;
+                }
+            }
+
+            len++;
+
+            if (len == 1)
+            {
+                _Speaker.Items.Clear();
+                _Speaker.Items.Add(speakers);
+            }
+            else
+            {
+                String[] sp = speakers.Split(' ');
+                _Speaker.Items.Clear();
+                for (int i = 0; i < len; i++)
+                {
+                    _Speaker.Items.Add("" + sp[i]);
+                }
+            }
+        }
+
         void Convert_Click(object sender, RoutedEventArgs e)
         {
-            ApiHelpClass.tts(_Language, _Speaker, FileTextBox.Text);
+            String[] language = _Language.SelectedValue.ToString().Split(' ');
+            ApiHelpClass.tts(language[2], _Speaker.SelectedValue.ToString(), FileTextBox.Text);
         }
 
         void PlayFile_Click(object sender, RoutedEventArgs e)

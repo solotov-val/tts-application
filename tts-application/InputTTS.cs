@@ -91,6 +91,7 @@ namespace tts_application
             }
         }
 
+        //exported to XAML UI
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
             wordCount(richTextBox1.Text);
@@ -99,6 +100,7 @@ namespace tts_application
 
 
         //Function to value the Text by the number of words
+        //exported to XAml UI
         private void wordCount(String text)
         {
             int counter = v.wordCounter(text);
@@ -119,6 +121,7 @@ namespace tts_application
 
         
         //Function to value the Text by the number of chars
+        //exported to XamlUI
         private void charCount(String text)
         {
             int counter = v.charCounter(text);
@@ -139,12 +142,13 @@ namespace tts_application
 
 
         //Selected Language
+        //exported to XamlUI
         private void comboBoxSprache_SelectedIndexChanged(object sender, EventArgs e)
         {
             updateSpeakerCombo();
         }
 
-
+        //exported to Xaml UI
         private void updateSpeakerCombo()
         {
 
@@ -158,7 +162,6 @@ namespace tts_application
             if (len == 1)
             {
                 choosenSpeaker = speakers;
-
             }
             else
             {
@@ -175,6 +178,7 @@ namespace tts_application
         }
 
         // Speaker Selection
+        //exported to Xaml
         private void comboBoxSpeakers_SelectedIndexChanged(object sender, EventArgs e)
         {
             choosenSpeaker=comboBoxSpeakers.SelectedItem.ToString();
@@ -191,6 +195,7 @@ namespace tts_application
         }
 
         //Play Button
+        //exported to XamlUI
         private void buttonPlay_Click(object sender, EventArgs e)
         {
             if(File.Exists("filename.txt"))
@@ -212,6 +217,7 @@ namespace tts_application
         }
 
 
+        //exported to XamlUI
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -219,6 +225,7 @@ namespace tts_application
         }
 
         //Download Button
+        //exported to XAml UI
         private void buttonDownload_Click(object sender, EventArgs e)
         {
             //folderBrowserDialog.ShowDialog();
@@ -256,6 +263,7 @@ namespace tts_application
                 MessageBox.Show("Error by searching for the file!");
             }
         }
+        //exported to Xaml UI
         string GetDownloadFolderPath()
         {
             return Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString();

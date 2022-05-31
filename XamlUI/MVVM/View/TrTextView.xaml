@@ -19,8 +19,18 @@
 
         <StackPanel>
             <ComboBox Margin="50,40,300,0"
-                      x:Name="_Language">
-
+                      x:Name="_Language"
+                      SelectionChanged="UpdateSpeaker">
+                <ComboBoxItem Content="Chinesisch cmn-CN"/>
+                <ComboBoxItem Content="Deutsch de-DE"/>
+                <ComboBoxItem Content="English en-GB"/>
+                <ComboBoxItem Content="Französisch fr-FR"/>
+                <ComboBoxItem Content="Holländisch nl-NL"/>
+                <ComboBoxItem Content="Spanisch es-ES"/>
+                <ComboBoxItem Content="Italienisch it-IT"/>
+                <ComboBoxItem Content="Japanisch ja-JP"/>
+                <ComboBoxItem Content="Koreanisch ko-KR"/>
+                <ComboBoxItem Content="Portugisisch pt-PT"/>
             </ComboBox>
             <ComboBox Margin="50,10,300,0"
                       x:Name="_Speaker">
@@ -54,8 +64,18 @@
 
         <StackPanel>
             <ComboBox Margin="300,40,50,0"
-                      x:Name="_TrLanguage">
-
+                      x:Name="_TrLanguage"
+                      SelectionChanged="UpdateTrSpeaker">
+                <ComboBoxItem Content="Chinesisch cmn-CN"/>
+                <ComboBoxItem Content="Deutsch de-DE"/>
+                <ComboBoxItem Content="English en-GB"/>
+                <ComboBoxItem Content="Französisch fr-FR"/>
+                <ComboBoxItem Content="Holländisch nl-NL"/>
+                <ComboBoxItem Content="Spanisch es-ES"/>
+                <ComboBoxItem Content="Italienisch it-IT"/>
+                <ComboBoxItem Content="Japanisch ja-JP"/>
+                <ComboBoxItem Content="Koreanisch ko-KR"/>
+                <ComboBoxItem Content="Portugisisch pt-PT"/>
             </ComboBox>
             <ComboBox Margin="300,10,50,0"
                       x:Name="_TrSpeaker">
@@ -78,7 +98,8 @@
                         Foreground="#00FF29"
                         Background="Transparent"
                         BorderThickness="0"
-                        Style="{StaticResource Button}">
+                        Style="{StaticResource Button}"
+                        Click="Convert_Click">
                 </Button>
             </Border>
         </StackPanel>

@@ -78,7 +78,7 @@ namespace XamlUI
                 if (!ul.searchUser(user.Text, pass1.Password))
                 {
                     MessageBox.Show("Account Created Successfully!");
-                    ul.addUser(user.Text, pass1.Password, "en-GB");
+                    ul.addUser(user.Text, pass1.Password);
                 }
                 else
                 {

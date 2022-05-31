@@ -1,19 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.IO;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Microsoft.Win32;
+using XamlUI.MVVM.Model;
 
 namespace XamlUI.MVVM.View
 {
@@ -22,10 +14,55 @@ namespace XamlUI.MVVM.View
     /// </summary>
     public partial class TextView : UserControl
     {
+        #region Variables
+
+        EvaluateParameters ev = new EvaluateParameters();
+
+        String choosenLanguage;
+        String speakers;
+        #endregion
+
         #region Private Methods
+
+        void UpdateSpeaker(object sender, RoutedEventArgs e)
+        {
+            choosenLanguage = _Language.SelectedItem.ToString();
+            String[] words = choosenLanguage.Split(' ');
+            choosenLanguage = words[2];
+
+            speakers = ev.evaluateSpeaker(choosenLanguage);
+
+            int len = 0;
+            for (int i = 0; i < speakers.Length - 1; i++)
+            {
+                if (speakers[i] == ' ' && Char.IsLetter(speakers[i + 1]) && (i > 0))
+                {
+                    len++;
+                }
+            }
+
+            len++;
+
+            if (len == 1)
+            {
+                _Speaker.Items.Clear();
+                _Speaker.Items.Add(speakers);
+            }
+            else
+            {
+                String[] sp = speakers.Split(' ');
+                _Speaker.Items.Clear();
+                for (int i = 0; i < len; i++)
+                {
+                    _Speaker.Items.Add("" + sp[i]);
+                }
+            }
+        }
+
         void Convert_Click(object sender, RoutedEventArgs e)
         {
-            ApiHelpClass.tts(_Language, _Speaker, InputTextBox.Text);
+            String[] language = _Language.SelectedValue.ToString().Split(' ');
+            ApiHelpClass.tts(language[2], _Speaker.SelectedValue.ToString(), InputTextBox.Text);
         }
 
         void PlayFile_Click(object sender, RoutedEventArgs e)
@@ -78,7 +115,7 @@ namespace XamlUI.MVVM.View
             return Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString();
         }
 
-        void InputTextChanged(object sender, RoutedEventArgs e) //Funktioniert uanfoch et richtig. Warum? jo.
+        void InputTextChanged(object sender, RoutedEventArgs e)
         {
             wordCount(InputTextBox.Text);
             charCount(InputTextBox.Text);

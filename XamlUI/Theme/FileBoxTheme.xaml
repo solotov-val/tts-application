@@ -17,7 +17,7 @@
                                      Padding="5"
                                      Foreground="#CFCFCF" 
                                      TextWrapping="Wrap"
-                                     x:Name="TextInput"/>
+                                     IsReadOnly="True"/>
                             
                             <Border BorderThickness="1" BorderBrush="Black" CornerRadius="10" Height="40" VerticalAlignment="Top">
                                 <TextBlock IsHitTestVisible="False"
