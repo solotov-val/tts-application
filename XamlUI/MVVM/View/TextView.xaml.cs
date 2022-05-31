@@ -17,13 +17,19 @@ namespace XamlUI.MVVM.View
         #region Variables
 
         EvaluateParameters ev = new EvaluateParameters();
-
+        int volume = 50;
+        double speed = 1;
         String choosenLanguage;
         String speakers;
         #endregion
 
         #region Private Methods
 
+        /// <summary>
+        /// Changing the Language Combobox Item calls this function to change the items of the Speaker Combobox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void UpdateSpeaker(object sender, RoutedEventArgs e)
         {
             choosenLanguage = _Language.SelectedItem.ToString();
@@ -59,12 +65,22 @@ namespace XamlUI.MVVM.View
             }
         }
 
+        /// <summary>
+        /// Clicking the Convert Button calls this function to create a .mp3 file with the help of the Amazon API
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void Convert_Click(object sender, RoutedEventArgs e)
         {
             String[] language = _Language.SelectedValue.ToString().Split(' ');
             ApiHelpClass.tts(language[2], _Speaker.SelectedValue.ToString(), InputTextBox.Text);
         }
 
+        /// <summary>
+        /// Clicking the Play Button calls this funtion to play the last converted file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void PlayFile_Click(object sender, RoutedEventArgs e)
         {
             if (File.Exists("filename.txt"))
@@ -76,6 +92,8 @@ namespace XamlUI.MVVM.View
                     WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
                     wplayer.URL = filename;
                     wplayer.controls.play();
+                    wplayer.settings.volume = getVolume;
+                    wplayer.settings.rate = getSpeed;
                 }
             }
             else
@@ -84,6 +102,11 @@ namespace XamlUI.MVVM.View
             }
         }
 
+        /// <summary>
+        /// Clicking the Download Button will call this funtion to save the .mp3 file in Downloads
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void Download_Click(object sender, RoutedEventArgs e)
         {
             if (File.Exists("filename.txt"))
@@ -110,17 +133,30 @@ namespace XamlUI.MVVM.View
             }
         }
 
+        /// <summary>
+        /// Returns Path of Downloads
+        /// </summary>
+        /// <returns></returns>
         string GetDownloadFolderPath()
         {
             return Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString();
         }
 
+        /// <summary>
+        /// Changing the Text of the InputTextBox calls this function to recalculate the amount of words and chars
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void InputTextChanged(object sender, RoutedEventArgs e)
         {
             wordCount(InputTextBox.Text);
             charCount(InputTextBox.Text);
         }
 
+        /// <summary>
+        /// Calculates the amount of words in text
+        /// </summary>
+        /// <param name="text">Text of TextBox</param>
         void wordCount(String text)
         {
             int counter = 0;
@@ -150,6 +186,10 @@ namespace XamlUI.MVVM.View
 
         }
 
+        /// <summary>
+        /// Calculates the amount of chars in text
+        /// </summary>
+        /// <param name="text">Text of Textbox</param>
         void charCount(String text)
         {
             int counter = 0;
@@ -172,6 +212,87 @@ namespace XamlUI.MVVM.View
                 _ConvertButton.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0x00, 0xFF, 0x29));
             }
             CurrentSymbolsLabel.Text = "Current Symbols: " + counter;
+        }
+
+        /// <summary>
+        /// Looks if Speed is in the range of 0.0-1.0, if it is empty or if a wrong sign is being tried to use
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void SpeedChanged(object sender, RoutedEventArgs e)
+        {
+            if(Double.TryParse(_Speed.Text.ToString(), out double number))
+            {
+                if(number > 1.0)
+                {
+                    _Speed.Text = "1";
+                    number = 1.0;
+                }
+                else if (number < 0.0)
+                {
+                    _Speed.Text = "0";
+                    number = 0.0;
+                }
+                getSpeed = number;
+            }else if(_Speed.Text == "")
+            {
+
+            }
+            else
+            {
+                _Speed.Text = getSpeed.ToString();
+            }
+            
+        }
+        /// <summary>
+        /// Looks if Volume is in the range of 0-100, if it is empty or if a wrong sign is being tried to use
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void VolumeChanged(object sender, RoutedEventArgs e)
+        {
+            if(Int32.TryParse(_Volume.Text.ToString(), out int number))
+            {
+                if (number > 100)
+                {
+                    _Volume.Text = "100";
+                    number = 100;
+                }
+                else if (number < 0)
+                {
+                    _Volume.Text = "0";
+                    number = 0;
+                }
+                getVolume = number;
+            }else if(_Volume.Text == "")
+            {
+
+            }
+            else
+            {
+                _Volume.Text = getVolume.ToString();
+            }
+            
+        }
+        #endregion
+
+        #region Getter-Setter
+        /// <summary>
+        /// get and set speed of Windows Media Player
+        /// </summary>
+        public double getSpeed
+        {
+            get { return speed; }
+            set { speed = value; }
+        }
+
+        /// <summary>
+        /// get and set volume of Windows Media Player
+        /// </summary>
+        public int getVolume
+        {
+            get { return volume; }
+            set { volume = value; }
         }
         #endregion
         public TextView()
