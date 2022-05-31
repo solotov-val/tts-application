@@ -8,6 +8,16 @@
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="870">
     <Grid>
-            
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   Width="600" Height="350"
+                   Foreground="White" FontSize="26"
+                   TextWrapping="Wrap" TextAlignment="Center">
+            Text to speech conversion;<LineBreak/>
+            parameters: Speech and Speaker;<LineBreak/>
+            translation function; <LineBreak/>
+            parameters: Input and output language<LineBreak/>
+            Input is first converted by pressing button and can be downloaded by pressing download button. The file will be saved in the downloads folder.<LineBreak/> 
+            In case of translations, it will be displayed in a field of the application.
+        </TextBlock>
     </Grid>
 </UserControl>

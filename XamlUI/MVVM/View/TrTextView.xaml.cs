@@ -16,6 +16,7 @@ namespace XamlUI.MVVM.View
         #region Variables
         String speakers;
         String choosenLanguage;
+        DateTime convertClicked;
 
         EvaluateParameters ev = new EvaluateParameters();
         #endregion
@@ -91,6 +92,12 @@ namespace XamlUI.MVVM.View
         }
         void Convert_Click(object sender, RoutedEventArgs e)
         {
+            String[] language = _TrLanguage.SelectedValue.ToString().Split(' ');
+            ApiHelpClass.tts(language[2], _TrSpeaker.SelectedValue.ToString(), TranslateTextBox.Text);
+        }
+        void Translate_Click(object sender, RoutedEventArgs e)
+        {
+            convertClicked = DateTime.Now;
             String authKey = "";
             if (File.Exists("..\\..\\Keys\\KeyAPI.txt"))
             {
@@ -102,7 +109,22 @@ namespace XamlUI.MVVM.View
             }
 
             String input = InputTextBox.Text.ToString();
-            ApiHelpClass.translate(authKey, _Language.SelectedValue.ToString(), _TrLanguage.SelectedValue.ToString(), input);
+            String[] temp = _Language.SelectedValue.ToString().Split(' ');
+            String language = ev.evaluateLanguage(temp[2]);
+            String[] trtemp = _TrLanguage.SelectedValue.ToString().Split(' ');
+            String trlanguage = ev.evaluateLanguage(trtemp[2]);
+            ApiHelpClass.translate(authKey, language, trlanguage, input);
+
+            if (File.Exists("temptranslate.txt"))
+            {
+                String path = System.AppDomain.CurrentDomain.BaseDirectory + "\\temptranslate.txt";
+                String text = File.ReadAllText(path);
+                TranslateTextBox.Text = text;
+            }
+            else
+            {
+                MessageBox.Show("No answer yet from API");
+            }
         }
 
         void PlayFile_Click(object sender, RoutedEventArgs e)

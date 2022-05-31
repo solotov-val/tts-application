@@ -58,10 +58,10 @@ namespace tts_application
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(604, 292);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(1208, 562);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 23);
+            this.button1.Size = new System.Drawing.Size(120, 44);
             this.button1.TabIndex = 44;
             this.button1.Text = "Play";
             this.button1.UseVisualStyleBackColor = false;
@@ -70,10 +70,10 @@ namespace tts_application
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(564, 144);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(1128, 277);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.Size = new System.Drawing.Size(84, 25);
             this.label2.TabIndex = 43;
             this.label2.Text = "Volume";
             // 
@@ -81,37 +81,37 @@ namespace tts_application
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(564, 118);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(1128, 227);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(74, 25);
             this.label1.TabIndex = 42;
             this.label1.Text = "Speed";
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(617, 144);
-            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDown2.Location = new System.Drawing.Point(1234, 277);
+            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(60, 20);
+            this.numericUpDown2.Size = new System.Drawing.Size(120, 31);
             this.numericUpDown2.TabIndex = 40;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(617, 116);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDown1.Location = new System.Drawing.Point(1234, 223);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(60, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 31);
             this.numericUpDown1.TabIndex = 39;
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(604, 326);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Location = new System.Drawing.Point(1208, 627);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(60, 23);
+            this.button3.Size = new System.Drawing.Size(120, 44);
             this.button3.TabIndex = 38;
             this.button3.Text = "Download";
             this.button3.UseVisualStyleBackColor = false;
@@ -120,29 +120,29 @@ namespace tts_application
             // charCount
             // 
             this.charCount.AutoSize = true;
-            this.charCount.Location = new System.Drawing.Point(180, 362);
-            this.charCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.charCount.Location = new System.Drawing.Point(360, 696);
+            this.charCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.charCount.Name = "charCount";
-            this.charCount.Size = new System.Drawing.Size(0, 13);
+            this.charCount.Size = new System.Drawing.Size(0, 25);
             this.charCount.TabIndex = 37;
             // 
             // wordCount
             // 
             this.wordCount.AutoSize = true;
-            this.wordCount.Location = new System.Drawing.Point(182, 326);
-            this.wordCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.wordCount.Location = new System.Drawing.Point(364, 627);
+            this.wordCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.wordCount.Name = "wordCount";
-            this.wordCount.Size = new System.Drawing.Size(0, 13);
+            this.wordCount.Size = new System.Drawing.Size(0, 25);
             this.wordCount.TabIndex = 36;
             // 
             // charLimitExcceded
             // 
             this.charLimitExcceded.AutoSize = true;
             this.charLimitExcceded.ForeColor = System.Drawing.Color.Red;
-            this.charLimitExcceded.Location = new System.Drawing.Point(89, 375);
-            this.charLimitExcceded.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.charLimitExcceded.Location = new System.Drawing.Point(178, 721);
+            this.charLimitExcceded.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.charLimitExcceded.Name = "charLimitExcceded";
-            this.charLimitExcceded.Size = new System.Drawing.Size(160, 13);
+            this.charLimitExcceded.Size = new System.Drawing.Size(312, 25);
             this.charLimitExcceded.TabIndex = 35;
             this.charLimitExcceded.Text = "CHAR LIMIT WAS EXCCEDED!";
             // 
@@ -150,10 +150,10 @@ namespace tts_application
             // 
             this.limitExcceded.AutoSize = true;
             this.limitExcceded.ForeColor = System.Drawing.Color.Red;
-            this.limitExcceded.Location = new System.Drawing.Point(89, 340);
-            this.limitExcceded.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.limitExcceded.Location = new System.Drawing.Point(178, 654);
+            this.limitExcceded.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.limitExcceded.Name = "limitExcceded";
-            this.limitExcceded.Size = new System.Drawing.Size(165, 13);
+            this.limitExcceded.Size = new System.Drawing.Size(319, 25);
             this.limitExcceded.TabIndex = 34;
             this.limitExcceded.Text = "WORD LIMIT WAS EXCCEDED!";
             // 
@@ -161,10 +161,10 @@ namespace tts_application
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(89, 362);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(178, 696);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 13);
+            this.label4.Size = new System.Drawing.Size(174, 25);
             this.label4.TabIndex = 33;
             this.label4.Text = "Amount of chars:";
             // 
@@ -172,10 +172,10 @@ namespace tts_application
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(89, 326);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(178, 627);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 13);
+            this.label3.Size = new System.Drawing.Size(178, 25);
             this.label3.TabIndex = 32;
             this.label3.Text = "Amount of words:";
             // 
@@ -183,10 +183,10 @@ namespace tts_application
             // 
             this.buttonSwitch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.buttonSwitch.ForeColor = System.Drawing.Color.White;
-            this.buttonSwitch.Location = new System.Drawing.Point(312, 115);
-            this.buttonSwitch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSwitch.Location = new System.Drawing.Point(624, 221);
+            this.buttonSwitch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSwitch.Name = "buttonSwitch";
-            this.buttonSwitch.Size = new System.Drawing.Size(100, 23);
+            this.buttonSwitch.Size = new System.Drawing.Size(200, 44);
             this.buttonSwitch.TabIndex = 31;
             this.buttonSwitch.Text = "Switch languages";
             this.buttonSwitch.UseVisualStyleBackColor = false;
@@ -196,10 +196,10 @@ namespace tts_application
             // 
             this.buttonConvert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.buttonConvert.ForeColor = System.Drawing.Color.White;
-            this.buttonConvert.Location = new System.Drawing.Point(312, 326);
-            this.buttonConvert.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonConvert.Location = new System.Drawing.Point(624, 627);
+            this.buttonConvert.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonConvert.Name = "buttonConvert";
-            this.buttonConvert.Size = new System.Drawing.Size(100, 23);
+            this.buttonConvert.Size = new System.Drawing.Size(200, 44);
             this.buttonConvert.TabIndex = 30;
             this.buttonConvert.Text = "Convert";
             this.buttonConvert.UseVisualStyleBackColor = false;
@@ -209,10 +209,10 @@ namespace tts_application
             // 
             this.rtbOutput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.rtbOutput.ForeColor = System.Drawing.Color.White;
-            this.rtbOutput.Location = new System.Drawing.Point(312, 149);
-            this.rtbOutput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtbOutput.Location = new System.Drawing.Point(624, 287);
+            this.rtbOutput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rtbOutput.Name = "rtbOutput";
-            this.rtbOutput.Size = new System.Drawing.Size(202, 168);
+            this.rtbOutput.Size = new System.Drawing.Size(400, 319);
             this.rtbOutput.TabIndex = 29;
             this.rtbOutput.Text = "";
             // 
@@ -220,10 +220,10 @@ namespace tts_application
             // 
             this.userInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.userInput.ForeColor = System.Drawing.Color.White;
-            this.userInput.Location = new System.Drawing.Point(84, 149);
-            this.userInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userInput.Location = new System.Drawing.Point(168, 287);
+            this.userInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.userInput.Name = "userInput";
-            this.userInput.Size = new System.Drawing.Size(202, 168);
+            this.userInput.Size = new System.Drawing.Size(400, 319);
             this.userInput.TabIndex = 28;
             this.userInput.Text = "";
             this.userInput.TextChanged += new System.EventHandler(this.userInput_TextChanged);
@@ -232,10 +232,10 @@ namespace tts_application
             // 
             this.buttonOpenFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.buttonOpenFile.ForeColor = System.Drawing.Color.White;
-            this.buttonOpenFile.Location = new System.Drawing.Point(84, 115);
-            this.buttonOpenFile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonOpenFile.Location = new System.Drawing.Point(168, 221);
+            this.buttonOpenFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonOpenFile.Name = "buttonOpenFile";
-            this.buttonOpenFile.Size = new System.Drawing.Size(88, 23);
+            this.buttonOpenFile.Size = new System.Drawing.Size(176, 44);
             this.buttonOpenFile.TabIndex = 45;
             this.buttonOpenFile.Text = "Open file";
             this.buttonOpenFile.UseVisualStyleBackColor = false;
@@ -260,10 +260,10 @@ namespace tts_application
             "JA - Japanese",
             "ES - Spanish",
             "PT-PT - Portuguese"});
-            this.comboBoxInputLanguage.Location = new System.Drawing.Point(84, 61);
-            this.comboBoxInputLanguage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxInputLanguage.Location = new System.Drawing.Point(168, 117);
+            this.comboBoxInputLanguage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxInputLanguage.Name = "comboBoxInputLanguage";
-            this.comboBoxInputLanguage.Size = new System.Drawing.Size(206, 21);
+            this.comboBoxInputLanguage.Size = new System.Drawing.Size(408, 33);
             this.comboBoxInputLanguage.TabIndex = 47;
             this.comboBoxInputLanguage.Text = "Language";
             this.comboBoxInputLanguage.SelectedIndexChanged += new System.EventHandler(this.comboBoxSprache_SelectedIndexChanged);
@@ -272,10 +272,10 @@ namespace tts_application
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(13, 57);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Location = new System.Drawing.Point(26, 110);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(45, 23);
+            this.button2.Size = new System.Drawing.Size(90, 44);
             this.button2.TabIndex = 49;
             this.button2.Text = "Back";
             this.button2.UseVisualStyleBackColor = false;
@@ -296,10 +296,10 @@ namespace tts_application
             "JA - Japanese",
             "ES - Spanish",
             "PT-PT - Portuguese"});
-            this.comboBoxOutputLanguage.Location = new System.Drawing.Point(309, 61);
-            this.comboBoxOutputLanguage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxOutputLanguage.Location = new System.Drawing.Point(618, 117);
+            this.comboBoxOutputLanguage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxOutputLanguage.Name = "comboBoxOutputLanguage";
-            this.comboBoxOutputLanguage.Size = new System.Drawing.Size(206, 21);
+            this.comboBoxOutputLanguage.Size = new System.Drawing.Size(408, 33);
             this.comboBoxOutputLanguage.TabIndex = 50;
             this.comboBoxOutputLanguage.Text = "Language";
             this.comboBoxOutputLanguage.SelectedIndexChanged += new System.EventHandler(this.comboBoxOutputLanguage_SelectedIndexChanged);
@@ -308,10 +308,10 @@ namespace tts_application
             // 
             this.buttonShowTranslation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.buttonShowTranslation.ForeColor = System.Drawing.Color.White;
-            this.buttonShowTranslation.Location = new System.Drawing.Point(312, 353);
-            this.buttonShowTranslation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonShowTranslation.Location = new System.Drawing.Point(624, 679);
+            this.buttonShowTranslation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonShowTranslation.Name = "buttonShowTranslation";
-            this.buttonShowTranslation.Size = new System.Drawing.Size(100, 23);
+            this.buttonShowTranslation.Size = new System.Drawing.Size(200, 44);
             this.buttonShowTranslation.TabIndex = 51;
             this.buttonShowTranslation.Text = "Show translation";
             this.buttonShowTranslation.UseVisualStyleBackColor = false;
@@ -319,10 +319,10 @@ namespace tts_application
             // 
             // TranslateInput
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Blue;
-            this.ClientSize = new System.Drawing.Size(760, 424);
+            this.ClientSize = new System.Drawing.Size(1520, 815);
             this.Controls.Add(this.buttonShowTranslation);
             this.Controls.Add(this.comboBoxOutputLanguage);
             this.Controls.Add(this.button2);
@@ -344,7 +344,7 @@ namespace tts_application
             this.Controls.Add(this.buttonConvert);
             this.Controls.Add(this.rtbOutput);
             this.Controls.Add(this.userInput);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TranslateInput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TranslateFileInput";

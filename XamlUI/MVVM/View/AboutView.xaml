@@ -8,6 +8,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="870">
     <Grid>
-            
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   Width="600" Height="450"
+                   Foreground="White" FontSize="24"
+                   TextWrapping="Wrap" TextAlignment="Center">
+            This application primarily offers the possibility to convert a text input in various formats into an audio file. Afterwards, this file can be downloaded at the click of a button. In addition, two different parameters can be transferred during the input, namely the language and a speaker (male/female, different voice pitches) suitable for this. Secondary a translation function was implemented. Input and output language are selected, whereby the input language can also be recognized. The translation can additionally be converted into an audio file afterwards. <LineBreak/>
+            This application was developed in the context of a school project by Priller Patrick, Huber Michael and Pastore Alex, whereby it concerns the 1st version.
+        </TextBlock>
     </Grid>
 </UserControl>
