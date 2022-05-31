@@ -57,5 +57,53 @@ namespace XamlUI.MVVM.Model
             }
             return speaker;
         }
+
+        public String evaluateLanguage(String chosenlanguage)
+        {
+            String language = "";
+            switch (chosenlanguage)
+            {
+                case "cmn-CN":
+                    language = "CN";
+                    break;
+
+                case "de-DE":
+                    language = "DE";
+                    break;
+
+                case "en-GB":
+                    language = "EN";
+                    break;
+
+                case "fr-FR":
+                    language = "FR";
+                    break;
+
+                case "nl-NL":
+                    language = "NL";
+                    break;
+
+                case "it-IT":
+                    language = "IT";
+                    break;
+
+                case "es-ES":
+                    language = "ES";
+                    break;
+
+                case "ja-JA":
+                    language = "JA";
+                    break;
+
+                case "ko-KR":
+                    language = "KR";
+                    break;
+
+                case "pt-PT":
+                    language = "PT";
+                    break;
+            }
+            return language;
+        }
     }
 }
