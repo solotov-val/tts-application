@@ -103,7 +103,9 @@
                                      BorderThickness="0"
                                      Margin="5,0,5,0"
                                      Foreground="White"
-                                     HorizontalContentAlignment="Center">
+                                     HorizontalContentAlignment="Center"
+                                     x:Name="_Speed"
+                                     TextChanged="SpeedChanged">
                             </TextBox>
                         </Border>
 
@@ -112,7 +114,9 @@
                                      BorderThickness="0"
                                      Margin="5,0,5,0"
                                      Foreground="White"
-                                     HorizontalContentAlignment="Center">
+                                     HorizontalContentAlignment="Center"
+                                     x:Name="_Volume"
+                                     TextChanged="VolumeChanged">
                             </TextBox>
                         </Border>
 
