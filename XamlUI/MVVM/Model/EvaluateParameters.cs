@@ -40,7 +40,7 @@ namespace XamlUI.MVVM.Model
                     break;
 
                 case "es-ES":
-                    speaker = "Conchita, Lucia, Enrique";
+                    speaker = "Conchita Lucia Enrique";
                     break;
 
                 case "ja-JP":

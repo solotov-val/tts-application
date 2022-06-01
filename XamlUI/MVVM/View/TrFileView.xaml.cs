@@ -140,9 +140,10 @@ namespace XamlUI.MVVM.View
 
             if (File.Exists("temptranslate.txt"))
             {
-                String path = System.AppDomain.CurrentDomain.BaseDirectory + "\\temptranslate.txt";
+                String path = System.AppDomain.CurrentDomain.BaseDirectory + "temptranslate.txt";
                 String text = File.ReadAllText(path);
                 TranslateTextBox.Text = text;
+                File.WriteAllText(path, String.Empty);
             }
             else
             {

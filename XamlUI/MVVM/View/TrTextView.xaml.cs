@@ -138,7 +138,6 @@ namespace XamlUI.MVVM.View
             String trlanguage = ev.evaluateLanguage(trtemp[2]);
             ApiHelpClass.translate(authKey, language, trlanguage, input);
 
-            //System.Threading.Thread.Sleep(2000);
             if (File.Exists("temptranslate.txt"))
             {
                 String path = System.AppDomain.CurrentDomain.BaseDirectory + "temptranslate.txt";
