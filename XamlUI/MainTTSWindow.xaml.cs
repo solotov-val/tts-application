@@ -19,19 +19,43 @@ namespace XamlUI
     /// </summary>
     public partial class MainTTSWindow : Window
     {
+        #region Variables
         Window loginWindow;
+        #endregion
 
+        #region Private Methods
+        /// <summary>
+        /// Swaps to MainLoginWindow
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void LogOutClick(object sender, RoutedEventArgs e)
         {
 
             loginWindow.Show();
             Close();
         }
+        /// <summary>
+        /// Closes Program
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void CloseClick(object sender, RoutedEventArgs e)
         {
             Close();
             loginWindow.Close();
         }
+        /// <summary>
+        /// Makes Program dragable
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
+        #endregion
 
         public MainTTSWindow(Window w)
         {

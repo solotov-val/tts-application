@@ -27,11 +27,21 @@ namespace XamlUI
         #endregion
 
         #region Private Methods
+        /// <summary>
+        /// Closes Program
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void CloseClick(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// Swaps to MainTTSWindow
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void LoginClick(object sender, RoutedEventArgs e)
         {
             var user = FindElementByName<TextBox>(LoginContent, "User");
@@ -48,6 +58,11 @@ namespace XamlUI
             }
         }
 
+        /// <summary>
+        /// Shows Register Buttons
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void RegisterClickHere(object sender, RoutedEventArgs e)
         {
             Click_Register.Visibility = Visibility.Hidden;
@@ -55,9 +70,14 @@ namespace XamlUI
             Login_Button.Visibility = Visibility.Hidden;
 
             Register_Button.Visibility = Visibility.Visible;
-            Back_Button.Visibility= Visibility.Visible;
+            Back_Button.Visibility = Visibility.Visible;
         }
 
+        /// <summary>
+        /// Shows Delete Buttons
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void DeleteClickHere(object sender, RoutedEventArgs e)
         {
             Click_Register.Visibility = Visibility.Hidden;
@@ -68,6 +88,11 @@ namespace XamlUI
             Back_Button.Visibility = Visibility.Visible;
         }
 
+        /// <summary>
+        /// Creates Account
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void RegisterClick(object sender, RoutedEventArgs e)
         {
             var user = FindElementByName<TextBox>(LoginContent, "User");
@@ -96,7 +121,11 @@ namespace XamlUI
             Register_Button.Visibility = Visibility.Hidden;
             Back_Button.Visibility = Visibility.Hidden;
         }
-
+        /// <summary>
+        /// Deletes Account
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void DeleteClick(object sender, RoutedEventArgs e)
         {
             var user = FindElementByName<TextBox>(LoginContent, "User");
@@ -104,7 +133,7 @@ namespace XamlUI
             var pass2 = FindElementByName<PasswordBox>(LoginContent, "Password2");
             if (pass1.Password.Equals(pass2.Password))
             {
-                if(ul.searchUser(user.Text, pass1.Password))
+                if (ul.searchUser(user.Text, pass1.Password))
                 {
                     MessageBox.Show("Account Deleted Successfully");
                     ul.remUser(user.Text, pass1.Password);
@@ -125,7 +154,11 @@ namespace XamlUI
             Delete_Button.Visibility = Visibility.Hidden;
             Back_Button.Visibility = Visibility.Hidden;
         }
-
+        /// <summary>
+        /// Shows Login Buttons
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void BackClick(object sender, RoutedEventArgs e)
         {
             Click_Register.Visibility = Visibility.Visible;
@@ -136,9 +169,26 @@ namespace XamlUI
             Back_Button.Visibility = Visibility.Hidden;
             Register_Button.Visibility = Visibility.Hidden;
         }
+        /// <summary>
+        /// Makes Program dragable
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
         #endregion
 
         #region Public Methods
+        /// <summary>
+        /// Returns View Fields such as Buttons
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="element"></param>
+        /// <param name="sChildName"></param>
+        /// <returns></returns>
         public T FindElementByName<T>(FrameworkElement element, string sChildName) where T : FrameworkElement
         {
             T childElement = null;
