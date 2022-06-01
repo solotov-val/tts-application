@@ -64,7 +64,7 @@ namespace XamlUI.MVVM.Model
             switch (chosenlanguage)
             {
                 case "cmn-CN":
-                    language = "CN";
+                    language = "ZH";
                     break;
 
                 case "de-DE":
@@ -92,11 +92,11 @@ namespace XamlUI.MVVM.Model
                     break;
 
                 case "ja-JP":
-                    language = "JP";
+                    language = "JA";
                     break;
 
                 case "ko-KR":
-                    language = "KR";
+                    language = "ZH";
                     break;
 
                 case "pt-PT":
