@@ -50,7 +50,14 @@ namespace XamlUI.MVVM.Model
           
             String path = System.AppDomain.CurrentDomain.BaseDirectory + "temptranslate.txt";
             //var output = File.Open("temp", FileMode.Create);
-            File.WriteAllText(path, temp);      //file not found exception
+            try
+            {
+                File.WriteAllText(path, temp);
+            }
+            catch(FileNotFoundException exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
             //output.Close();
         }
 
