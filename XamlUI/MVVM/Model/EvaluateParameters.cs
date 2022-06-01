@@ -43,7 +43,7 @@ namespace XamlUI.MVVM.Model
                     speaker = "Conchita, Lucia, Enrique";
                     break;
 
-                case "ja-JA":
+                case "ja-JP":
                     speaker = "Mizuki Takumi";
                     break;
 
@@ -64,7 +64,7 @@ namespace XamlUI.MVVM.Model
             switch (chosenlanguage)
             {
                 case "cmn-CN":
-                    language = "CN";
+                    language = "ZH";
                     break;
 
                 case "de-DE":
@@ -91,12 +91,12 @@ namespace XamlUI.MVVM.Model
                     language = "ES";
                     break;
 
-                case "ja-JA":
+                case "ja-JP":
                     language = "JA";
                     break;
 
                 case "ko-KR":
-                    language = "KR";
+                    language = "ZH";
                     break;
 
                 case "pt-PT":
