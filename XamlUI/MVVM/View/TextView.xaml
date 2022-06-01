@@ -38,6 +38,12 @@
             <TextBox Margin="150,10, 100, 10"
                      Style="{StaticResource ModernTextBox}"
                      Height="300"
+                     BorderThickness="0"
+                     Background="Transparent"
+                     VerticalContentAlignment="Top"
+                     Padding="5"
+                     Foreground="#CFCFCF" 
+                     TextWrapping="Wrap"
                      x:Name="InputTextBox"
                      TextChanged="InputTextChanged">
             </TextBox>
