@@ -48,7 +48,7 @@ namespace XamlUI.MVVM.Model
             string temp = translatedText.ToString();
             //string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
           
-            String path = System.AppDomain.CurrentDomain.BaseDirectory + "\\temptranslate.txt";
+            String path = System.AppDomain.CurrentDomain.BaseDirectory + "temptranslate.txt";
             //var output = File.Open("temp", FileMode.Create);
             File.WriteAllText(path, temp);      //file not found exception
             //output.Close();
