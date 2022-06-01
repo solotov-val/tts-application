@@ -12,7 +12,8 @@
         Background="Transparent"
         AllowsTransparency="True"
         Icon ="/Images/tts-pic.png"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown">
     
     <Window.DataContext>
         <viewModel:MainViewModel/>

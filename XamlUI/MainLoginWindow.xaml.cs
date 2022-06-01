@@ -27,11 +27,21 @@ namespace XamlUI
         #endregion
 
         #region Private Methods
+        /// <summary>
+        /// Closes Program
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void CloseClick(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// Goes to MainTTSWindow
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void LoginClick(object sender, RoutedEventArgs e)
         {
             var user = FindElementByName<TextBox>(LoginContent, "User");
@@ -48,6 +58,11 @@ namespace XamlUI
             }
         }
 
+        /// <summary>
+        /// Show Register View Buttons
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void RegisterClickHere(object sender, RoutedEventArgs e)
         {
             Click_Register.Visibility = Visibility.Hidden;
@@ -58,6 +73,11 @@ namespace XamlUI
             Back_Button.Visibility= Visibility.Visible;
         }
 
+        /// <summary>
+        /// Show Delete View Buttons
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void DeleteClickHere(object sender, RoutedEventArgs e)
         {
             Click_Register.Visibility = Visibility.Hidden;
@@ -68,6 +88,11 @@ namespace XamlUI
             Back_Button.Visibility = Visibility.Visible;
         }
 
+        /// <summary>
+        /// Creates new Account
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void RegisterClick(object sender, RoutedEventArgs e)
         {
             var user = FindElementByName<TextBox>(LoginContent, "User");
@@ -97,6 +122,11 @@ namespace XamlUI
             Back_Button.Visibility = Visibility.Hidden;
         }
 
+        /// <summary>
+        /// Deletes Account
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void DeleteClick(object sender, RoutedEventArgs e)
         {
             var user = FindElementByName<TextBox>(LoginContent, "User");
@@ -126,6 +156,11 @@ namespace XamlUI
             Back_Button.Visibility = Visibility.Hidden;
         }
 
+        /// <summary>
+        /// Shows Login Buttons
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void BackClick(object sender, RoutedEventArgs e)
         {
             Click_Register.Visibility = Visibility.Visible;
@@ -136,9 +171,26 @@ namespace XamlUI
             Back_Button.Visibility = Visibility.Hidden;
             Register_Button.Visibility = Visibility.Hidden;
         }
+        /// <summary>
+        /// Makes Program Dragable
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
         #endregion
 
         #region Public Methods
+        /// <summary>
+        /// Gets Buttons and other Fields of Current View
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="element"></param>
+        /// <param name="sChildName"></param>
+        /// <returns></returns>
         public T FindElementByName<T>(FrameworkElement element, string sChildName) where T : FrameworkElement
         {
             T childElement = null;
