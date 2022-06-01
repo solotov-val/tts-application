@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using XamlUI.MVVM.Model;
+using System.Threading;
 
 namespace XamlUI.MVVM.View
 {
@@ -137,11 +138,13 @@ namespace XamlUI.MVVM.View
             String trlanguage = ev.evaluateLanguage(trtemp[2]);
             ApiHelpClass.translate(authKey, language, trlanguage, input);
 
+            //System.Threading.Thread.Sleep(2000);
             if (File.Exists("temptranslate.txt"))
             {
-                String path = System.AppDomain.CurrentDomain.BaseDirectory + "\\temptranslate.txt";
+                String path = System.AppDomain.CurrentDomain.BaseDirectory + "temptranslate.txt";
                 String text = File.ReadAllText(path);
                 TranslateTextBox.Text = text;
+                File.WriteAllText(path, String.Empty);
             }
             else
             {
