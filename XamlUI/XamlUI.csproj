@@ -321,6 +321,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -335,12 +337,6 @@
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\AWSSDK.Polly.3.7.5.17\analyzers\dotnet\cs\AWSSDK.Polly.CodeAnalysis.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\tts-application\tts-application.csproj">
-      <Project>{D2C6070D-4BA1-450D-864E-DFA65577EE86}</Project>
-      <Name>tts-application</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="bin\Debug\filename.txt" />

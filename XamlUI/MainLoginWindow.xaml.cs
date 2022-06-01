@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using tts_application;
+using XamlUI.MVVM.Model;
 using XamlUI.MVVM.View;
 
 namespace XamlUI
