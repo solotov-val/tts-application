@@ -143,7 +143,7 @@ namespace XamlUI.MVVM.View
                 String path = System.AppDomain.CurrentDomain.BaseDirectory + "temptranslate.txt";
                 String text = File.ReadAllText(path);
                 TranslateTextBox.Text = text;
-                File.WriteAllText(path, String.Empty);
+                //File.WriteAllText(path, String.Empty);
             }
             else
             {
