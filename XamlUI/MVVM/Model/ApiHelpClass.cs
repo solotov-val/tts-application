@@ -34,11 +34,11 @@ namespace XamlUI.MVVM.Model
             return "ERROR API-HELP-CLASS";
         }
 
-        public static String translate(String authKey, String inputLang, String outputLang, String text)
+        public static String translate(String inputLang, String outputLang, String text)
         {
             bool writeSuccessful = false;
             var outputFileName = "tempfile2_" + DateTime.Now.ToString().Replace(":", "-").Replace(" ", "_") + ".txt";
-            //authKey = "48b840d9-957fe91b-ff3d-d5616d26a7b3:fx";
+            String authKey = "48b840d9-957f-e91b-ff3d-d5616d26a7b3:fx";
 
             try
             {

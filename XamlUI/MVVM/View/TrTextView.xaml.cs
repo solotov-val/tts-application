@@ -121,22 +121,13 @@ namespace XamlUI.MVVM.View
         void Translate_Click(object sender, RoutedEventArgs e)
         {
             convertClicked = DateTime.Now;
-            String authKey = "";
-            if (File.Exists("..\\..\\Keys\\KeyAPI.txt"))
-            {
-                authKey = File.ReadAllText("..\\..\\Keys\\KeyAPI.txt");
-            }
-            else
-            {
-                MessageBox.Show("Error by searching for the KeyAPI file!");
-            }
 
             String input = InputTextBox.Text.ToString();
             String[] temp = _Language.SelectedValue.ToString().Split(' ');
             String language = ev.evaluateLanguage(temp[2]);
             String[] trtemp = _TrLanguage.SelectedValue.ToString().Split(' ');
             String trlanguage = ev.evaluateLanguage(trtemp[2]);
-            ApiHelpClass.translate(authKey, language, trlanguage, input);
+            ApiHelpClass.translate(language, trlanguage, input);
 
             if (File.Exists("temptranslate.txt"))
             {
